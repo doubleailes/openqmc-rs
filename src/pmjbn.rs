@@ -1,7 +1,8 @@
-// Port of oqmc/pmjbn.h — the blue-noise variant of the PMJ sampler. Same
-// sequence as `PmjSampler`, plus spatial blue-noise dithering between pixels. It
-// shares the PMJ sample cache and adds the blue-noise key/rank tables. State is
-// not pixel-decorrelated (the table lookup does that).
+//! Port of `oqmc/pmjbn.h` — the blue-noise variant of the PMJ sampler. Same
+//! sequence as [`PmjSampler`](crate::PmjSampler), plus spatial blue-noise
+//! dithering between pixels. It shares the PMJ sample cache and adds the
+//! blue-noise key/rank tables. State is not pixel-decorrelated (the table
+//! lookup does that).
 
 use crate::bntables::{self, table_value};
 use crate::lookup::shuffled_scrambled_lookup;
@@ -10,6 +11,7 @@ use crate::pmj::pmj_cache;
 use crate::sampler::{Sampler, SamplerImpl};
 use crate::state::State64Bit;
 
+/// Implementation behind [`PmjBnSampler`]. Use it through [`Sampler`].
 #[derive(Clone, Copy, Debug)]
 pub struct PmjBnImpl {
     state: State64Bit,
@@ -66,7 +68,9 @@ impl SamplerImpl for PmjBnImpl {
 
     #[inline]
     fn draw_rnd_block(&self) -> [u32; 4] {
-        self.state.new_domain(self.state.pixel_id as i32).draw_rnd::<4>()
+        self.state
+            .new_domain(self.state.pixel_id as i32)
+            .draw_rnd::<4>()
     }
 
     #[inline]
@@ -81,5 +85,19 @@ impl SamplerImpl for PmjBnImpl {
     }
 }
 
-/// Blue-noise variant of the PMJ sampler.
+/// Blue-noise variant of the [`PmjSampler`](crate::PmjSampler).
+///
+/// Same sequence, plus a per-pixel key/rank table lookup that distributes the
+/// residual error as blue noise across the image. Shares the PMJ sample cache
+/// and adds the blue-noise tables, all built lazily on first draw; call
+/// `PmjBnSampler::warm_cache()` to pay that cost up front.
+///
+/// ```
+/// use openqmc::PmjBnSampler;
+///
+/// PmjBnSampler::warm_cache();
+/// let root = PmjBnSampler::new(12, 34, 0, 7);
+/// let [u, v] = root.new_domain(0).draw_sample_f32::<2>();
+/// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
+/// ```
 pub type PmjBnSampler = Sampler<PmjBnImpl>;

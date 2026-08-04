@@ -1,9 +1,10 @@
-// Port of oqmc/reverse.h — bit reversal (radical inversion / Van der Corput).
-//
-// Reverses the order of bits in an integer, so the most significant bit becomes
-// the least significant and vice versa. The upstream header hand-rolls the swap
-// with masks and a byte-swap; Rust's `reverse_bits` compiles to the same
-// `rbit`/`bswap`-style sequence, so we use it directly.
+//! Port of `oqmc/reverse.h` — bit reversal (radical inversion / Van der
+//! Corput).
+//!
+//! Reverses the order of bits in an integer, so the most significant bit
+//! becomes the least significant and vice versa. The upstream header hand-rolls
+//! the swap with masks and a byte-swap; Rust's `reverse_bits` compiles to the
+//! same `rbit`/`bswap`-style sequence, so we use it directly.
 
 /// Reverse the bits of a 32-bit unsigned integer.
 #[inline]

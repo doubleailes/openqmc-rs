@@ -1,8 +1,8 @@
-// Port of oqmc/range.h — map a full-range 32-bit integer into a bounded range
-// using the high-bits-preserving multiplication method (Lemire 2019), which
-// keeps the good high-order bits of QMC sequences and weak PRNGs alike. Prefer
-// this over modulo. A small bias remains at large non-power-of-two ranges (no
-// rejection loop, by design).
+//! Port of `oqmc/range.h` — map a full-range 32-bit integer into a bounded
+//! range using the high-bits-preserving multiplication method (Lemire 2019),
+//! which keeps the good high-order bits of QMC sequences and weak PRNGs alike.
+//! Prefer this over modulo. A small bias remains at large non-power-of-two
+//! ranges (no rejection loop, by design).
 
 /// Map `value` into `[0, range)`.
 #[inline]

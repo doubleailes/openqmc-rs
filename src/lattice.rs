@@ -1,14 +1,15 @@
-// Port of oqmc/lattice.h — the rank-1 lattice sampler.
-//
-// No cache: samples are computed on the fly with a low per-draw cost. Runtime
-// performance is high, though the rate of integration per pixel can be lower than
-// the Sobol or PMJ samplers.
+//! Port of `oqmc/lattice.h` — the rank-1 lattice sampler.
+//!
+//! No cache: samples are computed on the fly with a low per-draw cost. Runtime
+//! performance is high, though the rate of integration per pixel can be lower
+//! than the Sobol or PMJ samplers.
 
 use crate::pcg;
 use crate::rank1::shuffled_rotated_lattice;
 use crate::sampler::{Sampler, SamplerImpl};
 use crate::state::State64Bit;
 
+/// Implementation behind [`LatticeSampler`]. Use it through [`Sampler`].
 #[derive(Clone, Copy, Debug)]
 pub struct LatticeImpl {
     state: State64Bit,
@@ -61,5 +62,18 @@ impl SamplerImpl for LatticeImpl {
     }
 }
 
-/// Rank-1 lattice sampler.
+/// Rank-1 lattice sampler (Hickernell et al.).
+///
+/// Cache-free and the cheapest per draw of the six samplers; the rate of
+/// integration per pixel can be lower than Sobol or PMJ. Prefer it when draw
+/// cost dominates. See [`LatticeBnSampler`](crate::LatticeBnSampler) for the
+/// blue-noise variant.
+///
+/// ```
+/// use openqmc::LatticeSampler;
+///
+/// let root = LatticeSampler::new(12, 34, 0, 7);
+/// let [u, v] = root.new_domain(0).draw_sample_f32::<2>();
+/// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
+/// ```
 pub type LatticeSampler = Sampler<LatticeImpl>;

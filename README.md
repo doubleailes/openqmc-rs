@@ -1,5 +1,10 @@
 # openqmc-rs
 
+[![crates.io](https://img.shields.io/crates/v/openqmc-rs.svg)](https://crates.io/crates/openqmc-rs)
+[![docs.rs](https://img.shields.io/docsrs/openqmc-rs)](https://docs.rs/openqmc-rs)
+[![CI](https://github.com/doubleailes/openqmc-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/doubleailes/openqmc-rs/actions/workflows/ci.yml)
+[![license](https://img.shields.io/crates/l/openqmc-rs.svg)](LICENSE)
+
 A faithful Rust port of [AcademySoftwareFoundation/openqmc][upstream] — quasi-Monte Carlo
 samplers for rendering, with a pass-by-value domain-tree API and blue-noise variants.
 
@@ -19,7 +24,7 @@ noise.
 
 ## Samplers
 
-Six samplers, all interchangeable behind the same [`Sampler`] API:
+Six samplers, all interchangeable behind the same [`Sampler`](https://docs.rs/openqmc-rs/latest/openqmc/sampler/struct.Sampler.html) API:
 
 | Sampler | Construction | Cache | Notes |
 | --- | --- | --- | --- |
@@ -42,10 +47,11 @@ Add the dependency:
 
 ```toml
 [dependencies]
-openqmc-rs = { git = "https://github.com/doubleailes/openqmc-rs" }
+openqmc-rs = "0.2"
 ```
 
-The crate's library name is `openqmc`, so import it as `use openqmc::...;`.
+The crate's library name is `openqmc`, so import it as `use openqmc::...;`. It has no
+dependencies and no `unsafe` code, and requires Rust 1.85 or later (edition 2024).
 
 Construct a root sampler per (pixel, frame, sample index), derive independent 4-dimensional
 sub-patterns with `new_domain`, and draw up to four dimensions per domain:
@@ -155,6 +161,10 @@ The bundled blue-noise blobs under `src/data/` are the upstream optimised tables
 - Jarzynski & Olano, *Hash Functions for GPU Rendering*
 - Belcour & Heitz, blue-noise sample-set optimisation
 - Sobol direction matrices originate from MIT-licensed code by Leonhard Gruenschloss
+
+## Changelog
+
+Release history lives in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

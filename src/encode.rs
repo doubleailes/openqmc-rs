@@ -1,12 +1,15 @@
-// Port of oqmc/encode.h — pack/unpack a 3-axis integer coordinate key into a
-// single 16-bit value. Used to store pixel coordinates compactly. The sum of the
-// per-axis bit precisions must not exceed 16.
+//! Port of `oqmc/encode.h` — pack/unpack a 3-axis integer coordinate key into a
+//! single 16-bit value. Used to store pixel coordinates compactly. The sum of
+//! the per-axis bit precisions must not exceed 16.
 
 /// A 3-dimensional integer coordinate key.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct EncodeKey {
+    /// X-axis coordinate.
     pub x: i32,
+    /// Y-axis coordinate.
     pub y: i32,
+    /// Z-axis coordinate.
     pub z: i32,
 }
 

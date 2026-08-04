@@ -1,13 +1,13 @@
-// Port of oqmc/owen.h — Owen-scrambled Sobol sequences via Brent Burley's
-// hash-based construction ("Practical Hash-based Owen Scrambling").
-//
-// The upstream header has three equivalent implementations of the core
-// `sobolReversedIndex` (an Ahmed-2024 shift-mask-xor scalar path plus AVX/SSE/NEON
-// direction-matrix paths). They all compute the same GF(2) matrix-vector product,
-// so we port the direction-matrix form as a plain scalar loop:
-//   result = XOR over set bits k of DIRECTIONS[dim][k].
-// The `DIRECTIONS` table is copied verbatim from owen.h (the `directions[4][16]`
-// literal). Dimension 0 reduces to a 16-bit bit reversal.
+//! Port of `oqmc/owen.h` — Owen-scrambled Sobol sequences via Brent Burley's
+//! hash-based construction ("Practical Hash-based Owen Scrambling").
+//!
+//! The upstream header has three equivalent implementations of the core
+//! `sobolReversedIndex` (an Ahmed-2024 shift-mask-xor scalar path plus
+//! AVX/SSE/NEON direction-matrix paths). They all compute the same GF(2)
+//! matrix-vector product, so we port the direction-matrix form as a plain
+//! scalar loop: `result = XOR over set bits k of DIRECTIONS[dim][k]`. The
+//! `DIRECTIONS` table is copied verbatim from `owen.h` (the `directions[4][16]`
+//! literal). Dimension 0 reduces to a 16-bit bit reversal.
 
 use crate::permute::{laine_karras_permutation, reverse_and_shuffle};
 use crate::reverse::{reverse_bits16, reverse_bits32};
@@ -81,7 +81,12 @@ pub const fn scramble_and_reverse(value: u32, seed: u32) -> u32 {
 /// a given sequence; an index greater than 2^16 will repeat values.
 #[inline]
 pub fn shuffled_scrambled_sobol<const DEPTH: usize>(index: u32, seed: u32) -> [u32; DEPTH] {
-    const { assert!(DEPTH >= 1 && DEPTH <= 4, "Pattern depth must be within [1, 4]") };
+    const {
+        assert!(
+            DEPTH >= 1 && DEPTH <= 4,
+            "Pattern depth must be within [1, 4]"
+        )
+    };
 
     let index = reverse_and_shuffle(index, seed);
 

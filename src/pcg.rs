@@ -1,7 +1,7 @@
-// Port of oqmc/pcg.h — the PCG-RXS-M-XS-32 PRNG by Melissa O'Neill, used both as
-// a classic sequential PRNG and (via `hash`) as a stateless parallel hash
-// function per Jarzynski & Olano, "Hash Functions for GPU Rendering". Constants
-// are taken from https://github.com/imneme/pcg-c.
+//! Port of `oqmc/pcg.h` — the PCG-RXS-M-XS-32 PRNG by Melissa O'Neill, used
+//! both as a classic sequential PRNG and (via [`hash`]) as a stateless parallel
+//! hash function per Jarzynski & Olano, "Hash Functions for GPU Rendering".
+//! Constants are taken from <https://github.com/imneme/pcg-c>.
 
 use crate::float::uint_to_float;
 

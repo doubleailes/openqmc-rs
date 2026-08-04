@@ -1,7 +1,7 @@
-// Port of oqmc/stochastic.h — progressive multi-jittered (0,2) sequence
-// construction (Helmer et al., "Stochastic Generation of (t,s) Sample
-// Sequences"). Builds the first pair of dimensions; the second pair is a
-// randomisation of the first. Used to fill the PMJ sampler's cache.
+//! Port of `oqmc/stochastic.h` — progressive multi-jittered (0,2) sequence
+//! construction (Helmer et al., "Stochastic Generation of (t,s) Sample
+//! Sequences"). Builds the first pair of dimensions; the second pair is a
+//! randomisation of the first. Used to fill the PMJ sampler's cache.
 
 use crate::lookup::shuffled_scrambled_lookup;
 use crate::pcg;

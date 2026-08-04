@@ -1,5 +1,5 @@
-// Port of oqmc/rotate.h — bit/byte rotation, used to extract fresh random
-// values from an existing hash or RNG number.
+//! Port of `oqmc/rotate.h` — bit/byte rotation, used to extract fresh random
+//! values from an existing hash or RNG number.
 
 /// Rotate the bits of a 32-bit integer right by `distance` (wrapping every 32).
 ///

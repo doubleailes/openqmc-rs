@@ -1,7 +1,8 @@
-// Port of oqmc/sobolbn.h — the blue-noise variant of the Sobol sampler. Same
-// sequence as `SobolSampler`, plus spatial blue-noise dithering between pixels
-// (progressive pixel sampling). Note it does *not* pixel-decorrelate the state;
-// the per-pixel (key, rank) table lookup provides the decorrelation.
+//! Port of `oqmc/sobolbn.h` — the blue-noise variant of the Sobol sampler.
+//! Same sequence as [`SobolSampler`](crate::SobolSampler), plus spatial
+//! blue-noise dithering between pixels (progressive pixel sampling). Note it
+//! does *not* pixel-decorrelate the state; the per-pixel (key, rank) table
+//! lookup provides the decorrelation.
 
 use crate::bntables::{self, table_value};
 use crate::owen::shuffled_scrambled_sobol;
@@ -9,6 +10,7 @@ use crate::pcg;
 use crate::sampler::{Sampler, SamplerImpl};
 use crate::state::State64Bit;
 
+/// Implementation behind [`SobolBnSampler`]. Use it through [`Sampler`].
 #[derive(Clone, Copy, Debug)]
 pub struct SobolBnImpl {
     state: State64Bit,
@@ -63,7 +65,9 @@ impl SamplerImpl for SobolBnImpl {
 
     #[inline]
     fn draw_rnd_block(&self) -> [u32; 4] {
-        self.state.new_domain(self.state.pixel_id as i32).draw_rnd::<4>()
+        self.state
+            .new_domain(self.state.pixel_id as i32)
+            .draw_rnd::<4>()
     }
 
     #[inline]
@@ -77,5 +81,19 @@ impl SamplerImpl for SobolBnImpl {
     }
 }
 
-/// Blue-noise variant of the Sobol sampler.
+/// Blue-noise variant of the [`SobolSampler`](crate::SobolSampler).
+///
+/// Same sequence, plus a per-pixel key/rank table lookup that distributes the
+/// residual error as blue noise across the image — easier on the eye and on
+/// denoisers. A good default if you are unsure which sampler to pick. The
+/// tables decode lazily on first draw; call `SobolBnSampler::warm_cache()` to
+/// pay that cost up front.
+///
+/// ```
+/// use openqmc::SobolBnSampler;
+///
+/// let root = SobolBnSampler::new(12, 34, 0, 7);
+/// let [u, v] = root.new_domain(0).draw_sample_f32::<2>();
+/// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
+/// ```
 pub type SobolBnSampler = Sampler<SobolBnImpl>;

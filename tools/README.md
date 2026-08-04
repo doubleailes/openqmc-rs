@@ -14,6 +14,7 @@ git clone --depth 1 https://github.com/AcademySoftwareFoundation/openqmc.git
 g++ -std=c++14 -O2 -DOQMC_FORCE_SCALAR -I openqmc/include \
     ref_gen.cpp -o ref_gen
 ./ref_gen > ../tests/golden_upstream.rs
+cargo fmt   # the generated file must be reformatted to keep CI's fmt check green
 ```
 
 Then `cargo test -p openqmc-rs --test golden_upstream` must pass. The generator

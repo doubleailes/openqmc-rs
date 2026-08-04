@@ -1,12 +1,24 @@
 [package]
 name = "openqmc-rs"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2024"
+rust-version = "1.85"
+authors = ["Philippe Llerena <philippe.llerena@forticheprod.com>"]
 license = "Apache-2.0"
 description = "A faithful Rust port of AcademySoftwareFoundation/openqmc — quasi-Monte Carlo samplers (Sobol, Lattice, PMJ) with a domain-tree API and blue-noise variants."
+repository = "https://github.com/doubleailes/openqmc-rs"
+documentation = "https://docs.rs/openqmc-rs"
+readme = "README.md"
+keywords = ["qmc", "sampling", "sobol", "monte-carlo", "rendering"]
+categories = ["algorithms", "graphics", "mathematics"]
+exclude = ["/tools"]
 
 [lib]
 name = "openqmc"
 path = "src/lib.rs"
 
 [dependencies]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--generate-link-to-definition"]

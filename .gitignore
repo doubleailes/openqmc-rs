@@ -1,1 +1,9 @@
 /target
+
+# Reference generator binary and upstream clone (see tools/README.md)
+/tools/ref_gen
+/tools/openqmc
+
+# Profiling artifacts
+perf.data*
+*.profraw
