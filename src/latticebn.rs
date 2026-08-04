@@ -1,6 +1,7 @@
-// Port of oqmc/latticebn.h — the blue-noise variant of the rank-1 lattice
-// sampler. Same sequence as `LatticeSampler`, plus spatial blue-noise dithering
-// between pixels. State is not pixel-decorrelated (the table lookup does that).
+//! Port of `oqmc/latticebn.h` — the blue-noise variant of the rank-1 lattice
+//! sampler. Same sequence as [`LatticeSampler`](crate::LatticeSampler), plus
+//! spatial blue-noise dithering between pixels. State is not
+//! pixel-decorrelated (the table lookup does that).
 
 use crate::bntables::{self, table_value};
 use crate::pcg;
@@ -8,6 +9,7 @@ use crate::rank1::shuffled_rotated_lattice;
 use crate::sampler::{Sampler, SamplerImpl};
 use crate::state::State64Bit;
 
+/// Implementation behind [`LatticeBnSampler`]. Use it through [`Sampler`].
 #[derive(Clone, Copy, Debug)]
 pub struct LatticeBnImpl {
     state: State64Bit,
@@ -62,7 +64,9 @@ impl SamplerImpl for LatticeBnImpl {
 
     #[inline]
     fn draw_rnd_block(&self) -> [u32; 4] {
-        self.state.new_domain(self.state.pixel_id as i32).draw_rnd::<4>()
+        self.state
+            .new_domain(self.state.pixel_id as i32)
+            .draw_rnd::<4>()
     }
 
     #[inline]
@@ -76,5 +80,17 @@ impl SamplerImpl for LatticeBnImpl {
     }
 }
 
-/// Blue-noise variant of the rank-1 lattice sampler.
+/// Blue-noise variant of the [`LatticeSampler`](crate::LatticeSampler).
+///
+/// Same sequence, plus a per-pixel key/rank table lookup that distributes the
+/// residual error as blue noise across the image. The tables decode lazily on
+/// first draw; call `LatticeBnSampler::warm_cache()` to pay that cost up front.
+///
+/// ```
+/// use openqmc::LatticeBnSampler;
+///
+/// let root = LatticeBnSampler::new(12, 34, 0, 7);
+/// let [u, v] = root.new_domain(0).draw_sample_f32::<2>();
+/// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
+/// ```
 pub type LatticeBnSampler = Sampler<LatticeBnImpl>;

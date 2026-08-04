@@ -1,8 +1,8 @@
-// Port of oqmc/state.h — the generic 8-byte sampler state shared by all sampler
-// implementations. Small enough to pass by value; carries the pattern/sample/
-// pixel identifiers and the domain-tree mutations.
+//! Port of `oqmc/state.h` — the generic 8-byte sampler state shared by all
+//! sampler implementations. Small enough to pass by value; carries the
+//! pattern/sample/pixel identifiers and the domain-tree mutations.
 
-use crate::encode::{encode_bits16, EncodeKey};
+use crate::encode::{EncodeKey, encode_bits16};
 use crate::pcg;
 
 /// 2^16 sample-index upper limit (bit size).

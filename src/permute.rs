@@ -1,8 +1,8 @@
-// Port of oqmc/permute.h — hash-based permutations. A Laine & Karras style
-// permutation (from "Stratified Sampling for Stochastic Transparency"), with the
-// improved constants from Nathan Vegdahl's "Building a Better LK Hash". Combined
-// with bit reversal before and after, this forms an efficient hash-based Owen
-// scramble.
+//! Port of `oqmc/permute.h` — hash-based permutations. A Laine & Karras style
+//! permutation (from "Stratified Sampling for Stochastic Transparency"), with
+//! the improved constants from Nathan Vegdahl's "Building a Better LK Hash".
+//! Combined with bit reversal before and after, this forms an efficient
+//! hash-based Owen scramble.
 
 use crate::reverse::reverse_bits32;
 

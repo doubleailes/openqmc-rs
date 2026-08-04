@@ -40,6 +40,10 @@
 //!
 //! [upstream]: https://github.com/AcademySoftwareFoundation/openqmc
 
+#![forbid(unsafe_code)]
+#![warn(missing_docs)]
+#![deny(rustdoc::broken_intra_doc_links)]
+
 // Utilities (oqmc/*.h leaf headers).
 pub mod encode;
 pub mod float;

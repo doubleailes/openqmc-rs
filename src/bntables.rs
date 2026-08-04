@@ -1,15 +1,15 @@
-// Port of oqmc/bntables.h — pre-computed, optimised blue-noise key/rank tables
-// used to give the base samplers a spatial blue-noise error distribution
-// (generalising Belcour & Heitz). A single table pair serves all domains: the
-// lookup is shifted toroidally per domain by a random offset.
-//
-// The upstream tables ship as text headers; this port bundles them as
-// little-endian binary blobs (converted 1:1 from include/oqmc/data/**) and
-// decodes them lazily into process globals.
+//! Port of `oqmc/bntables.h` — pre-computed, optimised blue-noise key/rank
+//! tables used to give the base samplers a spatial blue-noise error
+//! distribution (generalising Belcour & Heitz). A single table pair serves all
+//! domains: the lookup is shifted toroidally per domain by a random offset.
+//!
+//! The upstream tables ship as text headers; this port bundles them as
+//! little-endian binary blobs (converted 1:1 from `include/oqmc/data/**`) and
+//! decodes them lazily into process globals.
 
 use std::sync::OnceLock;
 
-use crate::encode::{decode_bits16, encode_bits16, EncodeKey};
+use crate::encode::{EncodeKey, decode_bits16, encode_bits16};
 
 /// Pixel-x precision for the tables (256 pixels).
 pub const XBITS: u32 = 8;
@@ -21,7 +21,9 @@ pub const SIZE: usize = 1 << (XBITS + YBITS);
 /// A key/rank pair used to randomise a sequence.
 #[derive(Clone, Copy, Debug)]
 pub struct TableReturnValue {
+    /// Scramble key for the sequence at this pixel.
     pub key: u32,
+    /// Sample-index rank (XORed into the index) for this pixel.
     pub rank: u32,
 }
 
@@ -57,8 +59,9 @@ fn decode_table(bytes: &'static [u8]) -> Box<[u32]> {
 
 macro_rules! table_pair {
     ($module:ident, $keys:literal, $ranks:literal) => {
+        #[doc = concat!("Optimised blue-noise key/rank tables for the ", stringify!($module), " sampler, decoded lazily from the bundled blobs.")]
         pub mod $module {
-            use super::{decode_table, OnceLock};
+            use super::{OnceLock, decode_table};
 
             /// Optimised blue-noise key table.
             pub fn key_table() -> &'static [u32] {

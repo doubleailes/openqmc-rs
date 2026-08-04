@@ -1,16 +1,17 @@
-// Port of oqmc/sampler.h — the public, static-polymorphic sampler interface.
-//
-// Upstream `SamplerInterface<Impl>` composes an internal implementation and
-// exposes a uniform domain-tree API. We model that with the [`SamplerImpl`] trait
-// plus the generic [`Sampler`] wrapper. Each impl computes a full 4-dimensional
-// block; the wrapper's const-generic `draw_*::<N>` methods return the first `N`
-// values, which is identical to computing `N` directly in every upstream draw
-// path (each output dimension is independent of the requested depth).
-//
-// Divergence from the C++ headers: upstream takes a caller-allocated `void*`
-// cache, a design driven by GPU memory management (see sampler.h). This CPU port
-// instead builds any required tables in lazily-initialised process globals, so
-// every `Sampler<T>` stays a small `Copy + Send + 'static` value.
+//! Port of `oqmc/sampler.h` — the public, static-polymorphic sampler interface.
+//!
+//! Upstream `SamplerInterface<Impl>` composes an internal implementation and
+//! exposes a uniform domain-tree API. We model that with the [`SamplerImpl`]
+//! trait plus the generic [`Sampler`] wrapper. Each impl computes a full
+//! 4-dimensional block; the wrapper's const-generic `draw_*::<N>` methods
+//! return the first `N` values, which is identical to computing `N` directly in
+//! every upstream draw path (each output dimension is independent of the
+//! requested depth).
+//!
+//! Divergence from the C++ headers: upstream takes a caller-allocated `void*`
+//! cache, a design driven by GPU memory management (see `sampler.h`). This CPU
+//! port instead builds any required tables in lazily-initialised process
+//! globals, so every `Sampler<T>` stays a small `Copy + Send + 'static` value.
 
 use crate::float::uint_to_float;
 use crate::pcg;

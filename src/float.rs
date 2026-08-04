@@ -1,10 +1,10 @@
-// Port of oqmc/float.h — integer to `[0, 1)` float conversion.
-//
-// Uses the "clear the guard bit" trick (option 4 in the upstream header): by
-// masking off the bit 24 places below the leading one, the default
-// round-to-nearest conversion always rounds *down*, giving the optimal uniform
-// probability density of Keller/Wächter/Binder without changing the FPU rounding
-// mode, and guaranteeing an output strictly less than one.
+//! Port of `oqmc/float.h` — integer to `[0, 1)` float conversion.
+//!
+//! Uses the "clear the guard bit" trick (option 4 in the upstream header): by
+//! masking off the bit 24 places below the leading one, the default
+//! round-to-nearest conversion always rounds *down*, giving the optimal uniform
+//! probability density of Keller/Wächter/Binder without changing the FPU
+//! rounding mode, and guaranteeing an output strictly less than one.
 
 /// 2^-32.
 pub const FLOAT_ONE_OVER_TWO_POWER_32: f32 = 1.0 / 4294967296.0;

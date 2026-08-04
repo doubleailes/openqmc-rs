@@ -1,6 +1,7 @@
-// Port of oqmc/rank1.h — a rank-1 lattice (Hickernell et al., "Weighted Compound
-// Integration Rules with Higher Order Convergence for all N") made progressive
-// with a radical inversion of the sample index, randomised with toroidal shifts.
+//! Port of `oqmc/rank1.h` — a rank-1 lattice (Hickernell et al., "Weighted
+//! Compound Integration Rules with Higher Order Convergence for all N") made
+//! progressive with a radical inversion of the sample index, randomised with
+//! toroidal shifts.
 
 use crate::pcg;
 use crate::permute::reverse_and_shuffle;
@@ -30,7 +31,12 @@ pub fn shuffled_rotated_lattice<const DEPTH: usize>(
     index: u32,
     mut pattern_id: u32,
 ) -> [u32; DEPTH] {
-    const { assert!(DEPTH >= 1 && DEPTH <= 4, "Pattern depth must be within [1, 4]") };
+    const {
+        assert!(
+            DEPTH >= 1 && DEPTH <= 4,
+            "Pattern depth must be within [1, 4]"
+        )
+    };
 
     let index = reverse_and_shuffle(index, pcg::output(pattern_id));
 
