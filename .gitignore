@@ -1,4 +1,5 @@
 /target
+Cargo.lock
 
 # Reference generator binary and upstream clone (see tools/README.md)
 /tools/ref_gen
