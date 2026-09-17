@@ -77,3 +77,44 @@ impl SamplerImpl for LatticeImpl {
 /// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
 /// ```
 pub type LatticeSampler = Sampler<LatticeImpl>;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn from_pixel_decorrelates_the_state() {
+        let imp = LatticeImpl::from_pixel(3, 4, 5, 6);
+        assert_eq!(imp.state, State64Bit::new(3, 4, 5, 6).pixel_decorrelate());
+    }
+
+    #[test]
+    fn draw_block_is_the_core_on_the_raw_pattern() {
+        let imp = LatticeImpl::from_pixel(3, 4, 5, 6).new_domain(2);
+        assert_eq!(
+            imp.draw_block(),
+            shuffled_rotated_lattice::<4>(imp.state.sample_id as u32, imp.state.pattern_id)
+        );
+        assert_eq!(imp.draw_rnd_block(), imp.state.draw_rnd::<4>());
+        assert_eq!(imp.rng().next_u32(), imp.state.rng().next_u32());
+    }
+
+    #[test]
+    fn domain_methods_forward_to_the_state() {
+        let imp = LatticeImpl::from_pixel(3, 4, 5, 6);
+        assert_eq!(imp.new_domain(1).state, imp.state.new_domain(1));
+        assert_eq!(
+            imp.new_domain_split(1, 2, 1).state,
+            imp.state.new_domain_split(1, 2, 1)
+        );
+        assert_eq!(
+            imp.new_domain_distrib(1, 2).state,
+            imp.state.new_domain_distrib(1, 2)
+        );
+    }
+
+    #[test]
+    fn impl_is_eight_bytes() {
+        assert_eq!(std::mem::size_of::<LatticeImpl>(), 8);
+    }
+}

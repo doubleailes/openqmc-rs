@@ -153,4 +153,121 @@ mod tests {
             assert!(strata.iter().all(|&b| b));
         }
     }
+
+    #[test]
+    fn direction_matrices_are_triangular_with_unit_diagonal() {
+        // Column k has its leading one at bit 15 - k in every dimension, so
+        // each generator matrix is invertible over GF(2).
+        for (dim, matrix) in DIRECTIONS.iter().enumerate() {
+            for (k, &col) in matrix.iter().enumerate() {
+                assert_eq!(col.leading_zeros() as usize, k, "dim {dim} col {k}");
+            }
+        }
+    }
+
+    #[test]
+    fn direction_dim0_is_the_identity_in_reversed_order() {
+        for (k, &col) in DIRECTIONS[0].iter().enumerate() {
+            assert_eq!(col, 1 << (15 - k));
+        }
+    }
+
+    #[test]
+    fn direction_dim1_is_the_pascal_triangle_matrix() {
+        // Sobol dimension 1 uses the primitive polynomial x + 1, whose
+        // generator matrix is Pascal's triangle mod 2: column k has bits set
+        // where binomial(j, k) is odd, i.e. (j & k) == k.
+        for (k, &col) in DIRECTIONS[1].iter().enumerate() {
+            let mut expected = 0u16;
+            for j in 0..16 {
+                if (j & k) == k {
+                    expected |= 1 << (15 - j);
+                }
+            }
+            assert_eq!(col, expected, "col {k}");
+        }
+    }
+
+    #[test]
+    fn every_direction_column_ends_with_the_unit_column() {
+        for matrix in &DIRECTIONS {
+            assert_eq!(matrix[15], 1);
+        }
+    }
+
+    #[test]
+    fn dim0_shortcut_matches_the_generic_matrix_path() {
+        for index in 0..=u16::MAX {
+            let mut bits = 0u16;
+            for (k, &col) in DIRECTIONS[0].iter().enumerate() {
+                if index & (1 << k) != 0 {
+                    bits ^= col;
+                }
+            }
+            assert_eq!(bits, sobol_reversed_index(index, 0));
+        }
+    }
+
+    #[test]
+    fn reversed_index_is_a_bijection_in_each_dimension() {
+        for dim in 0..4 {
+            let mut seen = vec![false; 1 << 16];
+            for index in 0..=u16::MAX {
+                let v = sobol_reversed_index(index, dim) as usize;
+                assert!(!seen[v], "dim {dim}");
+                seen[v] = true;
+            }
+        }
+    }
+
+    #[test]
+    fn scramble_and_reverse_composes_lk_and_reverse() {
+        for v in [0u32, 1, 0xffff, 0x8000_0000, u32::MAX] {
+            for seed in [0u32, 7, 0xdead_beef] {
+                assert_eq!(
+                    scramble_and_reverse(v, seed),
+                    reverse_bits32(laine_karras_permutation(v, seed))
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn shuffled_uses_the_top_16_bits_of_the_shuffled_index() {
+        // Reconstruct one sample from the pieces.
+        let seed = pcg::hash(5);
+        for index in [0u32, 3, 1000, 65535] {
+            let shuffled = reverse_and_shuffle(index, seed);
+            let r = (shuffled >> 16) as u16;
+            let expected: [u32; 4] = std::array::from_fn(|d| {
+                scramble_and_reverse(
+                    sobol_reversed_index(r, d) as u32,
+                    rotate_bytes(seed, d as i32),
+                )
+            });
+            assert_eq!(shuffled_scrambled_sobol::<4>(index, seed), expected);
+        }
+    }
+
+    #[test]
+    fn is_02_net_for_several_seeds_and_sizes() {
+        for seed in [pcg::hash(1), pcg::hash(2), 0, u32::MAX] {
+            for m in 1..=10u32 {
+                let n = 1u32 << m;
+                for i in 0..=m {
+                    let xb = i;
+                    let yb = m - i;
+                    let mut strata = vec![false; n as usize];
+                    for index in 0..n {
+                        let out = shuffled_scrambled_sobol::<2>(index, seed);
+                        let x = if xb == 0 { 0 } else { out[0] >> (32 - xb) };
+                        let y = if yb == 0 { 0 } else { out[1] >> (32 - yb) };
+                        let cell = ((y << xb) | x) as usize;
+                        assert!(!strata[cell], "seed {seed:#x} m={m}");
+                        strata[cell] = true;
+                    }
+                }
+            }
+        }
+    }
 }

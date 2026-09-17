@@ -172,3 +172,184 @@ impl<T: SamplerImpl> Sampler<T> {
         self.imp.rng()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    use crate::state::State64Bit;
+
+    /// A minimal deterministic implementation to exercise the wrapper alone.
+    #[derive(Clone, Copy, Debug)]
+    struct Dummy {
+        state: State64Bit,
+    }
+
+    impl SamplerImpl for Dummy {
+        fn from_pixel(x: i32, y: i32, frame: i32, index: i32) -> Self {
+            Self {
+                state: State64Bit::new(x, y, frame, index),
+            }
+        }
+        fn new_domain(&self, key: i32) -> Self {
+            Self {
+                state: self.state.new_domain(key),
+            }
+        }
+        fn new_domain_split(&self, key: i32, size: i32, index: i32) -> Self {
+            Self {
+                state: self.state.new_domain_split(key, size, index),
+            }
+        }
+        fn new_domain_distrib(&self, key: i32, index: i32) -> Self {
+            Self {
+                state: self.state.new_domain_distrib(key, index),
+            }
+        }
+        fn draw_block(&self) -> [u32; 4] {
+            let p = self.state.pattern_id;
+            [p, p ^ 1, p ^ 2, p ^ 3]
+        }
+        fn draw_rnd_block(&self) -> [u32; 4] {
+            self.state.draw_rnd::<4>()
+        }
+        fn rng(&self) -> pcg::Rng {
+            self.state.rng()
+        }
+    }
+
+    type DummySampler = Sampler<Dummy>;
+
+    #[test]
+    fn take_returns_the_prefix() {
+        let block = [10u32, 20, 30, 40];
+        assert_eq!(take::<1>(block), [10]);
+        assert_eq!(take::<2>(block), [10, 20]);
+        assert_eq!(take::<3>(block), [10, 20, 30]);
+        assert_eq!(take::<4>(block), block);
+    }
+
+    #[test]
+    fn default_warm_cache_is_a_no_op() {
+        Dummy::warm_cache();
+        DummySampler::warm_cache();
+    }
+
+    #[test]
+    fn draw_sample_is_take_of_draw_block() {
+        let s = DummySampler::new(1, 2, 3, 4).new_domain(5);
+        let block = s.imp.draw_block();
+        assert_eq!(s.draw_sample::<4>(), block);
+        assert_eq!(s.draw_sample::<2>(), [block[0], block[1]]);
+        assert_eq!(s.draw_sample::<1>(), [block[0]]);
+    }
+
+    #[test]
+    fn draw_rnd_is_take_of_draw_rnd_block() {
+        let s = DummySampler::new(1, 2, 3, 4).new_domain(5);
+        let block = s.imp.draw_rnd_block();
+        assert_eq!(s.draw_rnd::<4>(), block);
+        assert_eq!(s.draw_rnd::<3>(), [block[0], block[1], block[2]]);
+    }
+
+    #[test]
+    fn conversions_apply_per_element() {
+        let s = DummySampler::new(1, 2, 3, 4).new_domain(5);
+        let block = s.draw_sample::<4>();
+        let f = s.draw_sample_f32::<4>();
+        let r = s.draw_sample_range::<4>(1000);
+        for k in 0..4 {
+            assert_eq!(f[k], uint_to_float(block[k]));
+            assert_eq!(r[k], uint_to_range(block[k], 1000));
+        }
+        let block = s.draw_rnd::<4>();
+        let f = s.draw_rnd_f32::<4>();
+        let r = s.draw_rnd_range::<4>(7);
+        for k in 0..4 {
+            assert_eq!(f[k], uint_to_float(block[k]));
+            assert_eq!(r[k], uint_to_range(block[k], 7));
+        }
+    }
+
+    #[test]
+    fn domain_methods_forward_to_the_impl() {
+        let s = DummySampler::new(1, 2, 3, 4);
+        assert_eq!(s.new_domain(7).imp.state, s.imp.state.new_domain(7));
+        assert_eq!(
+            s.new_domain_split(7, 4, 1).imp.state,
+            s.imp.state.new_domain_split(7, 4, 1)
+        );
+        assert_eq!(
+            s.new_domain_distrib(7, 1).imp.state,
+            s.imp.state.new_domain_distrib(7, 1)
+        );
+        assert_eq!(
+            s.new_domain_chain(7, 1).imp.state,
+            s.imp.state.new_domain(7).new_domain(1)
+        );
+    }
+
+    #[test]
+    fn rng_forwards_to_the_impl() {
+        let s = DummySampler::new(1, 2, 3, 4);
+        assert_eq!(s.rng().next_u32(), s.imp.rng().next_u32());
+        assert_eq!(s.rng().next_u32(), s.draw_rnd::<1>()[0]);
+    }
+
+    #[test]
+    fn wrapper_is_copy_and_debug() {
+        let s = DummySampler::new(1, 2, 3, 4);
+        let t = s;
+        assert_eq!(s.draw_sample::<4>(), t.draw_sample::<4>());
+        assert!(format!("{s:?}").contains("Sampler"));
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn negative_index_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, -1);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn zero_split_size_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).new_domain_split(0, 0, 0);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn negative_split_index_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).new_domain_split(0, 2, -1);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn negative_distrib_index_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).new_domain_distrib(0, -1);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn negative_chain_index_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).new_domain_chain(0, -1);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn zero_range_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).draw_sample_range::<1>(0);
+    }
+
+    #[cfg(debug_assertions)]
+    #[test]
+    #[should_panic]
+    fn zero_rnd_range_is_rejected_in_debug() {
+        let _ = DummySampler::new(0, 0, 0, 0).draw_rnd_range::<1>(0);
+    }
+}

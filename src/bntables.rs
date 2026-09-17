@@ -93,4 +93,66 @@ mod tests {
         assert_eq!(lattice::key_table().len(), SIZE);
         assert_eq!(pmj::rank_table().len(), SIZE);
     }
+
+    #[test]
+    fn tables_decode_little_endian() {
+        let raw: &[u8] = include_bytes!("data/sobol_keys.bin");
+        let first = u32::from_le_bytes([raw[0], raw[1], raw[2], raw[3]]);
+        let last = u32::from_le_bytes([
+            raw[raw.len() - 4],
+            raw[raw.len() - 3],
+            raw[raw.len() - 2],
+            raw[raw.len() - 1],
+        ]);
+        assert_eq!(sobol::key_table()[0], first);
+        assert_eq!(sobol::key_table()[SIZE - 1], last);
+    }
+
+    #[test]
+    fn all_six_blobs_have_the_expected_size() {
+        assert_eq!(include_bytes!("data/sobol_keys.bin").len(), SIZE * 4);
+        assert_eq!(include_bytes!("data/sobol_ranks.bin").len(), SIZE * 4);
+        assert_eq!(include_bytes!("data/lattice_keys.bin").len(), SIZE * 4);
+        assert_eq!(include_bytes!("data/lattice_ranks.bin").len(), SIZE * 4);
+        assert_eq!(include_bytes!("data/pmj_keys.bin").len(), SIZE * 4);
+        assert_eq!(include_bytes!("data/pmj_ranks.bin").len(), SIZE * 4);
+    }
+
+    #[test]
+    fn tables_are_decoded_once() {
+        assert!(std::ptr::eq(pmj::key_table(), pmj::key_table()));
+        assert!(std::ptr::eq(lattice::rank_table(), lattice::rank_table()));
+    }
+
+    #[test]
+    fn ranks_are_below_128() {
+        for t in [
+            sobol::rank_table(),
+            lattice::rank_table(),
+            pmj::rank_table(),
+        ] {
+            assert!(t.iter().all(|&r| r < 128));
+        }
+    }
+
+    #[test]
+    fn table_value_with_zero_shift_is_a_direct_index() {
+        let keys = sobol::key_table();
+        let ranks = sobol::rank_table();
+        for p in [0u16, 1, 255, 256, 65535] {
+            let t = table_value::<XBITS, YBITS, 0>(p, 0, keys, ranks);
+            assert_eq!(t.key, keys[p as usize]);
+            assert_eq!(t.rank, ranks[p as usize]);
+        }
+    }
+
+    #[test]
+    fn table_value_shift_wraps_toroidally() {
+        let keys = sobol::key_table();
+        let ranks = sobol::rank_table();
+        // pixel (255, 255) shifted by (1, 1) lands on (0, 0).
+        let t = table_value::<XBITS, YBITS, 0>(0xffff, 0x0101, keys, ranks);
+        assert_eq!(t.key, keys[0]);
+        assert_eq!(t.rank, ranks[0]);
+    }
 }

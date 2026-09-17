@@ -118,4 +118,68 @@ mod tests {
             assert!(strata.iter().all(|&b| b));
         }
     }
+
+    #[test]
+    fn xor_tables_point_inside_the_previous_prefix() {
+        // Row `log_n` of the table is XORed onto indices below 2^log_n, so its
+        // entries must stay below 2^log_n to remain in bounds.
+        for (k, row) in PMJ_XORS.iter().enumerate() {
+            assert_eq!(row[0], 0, "k={k}");
+            for (log_n, &x) in row.iter().enumerate().skip(1) {
+                assert!(
+                    (x as usize) < (1 << log_n),
+                    "k={k} log_n={log_n} xor={x:#b}"
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn xor_tables_are_the_upstream_constants() {
+        assert_eq!(PMJ_XORS[0][2], 0b10);
+        assert_eq!(PMJ_XORS[0][15], 0b0100000011001110);
+        assert_eq!(PMJ_XORS[1][1], 0b1);
+        assert_eq!(PMJ_XORS[1][15], 0b0000000010001011);
+    }
+
+    #[test]
+    #[should_panic(expected = "PMJ init requires a full 2^16 table")]
+    fn rejects_partial_tables() {
+        let mut t = vec![[0u32; 4]; 16];
+        stochastic_pmj_init(16, &mut t);
+    }
+
+    #[test]
+    fn second_pair_is_also_a_02_net() {
+        const M: u32 = 8;
+        const N: usize = 1 << M;
+        let mut table = vec![[0u32; 4]; FULL];
+        stochastic_pmj_init(FULL, &mut table);
+        for i in 0..=M {
+            let xb = i;
+            let yb = M - i;
+            let mut strata = vec![false; N];
+            for s in &table[..N] {
+                let x = if xb == 0 { 0 } else { s[2] >> (32 - xb) };
+                let y = if yb == 0 { 0 } else { s[3] >> (32 - yb) };
+                let cell = ((y << xb) | x) as usize;
+                assert!(!strata[cell]);
+                strata[cell] = true;
+            }
+        }
+    }
+
+    #[test]
+    fn every_dimension_permutes_the_16_bit_strata() {
+        let mut table = vec![[0u32; 4]; FULL];
+        stochastic_pmj_init(FULL, &mut table);
+        for d in 0..4 {
+            let mut seen = vec![false; FULL];
+            for s in &table {
+                let cell = (s[d] >> 16) as usize;
+                assert!(!seen[cell], "dim {d}");
+                seen[cell] = true;
+            }
+        }
+    }
 }

@@ -101,3 +101,65 @@ impl SamplerImpl for PmjBnImpl {
 /// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
 /// ```
 pub type PmjBnSampler = Sampler<PmjBnImpl>;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn from_pixel_keeps_the_state_correlated_and_shares_the_pmj_cache() {
+        let imp = PmjBnImpl::from_pixel(3, 4, 5, 6);
+        assert_eq!(imp.state, State64Bit::new(3, 4, 5, 6));
+        assert!(std::ptr::eq(imp.samples, pmj_cache()));
+        assert!(std::ptr::eq(imp.key_table, bntables::pmj::key_table()));
+        assert!(std::ptr::eq(imp.rank_table, bntables::pmj::rank_table()));
+    }
+
+    #[test]
+    fn domain_methods_keep_the_tables() {
+        let imp = PmjBnImpl::from_pixel(3, 4, 5, 6);
+        for child in [
+            imp.new_domain(1),
+            imp.new_domain_split(1, 2, 1),
+            imp.new_domain_distrib(1, 2),
+        ] {
+            assert!(std::ptr::eq(child.samples, imp.samples));
+            assert!(std::ptr::eq(child.key_table, imp.key_table));
+            assert!(std::ptr::eq(child.rank_table, imp.rank_table));
+        }
+    }
+
+    #[test]
+    fn draw_block_reads_the_table_shifted_by_the_pattern() {
+        let imp = PmjBnImpl::from_pixel(3, 4, 5, 6).new_domain(2);
+        let t = table_value::<8, 8, 0>(
+            imp.state.pixel_id,
+            pcg::output(imp.state.pattern_id) as u16,
+            imp.key_table,
+            imp.rank_table,
+        );
+        assert_eq!(
+            imp.draw_block(),
+            shuffled_scrambled_lookup::<4, 4>(
+                imp.state.sample_id as u32 ^ t.rank,
+                t.key,
+                imp.samples
+            )
+        );
+    }
+
+    #[test]
+    fn rnd_paths_decorrelate_by_pixel() {
+        let imp = PmjBnImpl::from_pixel(3, 4, 5, 6).new_domain(2);
+        let expected = imp.state.new_domain(imp.state.pixel_id as i32);
+        assert_eq!(imp.draw_rnd_block(), expected.draw_rnd::<4>());
+        assert_eq!(imp.rng().next_u32(), expected.rng().next_u32());
+    }
+
+    #[test]
+    fn warm_cache_builds_everything() {
+        PmjBnImpl::warm_cache();
+        PmjBnSampler::warm_cache();
+        assert_eq!(pmj_cache().len(), crate::state::MAX_INDEX_SIZE);
+    }
+}

@@ -109,3 +109,59 @@ impl SamplerImpl for PmjImpl {
 /// assert!((0.0..1.0).contains(&u) && (0.0..1.0).contains(&v));
 /// ```
 pub type PmjSampler = Sampler<PmjImpl>;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn cache_is_built_once_and_full_length() {
+        let a = pmj_cache();
+        let b = pmj_cache();
+        assert!(std::ptr::eq(a, b));
+        assert_eq!(a.len(), MAX_INDEX_SIZE);
+    }
+
+    #[test]
+    fn cache_matches_a_fresh_stochastic_init() {
+        let mut fresh = vec![[0u32; 4]; MAX_INDEX_SIZE];
+        stochastic_pmj_init(MAX_INDEX_SIZE, &mut fresh);
+        assert_eq!(pmj_cache(), &fresh[..]);
+    }
+
+    #[test]
+    fn from_pixel_decorrelates_the_state_and_holds_the_cache() {
+        let imp = PmjImpl::from_pixel(3, 4, 5, 6);
+        assert_eq!(imp.state, State64Bit::new(3, 4, 5, 6).pixel_decorrelate());
+        assert!(std::ptr::eq(imp.cache, pmj_cache()));
+        assert!(std::ptr::eq(imp.new_domain(1).cache, pmj_cache()));
+        assert!(std::ptr::eq(
+            imp.new_domain_split(1, 2, 0).cache,
+            pmj_cache()
+        ));
+        assert!(std::ptr::eq(
+            imp.new_domain_distrib(1, 2).cache,
+            pmj_cache()
+        ));
+    }
+
+    #[test]
+    fn draw_block_is_a_lookup_seeded_with_output_of_pattern() {
+        let imp = PmjImpl::from_pixel(3, 4, 5, 6).new_domain(2);
+        assert_eq!(
+            imp.draw_block(),
+            shuffled_scrambled_lookup::<4, 4>(
+                imp.state.sample_id as u32,
+                pcg::output(imp.state.pattern_id),
+                pmj_cache()
+            )
+        );
+        assert_eq!(imp.draw_rnd_block(), imp.state.draw_rnd::<4>());
+    }
+
+    #[test]
+    fn warm_cache_builds_the_table() {
+        PmjImpl::warm_cache();
+        assert_eq!(pmj_cache().len(), MAX_INDEX_SIZE);
+    }
+}

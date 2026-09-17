@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- A large dependency-free test suite (about 800 new tests) covering every
+  module: exhaustive and property tests for the utility headers (`encode`,
+  `float`, `range`, `rotate`, `reverse`, `permute`, `pcg`), (0,2)-net and
+  stratification checks for the Sobol, lattice and PMJ cores, checks on the
+  bundled blue-noise tables, `State64Bit` domain-tree algebra, a behavioural
+  suite stamped out for all six samplers, and cross-checks that rebuild each
+  sampler's output from the public building blocks. No library code changed.
+
 ## [0.2.0] - 2026-08-04
 
 Release polish. No API or behavioural changes — sample values remain bit-for-bit
