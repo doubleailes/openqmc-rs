@@ -20,11 +20,14 @@ jobs:
         with:
           toolchain: stable
       - name: Check tag matches Cargo.toml version
+        # `cargo metadata --no-deps`, not `cargo pkgid`: Cargo.lock is not
+        # committed, and `cargo pkgid` refuses to run without one — which is
+        # what failed the 0.2.1, 0.2.2 and 0.2.3 release runs at this step.
         run: |
-          version="$(cargo pkgid | sed 's/.*[@#]//')"
+          version="$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[0].version')"
           tag="${GITHUB_REF_NAME#v}"
           if [ "$version" != "$tag" ]; then
-            echo "Tag v$tag does not match Cargo.toml version $version" >&2
+            echo "Tag $GITHUB_REF_NAME does not match Cargo.toml version $version" >&2
             exit 1
           fi
       - name: Test
