@@ -4,8 +4,12 @@
 //! The upstream header has three equivalent implementations of the core
 //! `sobolReversedIndex` (an Ahmed-2024 shift-mask-xor scalar path plus
 //! AVX/SSE/NEON direction-matrix paths). They all compute the same GF(2)
-//! matrix-vector product, so we port the direction-matrix form as a plain
-//! scalar loop: `result = XOR over set bits k of DIRECTIONS[dim][k]`. The
+//! matrix-vector product, `result = XOR over set bits k of DIRECTIONS[dim][k]`.
+//! This port evaluates it a byte at a time: the product is linear over GF(2),
+//! so it splits into the low byte's contribution XOR the high byte's, each
+//! precomputed at compile time into a 256-entry table (4 KiB for all four
+//! dimensions). Two loads and one XOR replace a 16-step bit loop — the same
+//! values, bit for bit, pinned by an exhaustive test against the loop. The
 //! `DIRECTIONS` table is copied verbatim from `owen.h` (the `directions[4][16]`
 //! literal). Dimension 0 reduces to a 16-bit bit reversal.
 
@@ -45,27 +49,50 @@ const DIRECTIONS: [[u16; 16]; 4] = [
     ],
 ];
 
+/// `DIRECTIONS` pre-multiplied a byte at a time: `TABLES[d][0][b]` is the XOR
+/// of `DIRECTIONS[d][k]` over the set bits `k` of the low byte `b`, and
+/// `TABLES[d][1][b]` the same for the high byte (`k + 8`). The product is
+/// linear over GF(2), so the XOR of the two entries is exactly the 16-step
+/// loop's result — the same values, in two loads.
+const TABLES: [[[u16; 256]; 2]; 4] = {
+    let mut t = [[[0u16; 256]; 2]; 4];
+    let mut d = 0;
+    while d < 4 {
+        let mut half = 0;
+        while half < 2 {
+            let mut b = 0;
+            while b < 256 {
+                let mut bits = 0u16;
+                let mut k = 0;
+                while k < 8 {
+                    if b & (1 << k) != 0 {
+                        bits ^= DIRECTIONS[d][k + 8 * half];
+                    }
+                    k += 1;
+                }
+                t[d][half][b] = bits;
+                b += 1;
+            }
+            half += 1;
+        }
+        d += 1;
+    }
+    t
+};
+
 /// Sobol value at a bit-reversed index for a given dimension (0..4), 16-bit.
 #[inline]
 pub fn sobol_reversed_index(index: u16, dimension: usize) -> u16 {
     debug_assert!(dimension <= 3);
 
     if dimension == 0 {
-        // directions[0] is the reversal permutation; the loop below would give
+        // directions[0] is the reversal permutation; the tables would give
         // the same result, but the shortcut mirrors the upstream fast path.
         return reverse_bits16(index);
     }
 
-    let matrix = &DIRECTIONS[dimension];
-    let mut bits: u16 = 0;
-    let mut k = 0;
-    while k < 16 {
-        if index & (1 << k) != 0 {
-            bits ^= matrix[k];
-        }
-        k += 1;
-    }
-    bits
+    let t = &TABLES[dimension];
+    t[0][(index & 0xff) as usize] ^ t[1][(index >> 8) as usize]
 }
 
 /// Permute an integer (Laine & Karras) and reverse the bits. Equivalent to an
@@ -104,6 +131,24 @@ pub fn shuffled_scrambled_sobol<const DEPTH: usize>(index: u32, seed: u32) -> [u
 mod tests {
     use super::*;
     use crate::pcg;
+
+    /// The byte tables are the 16-step loop, precomputed: every index, every
+    /// dimension, bit for bit.
+    #[test]
+    fn tables_match_the_direction_matrix_loop() {
+        for (d, matrix) in DIRECTIONS.iter().enumerate() {
+            for index in 0..=u16::MAX {
+                let mut bits = 0u16;
+                for (k, &column) in matrix.iter().enumerate() {
+                    if index & (1 << k) != 0 {
+                        bits ^= column;
+                    }
+                }
+                let want = if d == 0 { reverse_bits16(index) } else { bits };
+                assert_eq!(sobol_reversed_index(index, d), want, "d={d} index={index}");
+            }
+        }
+    }
 
     #[test]
     fn dim0_is_van_der_corput() {

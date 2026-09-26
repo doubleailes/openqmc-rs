@@ -17,6 +17,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   suite stamped out for all six samplers, and cross-checks that rebuild each
   sampler's output from the public building blocks. No library code changed.
 
+## [0.2.4] - 2026-09-26
+
+Performance. No API or behavioural changes — sample values remain bit-for-bit
+identical to upstream OpenQMC and to every previous release.
+
+### Changed
+
+- `sobol_reversed_index` (the GF(2) direction-matrix product behind
+  `SobolSampler` and `SobolBnSampler`) evaluates the product a byte at a time
+  from two compile-time 256-entry tables per dimension instead of a 16-step
+  loop over the index bits. The product is linear over GF(2), so the two
+  lookups XORed together are exactly the loop's result; a new exhaustive test
+  checks every index in every dimension against the loop, and the upstream
+  golden vectors are unchanged. In crust-render, where Sobol draws were
+  16–24% of render time, this cut render instructions by 10–18% and render
+  time by 6–17%.
+
 ## [0.2.0] - 2026-08-04
 
 Release polish. No API or behavioural changes — sample values remain bit-for-bit
