@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Philippe Llerena <philippe.llerena@gmail.com>"]
+channels = ["https://conda.anaconda.org/anderslanglands", "conda-forge"]
+name = "openqmc-rs"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+openqmc = ">=0.7.1,<0.8"
