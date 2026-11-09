@@ -51,7 +51,7 @@ cargo bench --bench upstream -- all 9
 ```
 
 Add `-DOQMC_FORCE_SCALAR` to time upstream's scalar path. Add `-march=native`,
-or `RUSTFLAGS="-C target-cpu=native"` for Rust, to time AVX2 builds.
+or `RUSTFLAGS="-C target-cpu=native"` for Rust, to build for the host CPU.
 
 **Benchmark against upstream HEAD.** Upstream `b6a204e` (2026-09-04, "Replace
 Sobol matrices with SZ sequences") changed Sobol and Sobol-BN output, and this
@@ -61,18 +61,18 @@ instead. To time one of those, check that commit out
 
 At upstream `d6c40b5` (HEAD on 2026-11-09), a 64-bit hash of every value the
 benchmark draws (4096 indices × 64 domains) is identical between Rust and C++
-for all six samplers. This holds for the scalar, SSE2 and AVX2 C++ builds, and
+for all six samplers. This holds for the scalar, SSE2 and `-march=native` C++ builds, and
 for the baseline and `target-cpu=native` Rust builds.
 
 ### Results (2026-11-09, upstream `d6c40b5`)
 
-Run on a shared 4-vCPU Intel Xeon @ 2.10 GHz (AVX2) cloud VM, with rustc 1.97,
-g++ 13.3 and clang 18.1, all at `-O3` / release. Each number is ns per 4D draw:
+Run on a shared 4-vCPU Intel Xeon cloud VM (Granite Rapids: AVX-512 and GFNI),
+with rustc 1.97, g++ 13.3 and clang 18.1, all at `-O3` / release. Each number is ns per 4D draw:
 the best of 3 rounds, each round the median of 9 runs. Run-to-run noise on this
 host is about ±20%, so treat differences under about 1.2× as parity. "C++" is
 the faster of g++ and clang.
 
-| sampler   | Rust | C++ scalar | C++ SSE2 | Rust native | C++ AVX2 |
+| sampler   | Rust | C++ scalar | C++ SSE2 | Rust native | C++ native |
 | --------- | ---: | ---------: | -------: | ----------: | -------: |
 | pmj       |  7.0 |       10.6 |     10.2 |     **3.9** |      9.2 |
 | pmjbn     | 12.3 |       15.6 |     15.2 |     **6.4** |     13.6 |
@@ -86,7 +86,8 @@ the faster of g++ and clang.
   35 ns). Before it, the AVX2 build ran Sobol at about 18.5 ns.
 - This port evaluates the SZ matrix product from byte tables, as it did for
   the old matrices. With default flags it is 1.4–1.6× faster than upstream on
-  the Sobol family. With `target-cpu=native` it is about 3× faster. A port of
+  the Sobol family. With `target-cpu=native` it is about 3× faster (see
+  [below](#where-the-target-cpunative-gain-comes-from)). A port of
   upstream's new host path (reverse once, shift-mask-xor programs, dimension 3
   chained from 2) measured 23 / 29 ns at baseline and about 18 ns native for
   `sobol`, so the tables stay.
@@ -98,3 +99,39 @@ the faster of g++ and clang.
   both. An earlier version of this table reported 0.02–0.08 ms for C++. That
   figure was the median of repeated initialisations within one process, so it
   was not a cold start.
+
+### Where the `target-cpu=native` gain comes from
+
+A default Rust build targets baseline x86-64, which has only SSE2. The gain
+from `native` is almost entirely in **bit reversal**. The Owen scrambling used
+by the Sobol and PMJ samplers calls `reverse_bits32` / `reverse_bits16`
+(`src/reverse.rs`), which compile to LLVM's `bitreverse` intrinsic. LLVM lowers
+that intrinsic according to the target features:
+
+| target features   | `bitreverse` lowering                          |
+| ----------------- | ---------------------------------------------- |
+| SSE2 (baseline)   | scalar shift-and-mask ladder, about 15 ops     |
+| SSSE3             | `pshufb` nibble lookup                         |
+| GFNI              | one `gf2p8affineqb`, plus `bswap`              |
+
+Upstream hand-rolls the reversal with masks, so g++ and clang emit the scalar
+ladder at any `-march`. That is why the C++ columns barely move.
+
+The table below isolates each feature with Rust builds of this crate, on the
+same host and upstream commit as the results above. Each number is ns per draw,
+the best of 3 rounds:
+
+| sampler   | x86-64 | +SSSE3/4.1 | +GFNI | v3   | v3+GFNI | v4   | v4+GFNI | native | native−GFNI |
+| --------- | -----: | ---------: | ----: | ---: | ------: | ---: | ------: | -----: | ----------: |
+| pmj       |    5.8 |        5.1 |   4.7 |  5.0 |     4.1 |  4.6 |     3.4 |    3.2 |         4.2 |
+| sobol     |   15.9 |       11.9 |  13.3 | 11.5 |     9.2 | 11.0 |     8.2 |    7.9 |        10.2 |
+| sobolbn   |   19.1 |       13.6 |  14.7 | 13.5 |    10.8 | 12.6 |     9.6 |    9.7 |        12.6 |
+| lattice   |    6.0 |        6.3 |   5.8 |  6.3 |     6.1 |  6.3 |     6.3 |    6.3 |         6.2 |
+
+- `x86-64-v4` plus GFNI matches `native`, and `native` minus GFNI falls back to
+  v4 speed. The rest of the gain is v4's 512-bit vectors, worth about 10%.
+- Lattice samplers don't reverse bits, so no feature level helps them.
+- A `native` binary only runs on CPUs with the build host's features. For a
+  portable speedup, `-C target-cpu=x86-64-v2` (SSSE3, any x86-64 CPU since about
+  2009) gets most of the Sobol gain. Adding `-C target-feature=+gfni` gets
+  near-native speed on Ice Lake / Zen 4 and newer.
