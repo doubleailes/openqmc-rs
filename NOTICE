@@ -8,14 +8,14 @@ This crate is a Rust port of OpenQMC, a quasi-Monte Carlo sampling library:
     Licensed under the Apache License, Version 2.0.
 
 The port reproduces the upstream algorithms (PCG hashing, hash-based Owen
-scrambling of Sobol sequences per Burley 2020 and Ahmed 2024, rank-1 lattices
-per Hickernell et al., progressive multi-jittered (0,2) sequences per Helmer et
-al., and the domain-tree sampler interface) and their sample values bit-for-bit.
+scrambling of SZ sequences per Burley 2020, Ahmed 2024 and Ahmed et al. 2025,
+rank-1 lattices per Hickernell et al., progressive multi-jittered (0,2)
+sequences per Helmer et al., and the domain-tree sampler interface) and their
+sample values bit-for-bit.
 
 Bundled data (`src/data/*.bin`) are the upstream optimised blue-noise key/rank
 tables (`include/oqmc/data/**`) converted verbatim to little-endian binary.
-Those tables in turn derive from work by Belcour & Heitz; the Sobol direction
-matrices originate from MIT-licensed code by Leonhard Gruenschloss.
+Those tables in turn derive from work by Belcour & Heitz.
 
 A copy of the Apache License, Version 2.0 is provided in the LICENSE file
 alongside this notice.

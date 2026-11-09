@@ -28,7 +28,7 @@ Six samplers, all interchangeable behind the same [`Sampler`](https://docs.rs/op
 
 | Sampler | Construction | Cache | Notes |
 | --- | --- | --- | --- |
-| `SobolSampler` | Owen-scrambled Sobol (Burley 2020, Ahmed 2024) | none | Highest rate of integration for smooth functions; highest per-draw cost. |
+| `SobolSampler` | Owen-scrambled SZ sequence (Burley 2020, Ahmed 2024, Ahmed et al. 2025) | none | Sobol in dimensions 0–1; every 2D projection of the four dimensions well stratified. Highest rate of integration for smooth functions; highest per-draw cost. |
 | `LatticeSampler` | rank-1 lattice (Hickernell et al.) | none | Cheapest per draw; lower per-pixel rate of integration. |
 | `PmjSampler` | progressive multi-jittered (0,2) (Helmer et al.) | 2^16 × 4D table, built lazily | First dimension pair integrates like Sobol; second pair is a randomisation of the first. |
 | `SobolBnSampler` | as Sobol | blue-noise tables | Blue-noise variant: same sequence, spatially dithered between pixels. |
@@ -160,7 +160,7 @@ The bundled blue-noise blobs under `src/data/` are the upstream optimised tables
 - Helmer et al., *Stochastic Generation of (t,s) Sample Sequences*
 - Jarzynski & Olano, *Hash Functions for GPU Rendering*
 - Belcour & Heitz, blue-noise sample-set optimisation
-- Sobol direction matrices originate from MIT-licensed code by Leonhard Gruenschloss
+- Ahmed et al., *SZ Sequences: Binary-Constructed (0, 2^q)-Sequences* (SIGGRAPH Asia 2025)
 
 ## Changelog
 

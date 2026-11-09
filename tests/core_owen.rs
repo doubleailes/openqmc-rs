@@ -1,31 +1,32 @@
-//! Property tests for `openqmc::owen` (oqmc/owen.h) — Owen-scrambled Sobol.
+//! Property tests for `openqmc::owen` (oqmc/owen.h) — Owen-scrambled SZ
+//! sequences (Sobol in dimensions 0 and 1).
 
 mod common;
 
-use openqmc::owen::{scramble_and_reverse, shuffled_scrambled_sobol, sobol_reversed_index};
+use openqmc::owen::{scramble_and_reverse, shuffled_scrambled_sobol, sz_reversed_basis};
 use openqmc::pcg;
 use openqmc::permute::laine_karras_permutation;
 use openqmc::reverse::{reverse_bits16, reverse_bits32};
 
 const SEEDS: [u32; 6] = [0, 1, 0x07bb_2fe2, 0xdead_beef, 0x8000_0000, 0xffff_ffff];
 
-/// The plain (unscrambled) 16-bit Sobol value at `index` in `dim`, MSB first,
+/// The plain (unscrambled) 16-bit SZ value at `index` in `dim`, MSB first,
 /// widened to 32 bits.
 fn plain_sobol(index: u16, dim: usize) -> u32 {
-    (reverse_bits16(sobol_reversed_index(reverse_bits16(index), dim)) as u32) << 16
+    (reverse_bits16(sz_reversed_basis(reverse_bits16(index), dim)) as u32) << 16
 }
 
 #[test]
 fn reversed_index_of_zero_is_zero() {
     for dim in 0..4 {
-        assert_eq!(sobol_reversed_index(0, dim), 0);
+        assert_eq!(sz_reversed_basis(0, dim), 0);
     }
 }
 
 #[test]
 fn reversed_index_dim0_is_bit_reversal_exhaustively() {
     for i in 0..=u16::MAX {
-        assert_eq!(sobol_reversed_index(i, 0), reverse_bits16(i));
+        assert_eq!(sz_reversed_basis(i, 0), reverse_bits16(i));
     }
 }
 
@@ -37,8 +38,8 @@ fn reversed_index_is_xor_linear_in_every_dimension() {
             let a = w[0] as u16;
             let b = w[1] as u16;
             assert_eq!(
-                sobol_reversed_index(a ^ b, dim),
-                sobol_reversed_index(a, dim) ^ sobol_reversed_index(b, dim),
+                sz_reversed_basis(a ^ b, dim),
+                sz_reversed_basis(a, dim) ^ sz_reversed_basis(b, dim),
                 "dim {dim}"
             );
         }
@@ -48,7 +49,7 @@ fn reversed_index_is_xor_linear_in_every_dimension() {
 #[test]
 fn reversed_index_is_the_xor_of_its_basis_columns() {
     for dim in 0..4 {
-        let columns: Vec<u16> = (0..16).map(|k| sobol_reversed_index(1 << k, dim)).collect();
+        let columns: Vec<u16> = (0..16).map(|k| sz_reversed_basis(1 << k, dim)).collect();
         for i in common::random_u32s(2, 2048).into_iter().map(|v| v as u16) {
             let mut expected = 0u16;
             for (k, &col) in columns.iter().enumerate() {
@@ -56,11 +57,7 @@ fn reversed_index_is_the_xor_of_its_basis_columns() {
                     expected ^= col;
                 }
             }
-            assert_eq!(
-                sobol_reversed_index(i, dim),
-                expected,
-                "dim {dim} index {i}"
-            );
+            assert_eq!(sz_reversed_basis(i, dim), expected, "dim {dim} index {i}");
         }
     }
 }
@@ -71,7 +68,7 @@ fn direction_columns_have_descending_leading_bits() {
     // triangular (hence invertible) in every dimension.
     for dim in 0..4 {
         for k in 0..16u32 {
-            let col = sobol_reversed_index(1 << k, dim);
+            let col = sz_reversed_basis(1 << k, dim);
             assert_ne!(col, 0, "dim {dim} col {k}");
             assert_eq!(
                 15 - col.leading_zeros(),
@@ -87,7 +84,7 @@ fn reversed_index_is_a_bijection_in_every_dimension() {
     for dim in 0..4 {
         let mut seen = vec![false; 65536];
         for i in 0..=u16::MAX {
-            let v = sobol_reversed_index(i, dim) as usize;
+            let v = sz_reversed_basis(i, dim) as usize;
             assert!(!seen[v], "dim {dim}: value {v} hit twice");
             seen[v] = true;
         }
@@ -98,8 +95,7 @@ fn reversed_index_is_a_bijection_in_every_dimension() {
 fn dimensions_are_pairwise_distinct_maps() {
     for a in 0..4 {
         for b in (a + 1)..4 {
-            let differs =
-                (1..1024u16).any(|i| sobol_reversed_index(i, a) != sobol_reversed_index(i, b));
+            let differs = (1..1024u16).any(|i| sz_reversed_basis(i, a) != sz_reversed_basis(i, b));
             assert!(differs, "dims {a} and {b} coincide");
         }
     }
@@ -149,45 +145,83 @@ fn plain_sobol_first_pair_is_a_02_sequence() {
     }
 }
 
+/// True if the first `n` plain SZ points, projected on `dims`, put exactly one
+/// point in each box of `2^bits[j]` strata along `dims[j]` (the bits must sum
+/// to `log2(n)`).
+fn is_elementary_net(dims: &[usize], bits: &[u32], start: u32, n: u32) -> bool {
+    let mut seen = vec![false; n as usize];
+    for idx in start..start + n {
+        let mut cell = 0usize;
+        for (&d, &b) in dims.iter().zip(bits) {
+            let v = plain_sobol(idx as u16, d);
+            let c = if b == 0 { 0 } else { (v >> (32 - b)) as usize };
+            cell = (cell << b) | c;
+        }
+        if seen[cell] {
+            return false;
+        }
+        seen[cell] = true;
+    }
+    true
+}
+
 #[test]
-fn plain_sobol_other_pairs_are_not_02_nets() {
-    // Regression guard on the direction tables: only the (0,1) projection has
-    // t = 0. Each other pair fails for some small m.
-    let is_net = |a: usize, b: usize, m: u32| -> bool {
-        let n = 1usize << m;
-        for i in 0..=m {
-            let xb = i;
-            let yb = m - i;
-            let mut seen = vec![false; n];
-            for idx in 0..n as u32 {
-                let px = plain_sobol(idx as u16, a);
-                let py = plain_sobol(idx as u16, b);
-                let x = if xb == 0 {
-                    0
-                } else {
-                    (px >> (32 - xb)) as usize
-                };
-                let y = if yb == 0 {
-                    0
-                } else {
-                    (py >> (32 - yb)) as usize
-                };
-                let c = (y << xb) | x;
-                if seen[c] {
-                    return false;
+fn plain_sz_every_pair_is_a_02_sequence_in_base_4() {
+    // SZ sequences (Ahmed et al. 2025): every pair of the four dimensions is a
+    // (0, 2)-sequence in base 4, so 4^k-point prefixes and aligned blocks are
+    // stratified on every 4^i x 4^(k-i) grid. The classic Sobol matrices
+    // failed this for pairs (1, 3) and (2, 3).
+    for a in 0..4 {
+        for b in (a + 1)..4 {
+            for k in 0..=8u32 {
+                let n = 1u32 << (2 * k);
+                for block in [0u32, 1, 3] {
+                    let start = block * n;
+                    if start + n > 65536 {
+                        continue;
+                    }
+                    for i in 0..=k {
+                        assert!(
+                            is_elementary_net(&[a, b], &[2 * i, 2 * (k - i)], start, n),
+                            "pair ({a},{b}) 4^{k} points, block {block}, split {i}"
+                        );
+                    }
                 }
-                seen[c] = true;
             }
         }
-        true
-    };
-    assert!((0..=10).all(|m| is_net(0, 1, m)));
-    for (a, b) in [(0, 2), (0, 3), (1, 2), (1, 3), (2, 3)] {
-        assert!(
-            (1..=10).any(|m| !is_net(a, b, m)),
-            "pair ({a},{b}) unexpectedly a (0,2)-net"
-        );
     }
+}
+
+#[test]
+fn plain_sz_four_dimensions_are_a_04_sequence_in_base_16() {
+    // All four dimensions together: 16^k points fill every grid of
+    // 16^a0 x 16^a1 x 16^a2 x 16^a3 boxes with a0 + a1 + a2 + a3 = k.
+    for k in 0..=4u32 {
+        let n = 1u32 << (4 * k);
+        for a0 in 0..=k {
+            for a1 in 0..=k - a0 {
+                for a2 in 0..=k - a0 - a1 {
+                    let a3 = k - a0 - a1 - a2;
+                    let bits = [4 * a0, 4 * a1, 4 * a2, 4 * a3];
+                    assert!(
+                        is_elementary_net(&[0, 1, 2, 3], &bits, 0, n),
+                        "16^{k} points, split {bits:?}"
+                    );
+                }
+            }
+        }
+    }
+}
+
+#[test]
+fn plain_sz_dimensions_2_and_3_differ_from_classic_sobol() {
+    // Regression guard on the matrices: dimensions 0 and 1 are Sobol's, but 2
+    // and 3 are SZ's, not the Joe & Kuo direction numbers used before.
+    const SOBOL_COL0: [u16; 4] = [0x8000, 0xffff, 0b1010101000001001, 0b1010000011000011];
+    assert_eq!(sz_reversed_basis(1, 0), SOBOL_COL0[0]);
+    assert_eq!(sz_reversed_basis(1, 1), SOBOL_COL0[1]);
+    assert_eq!(sz_reversed_basis(1, 2), 0b1110011110011110);
+    assert_eq!(sz_reversed_basis(1, 3), 0b1001111001111001);
 }
 
 #[test]

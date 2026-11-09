@@ -695,7 +695,7 @@ fn golden_smoke_values_from_the_upstream_generator() {
     assert_eq!(pcg::hash(0xffff_ffff), 0xe62a_4902);
     assert_eq!(
         shuffled_scrambled_sobol::<4>(0, 0x07bb_2fe2),
-        [0xb56e_e684, 0xf47f_54b7, 0x2166_db28, 0x12b5_7966]
+        [0xb56e_e684, 0xf47f_54b7, 0x5b90_4c57, 0xa424_8ccf]
     );
     assert_eq!(
         shuffled_rotated_lattice::<4>(1, 0x07bb_2fe2),

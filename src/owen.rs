@@ -1,26 +1,35 @@
-//! Port of `oqmc/owen.h` — Owen-scrambled Sobol sequences via Brent Burley's
+//! Port of `oqmc/owen.h` — Owen-scrambled SZ sequences via Brent Burley's
 //! hash-based construction ("Practical Hash-based Owen Scrambling").
 //!
-//! The upstream header has three equivalent implementations of the core
-//! `sobolReversedIndex` (an Ahmed-2024 shift-mask-xor scalar path plus
-//! AVX/SSE/NEON direction-matrix paths). They all compute the same GF(2)
-//! matrix-vector product, `result = XOR over set bits k of DIRECTIONS[dim][k]`.
-//! This port evaluates it a byte at a time: the product is linear over GF(2),
-//! so it splits into the low byte's contribution XOR the high byte's, each
-//! precomputed at compile time into a 256-entry table (4 KiB for all four
-//! dimensions). Two loads and one XOR replace a 16-step bit loop — the same
-//! values, bit for bit, pinned by an exhaustive test against the loop. The
-//! `DIRECTIONS` table is copied verbatim from `owen.h` (the `directions[4][16]`
-//! literal). Dimension 0 reduces to a 16-bit bit reversal.
+//! Since upstream `b6a204e` the generator matrices are the SZ sequences of
+//! Ahmed et al., "SZ Sequences: Binary-Constructed (0, 2^q)-Sequences"
+//! (SIGGRAPH Asia 2025), in place of the classic Sobol (Joe & Kuo) direction
+//! numbers. Dimensions 0 and 1 are identical to Sobol; dimensions 2 and 3
+//! differ, so that every pair of the four dimensions is a (0, 2)-sequence in
+//! base 4 and the four together a (0, 4)-sequence in base 16.
+//!
+//! Upstream evaluates the core as Ahmed-2024 shift-mask-xor programs, in two
+//! forms: [`sz_reversed_basis`] (bit-reversed index in, GPU path) and
+//! [`sz_to_reversed`] (natural-order index in, host path, with dimension 3
+//! chained from dimension 2 by eq. 13). Both are the same GF(2)
+//! matrix-vector product, `result = XOR over set bits k of DIRECTIONS[dim][k]`
+//! on the bit-reversed index. This port evaluates that product a byte at a
+//! time from compile-time 256-entry tables (3 KiB for dimensions 1–3), which
+//! needs no reversal and no chaining: two loads and one XOR per dimension.
+//! Exhaustive tests pin the tables to the matrices, to both upstream programs
+//! and to the eq. 13 chaining relation. Dimension 0 reduces to a 16-bit bit
+//! reversal.
 
 use crate::permute::{laine_karras_permutation, reverse_and_shuffle};
 use crate::reverse::{reverse_bits16, reverse_bits32};
 use crate::rotate::rotate_bytes;
 
-/// Sobol direction vectors for dimensions 0..4, 16-bit precision.
+/// SZ generator matrices for dimensions 0..4, 16-bit precision, one column per
+/// index bit.
 ///
-/// Copied from `directions[4][16]` in owen.h; those in turn come from
-/// Leonhard Gruenschloss's MIT-licensed generator (via the `matrices` CLI tool).
+/// Copied verbatim from `directions[4][16]` in upstream's `src/tests/owen.cpp`
+/// (emitted by its `matrices` CLI tool). Dimensions 0 and 1 are the Sobol
+/// identity and Pascal matrices.
 #[rustfmt::skip]
 const DIRECTIONS: [[u16; 16]; 4] = [
     [
@@ -36,16 +45,16 @@ const DIRECTIONS: [[u16; 16]; 4] = [
         0b0000000000001111, 0b0000000000000101, 0b0000000000000011, 0b0000000000000001,
     ],
     [
-        0b1010101000001001, 0b0111011100000110, 0b0011100100000011, 0b0001011000000001,
-        0b0000100110101010, 0b0000011001110111, 0b0000001100111001, 0b0000000100010110,
-        0b0000000010100011, 0b0000000001110001, 0b0000000000111010, 0b0000000000010111,
-        0b0000000000001001, 0b0000000000000110, 0b0000000000000011, 0b0000000000000001,
+        0b1110011110011110, 0b0111100111100111, 0b0011000100100011, 0b0001001000110001,
+        0b0000111000001001, 0b0000011100001110, 0b0000001100000010, 0b0000000100000011,
+        0b0000000011100111, 0b0000000001111001, 0b0000000000110001, 0b0000000000010010,
+        0b0000000000001110, 0b0000000000000111, 0b0000000000000011, 0b0000000000000001,
     ],
     [
-        0b1010000011000011, 0b0100000001000001, 0b0011000000101101, 0b0001000000011110,
-        0b0000101101100111, 0b0000011110011010, 0b0000001010100100, 0b0000000100011011,
-        0b0000000011001001, 0b0000000001000101, 0b0000000000101110, 0b0000000000011111,
-        0b0000000000001010, 0b0000000000000100, 0b0000000000000011, 0b0000000000000001,
+        0b1001111001111001, 0b0111100111100111, 0b0010001100010010, 0b0001001000110001,
+        0b0000100100000111, 0b0000011100001110, 0b0000001000000001, 0b0000000100000011,
+        0b0000000010011110, 0b0000000001111001, 0b0000000000100011, 0b0000000000010010,
+        0b0000000000001001, 0b0000000000000111, 0b0000000000000010, 0b0000000000000001,
     ],
 ];
 
@@ -80,19 +89,71 @@ const TABLES: [[[u16; 256]; 2]; 4] = {
     t
 };
 
-/// Sobol value at a bit-reversed index for a given dimension (0..4), 16-bit.
+/// SZ sequence value in the reversed basis, for a given dimension (0..4).
+///
+/// Port of `oqmc::szReversedBasis`: given a 16-bit index whose bits have been
+/// reversed, returns the SZ sequence value to 16 bits of precision, also with
+/// its bits reversed. Evaluated from byte tables; see the module docs.
 #[inline]
-pub fn sobol_reversed_index(index: u16, dimension: usize) -> u16 {
+pub fn sz_reversed_basis(index: u16, dimension: usize) -> u16 {
     debug_assert!(dimension <= 3);
 
     if dimension == 0 {
         // directions[0] is the reversal permutation; the tables would give
-        // the same result, but the shortcut mirrors the upstream fast path.
+        // the same result.
         return reverse_bits16(index);
     }
 
     let t = &TABLES[dimension];
     t[0][(index & 0xff) as usize] ^ t[1][(index >> 8) as usize]
+}
+
+/// SZ sequence value from a natural-order index, for a given dimension (0..4).
+///
+/// Port of `oqmc::szToReversed`: as [`sz_reversed_basis`], but taking the
+/// index in its natural bit order, so
+/// `sz_to_reversed(i, d) == sz_reversed_basis(reverse_bits16(i), d)`. This is
+/// upstream's host-path shift-mask-xor program (Ahmed 2024, eq. 18), kept
+/// verbatim; it also satisfies the SZ pair relation
+/// `sz_to_reversed(sz_to_reversed(i, 2), 1) == sz_to_reversed(i, 3)`
+/// (Ahmed et al. 2025, eq. 13).
+#[inline]
+pub const fn sz_to_reversed(mut index: u16, dimension: usize) -> u16 {
+    debug_assert!(dimension <= 3);
+
+    match dimension {
+        1 => {
+            index ^= (index & 0xff00) >> 8;
+            index ^= (index & 0xf0f0) >> 4;
+            index ^= (index & 0xcccc) >> 2;
+            index ^= (index & 0xaaaa) >> 1;
+        }
+        2 => {
+            index ^= (index & 0xaa00) >> 9;
+            index ^= (index & 0xaa00) >> 8;
+            index ^= (index & 0x5500) >> 7;
+            index ^= (index & 0x4040) >> 6;
+            index ^= (index & 0xa0a0) >> 5;
+            index ^= (index & 0x5050) >> 4;
+            index ^= (index & 0xd8d8) >> 3;
+            index ^= (index & 0xcccc) >> 2;
+            index ^= (index & 0xeeee) >> 1;
+        }
+        3 => {
+            index ^= (index & 0xaa00) >> 9;
+            index ^= (index & 0x5500) >> 8;
+            index ^= (index & 0x5500) >> 7;
+            index ^= (index & 0x4040) >> 6;
+            index ^= (index & 0xa0a0) >> 5;
+            index ^= (index & 0xa0a0) >> 4;
+            index ^= (index & 0xd8d8) >> 3;
+            index ^= (index & 0x4444) >> 2;
+            index ^= (index & 0x4444) >> 1;
+        }
+        _ => {}
+    }
+
+    index
 }
 
 /// Permute an integer (Laine & Karras) and reverse the bits. Equivalent to an
@@ -102,7 +163,8 @@ pub const fn scramble_and_reverse(value: u32, seed: u32) -> u32 {
     reverse_bits32(laine_karras_permutation(value, seed))
 }
 
-/// Compute a randomised (Owen-scrambled, progressively shuffled) Sobol value.
+/// Compute a randomised (Owen-scrambled, progressively shuffled) SZ sequence
+/// value. The name is kept from upstream (`oqmc::shuffledScrambledSobol`).
 ///
 /// `DEPTH` is the dimensional output count (1..=4). The seed must be constant for
 /// a given sequence; an index greater than 2^16 will repeat values.
@@ -120,7 +182,9 @@ pub fn shuffled_scrambled_sobol<const DEPTH: usize>(index: u32, seed: u32) -> [u
     let mut sample = [0u32; DEPTH];
     let mut i = 0;
     while i < DEPTH {
-        let s = sobol_reversed_index((index >> 16) as u16, i) as u32;
+        // Upstream's host path computes sz_to_reversed(reverse_bits16(r), i),
+        // which is sz_reversed_basis(r, i): the tables consume r directly.
+        let s = sz_reversed_basis((index >> 16) as u16, i) as u32;
         sample[i] = scramble_and_reverse(s, rotate_bytes(seed, i as i32));
         i += 1;
     }
@@ -145,16 +209,118 @@ mod tests {
                     }
                 }
                 let want = if d == 0 { reverse_bits16(index) } else { bits };
-                assert_eq!(sobol_reversed_index(index, d), want, "d={d} index={index}");
+                assert_eq!(sz_reversed_basis(index, d), want, "d={d} index={index}");
+            }
+        }
+    }
+
+    /// Upstream's `szReversedBasis` left-shift program (the GPU path), kept
+    /// verbatim as the reference the byte tables are checked against.
+    fn sz_reversed_basis_program(mut index: u16, dimension: usize) -> u16 {
+        match dimension {
+            1 => {
+                index ^= (index & 0x00ff) << 8;
+                index ^= (index & 0x0f0f) << 4;
+                index ^= (index & 0x3333) << 2;
+                index ^= (index & 0x5555) << 1;
+            }
+            2 => {
+                index ^= (index & 0x0055) << 9;
+                index ^= (index & 0x0055) << 8;
+                index ^= (index & 0x00aa) << 7;
+                index ^= (index & 0x0202) << 6;
+                index ^= (index & 0x0505) << 5;
+                index ^= (index & 0x0a0a) << 4;
+                index ^= (index & 0x1b1b) << 3;
+                index ^= (index & 0x3333) << 2;
+                index ^= (index & 0x7777) << 1;
+            }
+            3 => {
+                index ^= (index & 0x0055) << 9;
+                index ^= (index & 0x00aa) << 8;
+                index ^= (index & 0x00aa) << 7;
+                index ^= (index & 0x0202) << 6;
+                index ^= (index & 0x0505) << 5;
+                index ^= (index & 0x0505) << 4;
+                index ^= (index & 0x1b1b) << 3;
+                index ^= (index & 0x2222) << 2;
+                index ^= (index & 0x2222) << 1;
+            }
+            _ => {}
+        }
+        reverse_bits16(index)
+    }
+
+    // Mirrors src/tests/owen.cpp:SzReversedBasis.
+    #[test]
+    fn tables_match_upstream_reversed_basis_program() {
+        for d in 0..4 {
+            for index in 0..=u16::MAX {
+                assert_eq!(
+                    sz_reversed_basis(index, d),
+                    sz_reversed_basis_program(index, d),
+                    "d={d} index={index}"
+                );
+            }
+        }
+    }
+
+    // Mirrors src/tests/owen.cpp:SzToReversed.
+    #[test]
+    fn to_reversed_is_reversed_basis_of_the_reversed_index() {
+        for d in 0..4 {
+            for index in 0..=u16::MAX {
+                assert_eq!(
+                    sz_to_reversed(index, d),
+                    sz_reversed_basis(reverse_bits16(index), d),
+                    "d={d} index={index}"
+                );
+            }
+        }
+    }
+
+    // Mirrors src/tests/owen.cpp:SzPairRelation (Ahmed et al. 2025, eq. 13),
+    // which upstream's host path relies on to chain dimension 3 from 2.
+    #[test]
+    fn dimension_3_chains_from_dimension_2() {
+        for index in 0..=u16::MAX {
+            assert_eq!(
+                sz_to_reversed(sz_to_reversed(index, 2), 1),
+                sz_to_reversed(index, 3),
+                "index={index}"
+            );
+        }
+    }
+
+    /// Upstream's host-path draw: reverse once, `sz_to_reversed` per
+    /// dimension, dimension 3 chained from dimension 2.
+    #[test]
+    fn draw_matches_upstream_host_path() {
+        for seed in [0u32, 1, pcg::hash(7), 0xdead_beef, u32::MAX] {
+            for index in (0..1u32 << 16).step_by(7).chain([u32::MAX, 1 << 20]) {
+                let shuffled = reverse_and_shuffle(index, seed);
+                let natural = reverse_bits16((shuffled >> 16) as u16);
+                let mut value = [0u16; 4];
+                for i in 0..4 {
+                    value[i] = if i == 3 {
+                        sz_to_reversed(value[2], 1)
+                    } else {
+                        sz_to_reversed(natural, i)
+                    };
+                }
+                let want: [u32; 4] = std::array::from_fn(|i| {
+                    scramble_and_reverse(value[i] as u32, rotate_bytes(seed, i as i32))
+                });
+                assert_eq!(shuffled_scrambled_sobol::<4>(index, seed), want);
             }
         }
     }
 
     #[test]
     fn dim0_is_van_der_corput() {
-        // Dimension 0 of the Sobol sequence is the radical inverse (bit reversal).
+        // Dimension 0 (as in Sobol) is the radical inverse (bit reversal).
         for index in [0u16, 1, 2, 3, 255, 12345, 65535] {
-            assert_eq!(sobol_reversed_index(index, 0), reverse_bits16(index));
+            assert_eq!(sz_reversed_basis(index, 0), reverse_bits16(index));
         }
     }
 
@@ -163,13 +329,13 @@ mod tests {
         // Index 0 maps to the sequence origin for any seed.
         let s = shuffled_scrambled_sobol::<4>(0, pcg::hash(0));
         // reverse_and_shuffle(0, seed) = LK(reverse(0)=0, seed); index>>16 feeds
-        // sobol_reversed_index. The (0,2) net still contains the origin point.
+        // sz_reversed_basis. The (0,2) net still contains the origin point.
         // We only assert values are within the u32 range and deterministic here.
         let s2 = shuffled_scrambled_sobol::<4>(0, pcg::hash(0));
         assert_eq!(s, s2);
     }
 
-    // Mirrors src/tests/owen.cpp:02Sequence — the first Sobol pair is a (0,2)-net:
+    // Mirrors src/tests/owen.cpp:02Sequence — the first pair is a (0,2)-net:
     // for every axis-aligned power-of-two stratification of n=2^m points, each
     // stratum holds exactly one point.
     #[test]
@@ -219,7 +385,7 @@ mod tests {
 
     #[test]
     fn direction_dim1_is_the_pascal_triangle_matrix() {
-        // Sobol dimension 1 uses the primitive polynomial x + 1, whose
+        // SZ keeps Sobol dimension 1: the primitive polynomial x + 1, whose
         // generator matrix is Pascal's triangle mod 2: column k has bits set
         // where binomial(j, k) is odd, i.e. (j & k) == k.
         for (k, &col) in DIRECTIONS[1].iter().enumerate() {
@@ -249,7 +415,7 @@ mod tests {
                     bits ^= col;
                 }
             }
-            assert_eq!(bits, sobol_reversed_index(index, 0));
+            assert_eq!(bits, sz_reversed_basis(index, 0));
         }
     }
 
@@ -258,7 +424,7 @@ mod tests {
         for dim in 0..4 {
             let mut seen = vec![false; 1 << 16];
             for index in 0..=u16::MAX {
-                let v = sobol_reversed_index(index, dim) as usize;
+                let v = sz_reversed_basis(index, dim) as usize;
                 assert!(!seen[v], "dim {dim}");
                 seen[v] = true;
             }
@@ -285,10 +451,7 @@ mod tests {
             let shuffled = reverse_and_shuffle(index, seed);
             let r = (shuffled >> 16) as u16;
             let expected: [u32; 4] = std::array::from_fn(|d| {
-                scramble_and_reverse(
-                    sobol_reversed_index(r, d) as u32,
-                    rotate_bytes(seed, d as i32),
-                )
+                scramble_and_reverse(sz_reversed_basis(r, d) as u32, rotate_bytes(seed, d as i32))
             });
             assert_eq!(shuffled_scrambled_sobol::<4>(index, seed), expected);
         }

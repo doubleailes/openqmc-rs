@@ -101,7 +101,7 @@ fn golden_pcg() {
 fn golden_cores() {
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(0, 0x07bb2fe2),
-        [0xb56ee684, 0xf47f54b7, 0x2166db28, 0x12b57966]
+        [0xb56ee684, 0xf47f54b7, 0x5b904c57, 0xa4248ccf]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(0, 0x07bb2fe2),
@@ -109,7 +109,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(1, 0x07bb2fe2),
-        [0x69434ce2, 0x7724ac81, 0x9a7a7752, 0x8de1ea4d]
+        [0x69434ce2, 0x7724ac81, 0xe9b6380f, 0x2f484dd0]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(1, 0x07bb2fe2),
@@ -117,7 +117,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(2, 0x07bb2fe2),
-        [0xcc68377f, 0x0851b57c, 0xfe74e6e0, 0xf57ad0c2]
+        [0xcc68377f, 0x0851b57c, 0x8450c46b, 0xc58917b8]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(2, 0x07bb2fe2),
@@ -125,7 +125,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(3, 0x07bb2fe2),
-        [0x25a535eb, 0x8268e8e3, 0x44e6ad97, 0x6f4e3c89]
+        [0x25a535eb, 0x8268e8e3, 0x39ee821a, 0x43a318ed]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(3, 0x07bb2fe2),
@@ -133,7 +133,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(255, 0x07bb2fe2),
-        [0x5aa4a7f7, 0xa94b96a9, 0x206b76e7, 0xc7041360]
+        [0x5aa4a7f7, 0xa94b96a9, 0x73e62a4b, 0xa14e800c]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(255, 0x07bb2fe2),
@@ -141,7 +141,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(4096, 0x07bb2fe2),
-        [0xdc5be587, 0xd1d5f03a, 0x52558028, 0xc220de27]
+        [0xdc5be587, 0xd1d5f03a, 0xf3b8b4f9, 0x749e5532]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(4096, 0x07bb2fe2),
@@ -149,7 +149,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(65535, 0x07bb2fe2),
-        [0xdd114df6, 0xf4f898b0, 0x4c794866, 0xac8aa35e]
+        [0xdd114df6, 0xf4f898b0, 0x3bec7f9a, 0x6aa48cbf]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(65535, 0x07bb2fe2),
@@ -157,7 +157,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(0, 0xa8beea3c),
-        [0x06c8d061, 0x23ab8153, 0x67e9a96c, 0xe058786d]
+        [0x06c8d061, 0x23ab8153, 0xc127e565, 0x3a4e0d52]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(0, 0xa8beea3c),
@@ -165,7 +165,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(1, 0xa8beea3c),
-        [0xe54658cd, 0xb9e0e90c, 0xdc088160, 0x29c5540f]
+        [0xe54658cd, 0xb9e0e90c, 0x76e00cba, 0xf75a90de]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(1, 0xa8beea3c),
@@ -173,7 +173,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(2, 0xa8beea3c),
-        [0xb02475f9, 0x477492f9, 0x1863cdb8, 0xacac9e01]
+        [0xb02475f9, 0x477492f9, 0xb30c7e85, 0xb826524e]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(2, 0xa8beea3c),
@@ -181,7 +181,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(3, 0xa8beea3c),
-        [0x606487dc, 0xdd584b57, 0xae214dff, 0x50f62178]
+        [0x606487dc, 0xdd584b57, 0x00494111, 0x4ef04643]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(3, 0xa8beea3c),
@@ -189,7 +189,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(255, 0xa8beea3c),
-        [0x7b3bb98f, 0x2117c78e, 0xa5e98917, 0x815b5c2a]
+        [0x7b3bb98f, 0x2117c78e, 0x1f09800d, 0x6855ba34]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(255, 0xa8beea3c),
@@ -197,7 +197,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(4096, 0xa8beea3c),
-        [0x32902254, 0xd2390c76, 0x51bf8c1b, 0xf06f38b9]
+        [0x32902254, 0xd2390c76, 0x752e1b93, 0x1a708af1]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(4096, 0xa8beea3c),
@@ -205,7 +205,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(65535, 0xa8beea3c),
-        [0x26f834b7, 0xde8f77de, 0x0cda1b4e, 0x3055f10d]
+        [0x26f834b7, 0xde8f77de, 0x46975534, 0xac98e039]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(65535, 0xa8beea3c),
@@ -213,7 +213,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(0, 0x80d0d707),
-        [0x10b55706, 0xc0fbe475, 0x307fff3a, 0x8130dee2]
+        [0x10b55706, 0xc0fbe475, 0xe3bce1bf, 0x39a16e03]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(0, 0x80d0d707),
@@ -221,7 +221,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(1, 0x80d0d707),
-        [0xd697418a, 0x08065328, 0xda015f43, 0x4d287759]
+        [0xd697418a, 0x08065328, 0x1d7ba5bb, 0xdf87eaf2]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(1, 0x80d0d707),
@@ -229,7 +229,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(2, 0x80d0d707),
-        [0x4f45e19d, 0x5419127a, 0x9e268e12, 0x2c23f708]
+        [0x4f45e19d, 0x5419127a, 0x6ccd5315, 0x5ee52879]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(2, 0x80d0d707),
@@ -237,7 +237,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(3, 0x80d0d707),
-        [0xad3670e7, 0xb99a1b4b, 0x52b10e82, 0xc0c56063]
+        [0xad3670e7, 0xb99a1b4b, 0xa4ceae9e, 0x9db19aa3]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(3, 0x80d0d707),
@@ -245,7 +245,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(255, 0x80d0d707),
-        [0x4d6cce9f, 0x108c2896, 0xd5397541, 0x00013cc1]
+        [0x4d6cce9f, 0x108c2896, 0x3538b5b5, 0xf235185e]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(255, 0x80d0d707),
@@ -253,7 +253,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(4096, 0x80d0d707),
-        [0xf2ab4000, 0x8f54f1fa, 0xcd7ce175, 0x8712aa3f]
+        [0xf2ab4000, 0x8f54f1fa, 0xa60cd1f3, 0xdcb23d49]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(4096, 0x80d0d707),
@@ -261,7 +261,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(65535, 0x80d0d707),
-        [0x00e2e211, 0x7a0ec8df, 0x2fabc2ed, 0x0fb14666]
+        [0x00e2e211, 0x7a0ec8df, 0x41a89837, 0x38153fe0]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(65535, 0x80d0d707),
@@ -269,7 +269,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(0, 0x9b76d347),
-        [0x2a690a58, 0xa8e13b09, 0x963aac6f, 0xb00ea596]
+        [0x2a690a58, 0xa8e13b09, 0xba3e04d8, 0x6ffe3cc6]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(0, 0x9b76d347),
@@ -277,7 +277,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(1, 0x9b76d347),
-        [0xbb0047d5, 0x0b9f546c, 0x7a4061ba, 0x0cfbe85c]
+        [0xbb0047d5, 0x0b9f546c, 0x45a3e8e3, 0xdd5abd01]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(1, 0x9b76d347),
@@ -285,7 +285,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(2, 0x9b76d347),
-        [0xda46e71f, 0xd62a49b4, 0xe3f37c79, 0xc7329314]
+        [0xda46e71f, 0xd62a49b4, 0xd94858ea, 0xae31afd1]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(2, 0x9b76d347),
@@ -293,7 +293,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(3, 0x9b76d347),
-        [0x49afe6ad, 0x728d4484, 0x3be9c16a, 0x7d4f4b0f]
+        [0x49afe6ad, 0x728d4484, 0x067bc974, 0x15b4ca7d]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(3, 0x9b76d347),
@@ -301,7 +301,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(255, 0x9b76d347),
-        [0xf394f8a3, 0x4274d267, 0xcde65bc7, 0x2929fefa]
+        [0xf394f8a3, 0x4274d267, 0x8f8a1c50, 0xa6055dd2]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(255, 0x9b76d347),
@@ -309,7 +309,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(4096, 0x9b76d347),
-        [0xd7012f73, 0x8ef9ba0f, 0xa8224430, 0xc2ff758a]
+        [0xd7012f73, 0x8ef9ba0f, 0xcc4b0ab3, 0x74af1448]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(4096, 0x9b76d347),
@@ -317,7 +317,7 @@ fn golden_cores() {
     );
     assert_eq!(
         owen::shuffled_scrambled_sobol::<4>(65535, 0x9b76d347),
-        [0xa1a04e2c, 0xfccc4a80, 0x15e624c9, 0x754fe649]
+        [0xa1a04e2c, 0xfccc4a80, 0x4d3587a9, 0x035f20d5]
     );
     assert_eq!(
         rank1::shuffled_rotated_lattice::<4>(65535, 0x9b76d347),
@@ -386,7 +386,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0xce2ac83d, 0x0cda39ad, 0xdd29e246, 0xc2b63350],
+        [0xce2ac83d, 0x0cda39ad, 0x7768e4cc, 0x5aa0b0ee],
     );
     ck_sobol(
         0,
@@ -394,7 +394,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xdb8c6076, 0xaf246882, 0x33b6e2f9, 0x222cc8ff],
+        [0xdb8c6076, 0xaf246882, 0xaed30ce0, 0x10765cae],
     );
     ck_sobol(
         0,
@@ -402,7 +402,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0xfcb75925, 0xe4f1c3f8, 0x6f913c55, 0x1b57bc7c],
+        [0xfcb75925, 0xe4f1c3f8, 0x11dc47b8, 0x9e4752bc],
     );
     ck_sobol(
         0,
@@ -410,7 +410,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x0b33d5ff, 0xdadfe377, 0x1a5b1848, 0x70b0e78a],
+        [0x0b33d5ff, 0xdadfe377, 0x9ed2d249, 0xe676394c],
     );
     ck_sobol(
         0,
@@ -418,7 +418,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x777afe5d, 0x4d98f153, 0xe0db2412, 0xc0d5a492],
+        [0x777afe5d, 0x4d98f153, 0x4b6688ad, 0xeb54089e],
     );
     ck_sobol(
         0,
@@ -426,7 +426,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0x1bc1e153, 0x44df5678, 0xe7d6abf5, 0xf064c74b],
+        [0x1bc1e153, 0x44df5678, 0x802fd34f, 0x41589494],
     );
     ck_sobol(
         0,
@@ -434,7 +434,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0x7016ca4f, 0x7b88241c, 0x8707b6b0, 0xa019d9d7],
+        [0x7016ca4f, 0x7b88241c, 0x0cf0faec, 0x97525351],
     );
     ck_sobol(
         0,
@@ -442,7 +442,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0xb93c9285, 0x10ad5793, 0xb74120b9, 0x86841fbc],
+        [0xb93c9285, 0x10ad5793, 0x2b1eb506, 0x66ac3769],
     );
     ck_sobol(
         0,
@@ -450,7 +450,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0x44cbf396, 0xac088b39, 0x3eb78e06, 0x679e94a1],
+        [0x44cbf396, 0xac088b39, 0x4635621b, 0x2945bc0a],
     );
     ck_sobol(
         0,
@@ -458,7 +458,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0xb3daac56, 0x26d20f9a, 0xc557de22, 0x9378da05],
+        [0xb3daac56, 0x26d20f9a, 0xe02d24f7, 0x7783eeff],
     );
     ck_sobol(
         0,
@@ -466,7 +466,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x0e5bbf43, 0xe6e09267, 0xedf46494, 0x633fb8d8],
+        [0x0e5bbf43, 0xe6e09267, 0x6940d7c8, 0xf40a9121],
     );
     ck_sobol(
         0,
@@ -474,7 +474,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x2346d6b4, 0x3fa83f76, 0xdcc75a8e, 0xabeddeda],
+        [0x2346d6b4, 0x3fa83f76, 0xf879c5fb, 0x6fac15da],
     );
     ck_sobol(
         0,
@@ -482,7 +482,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xd272c048, 0xfc59c785, 0x8f0a4273, 0x980cd6b0],
+        [0xd272c048, 0xfc59c785, 0x1b64fb24, 0x83d48f84],
     );
     ck_sobol(
         0,
@@ -490,7 +490,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0xc65ad3f6, 0x9142c312, 0x21c0978f, 0x60a90214],
+        [0xc65ad3f6, 0x9142c312, 0x25991082, 0x27547bb0],
     );
     ck_sobol(
         0,
@@ -498,7 +498,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x01aa0e5e, 0x85fe4e62, 0xcd5067c0, 0x07300212],
+        [0x01aa0e5e, 0x85fe4e62, 0x174d9815, 0x6d1ff6a4],
     );
     ck_sobol(
         0,
@@ -506,7 +506,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x124882f5, 0xd4a22a51, 0xc9f6af6a, 0x85f10965],
+        [0x124882f5, 0xd4a22a51, 0x7069d912, 0xb2bd7284],
     );
     ck_sobol(
         0,
@@ -514,7 +514,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x4971fff4, 0xcd4ab6c9, 0x8e2d7516, 0xe7fcd2ae],
+        [0x4971fff4, 0xcd4ab6c9, 0x4b4dab28, 0xc8135677],
     );
     ck_sobol(
         0,
@@ -522,7 +522,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x5346a991, 0xc55626fa, 0x57c23280, 0xa240c181],
+        [0x5346a991, 0xc55626fa, 0x2dc3b01a, 0x60fc4f96],
     );
     ck_sobol(
         0,
@@ -530,7 +530,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x93da2f37, 0x5f78dfa7, 0x97f70dc4, 0x3394c494],
+        [0x93da2f37, 0x5f78dfa7, 0xda7df9f4, 0x7e825d23],
     );
     ck_sobol(
         0,
@@ -538,7 +538,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x6fd439f2, 0xc2a5ecf9, 0x33b0563a, 0x829434cb],
+        [0x6fd439f2, 0xc2a5ecf9, 0xa9877b94, 0x958dd210],
     );
     ck_sobol(
         0,
@@ -546,7 +546,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x201e9a68, 0xb537b11a, 0xea798745, 0x130baf92],
+        [0x201e9a68, 0xb537b11a, 0x4ab9c3ae, 0x95260239],
     );
     ck_sobol(
         0,
@@ -554,7 +554,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x124882f5, 0xd4a22a51, 0xc9f6af6a, 0x85f10965],
+        [0x124882f5, 0xd4a22a51, 0x7069d912, 0xb2bd7284],
     );
     ck_sobol(
         0,
@@ -562,7 +562,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x4971fff4, 0xcd4ab6c9, 0x8e2d7516, 0xe7fcd2ae],
+        [0x4971fff4, 0xcd4ab6c9, 0x4b4dab28, 0xc8135677],
     );
     ck_sobol(
         0,
@@ -570,7 +570,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x5346a991, 0xc55626fa, 0x57c23280, 0xa240c181],
+        [0x5346a991, 0xc55626fa, 0x2dc3b01a, 0x60fc4f96],
     );
     ck_sobol(
         0,
@@ -578,7 +578,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0xeacce99b, 0x0d1b1abd, 0x2cce059a, 0x1ffffdb0],
+        [0xeacce99b, 0x0d1b1abd, 0xa7347466, 0x3ef097e8],
     );
     ck_sobol(
         0,
@@ -586,7 +586,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0x99bfe03b, 0x66d1423b, 0x77a8e849, 0x2cfb9519],
+        [0x99bfe03b, 0x66d1423b, 0xad2f2e99, 0x0b13ab11],
     );
     ck_sobol(
         0,
@@ -594,7 +594,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0xe19b3d9f, 0x2a33fd10, 0xf78ff67d, 0x44f95262],
+        [0xe19b3d9f, 0x2a33fd10, 0x8373f301, 0x9cb0af34],
     );
     ck_sobol(
         0,
@@ -602,7 +602,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0x7d3ad499, 0x61eccfed, 0x655402be, 0x625aafa1],
+        [0x7d3ad499, 0x61eccfed, 0xddbf5839, 0xdd32c9fd],
     );
     ck_sobol(
         0,
@@ -610,7 +610,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0x1d90b5b6, 0x329984c3, 0x07d30611, 0x7e40244e],
+        [0x1d90b5b6, 0x329984c3, 0xf5d4dc3f, 0xb5531c69],
     );
     ck_sobol(
         0,
@@ -618,7 +618,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0x8c81a512, 0x80821e39, 0x3aa60d9c, 0xdca9bd5a],
+        [0x8c81a512, 0x80821e39, 0x43b301aa, 0xfbb43c56],
     );
     ck_sobol(
         0,
@@ -626,7 +626,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xfdd8b464, 0x23d98959, 0xb97beebc, 0x2d6894ba],
+        [0xfdd8b464, 0x23d98959, 0x049cabdf, 0x456ebdb5],
     );
     ck_sobol(
         0,
@@ -634,7 +634,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x25516be0, 0xe22240a9, 0x99710146, 0xbbd142e0],
+        [0x25516be0, 0xe22240a9, 0xd674856c, 0xe8919292],
     );
     ck_sobol(
         0,
@@ -642,7 +642,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0xc09965a5, 0x3ae2b038, 0x99371044, 0xed02833d],
+        [0xc09965a5, 0x3ae2b038, 0xf4984253, 0x0c07e490],
     );
     ck_sobol(
         0,
@@ -650,7 +650,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x24fc5d2a, 0x9688e7db, 0xa3c8501e, 0xa95e9df2],
+        [0x24fc5d2a, 0x9688e7db, 0xae7a2d58, 0x7bfb8345],
     );
     ck_sobol(
         0,
@@ -658,7 +658,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0x7fc5d09a, 0xe3ce0e7b, 0xda1cfcb3, 0xe1bb5457],
+        [0x7fc5d09a, 0xe3ce0e7b, 0x33b2c42b, 0x5b44767b],
     );
     ck_sobol(
         0,
@@ -666,7 +666,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0xef941b5d, 0x5e189221, 0x501b6378, 0x3d144885],
+        [0xef941b5d, 0x5e189221, 0x19c775fa, 0x5b7f012e],
     );
     ck_sobol(
         0,
@@ -674,7 +674,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x2a8fccba, 0x7c3a912f, 0xd8b9cdfc, 0x43e241b5],
+        [0x2a8fccba, 0x7c3a912f, 0x409fe5a0, 0x0f2a13fc],
     );
     ck_sobol(
         0,
@@ -682,7 +682,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0xc38151ed, 0x0f67e53a, 0xb7a7ad36, 0xd2d27d17],
+        [0xc38151ed, 0x0f67e53a, 0x76903955, 0x46137386],
     );
     ck_sobol(
         0,
@@ -690,7 +690,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0xa9e025cd, 0xb5bf7f01, 0xffd83e5e, 0x49dbfaf7],
+        [0xa9e025cd, 0xb5bf7f01, 0x94087eee, 0x9a8b9c81],
     );
     ck_sobol(
         0,
@@ -698,7 +698,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xc729d8c2, 0x88e2b2ff, 0x3b4b8d1b, 0xe0e8574c],
+        [0xc729d8c2, 0x88e2b2ff, 0x0cc0655c, 0x92a92921],
     );
     ck_sobol(
         0,
@@ -706,7 +706,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x4db2a992, 0xac8a7d8e, 0x6e8f0786, 0xe36b7b1d],
+        [0x4db2a992, 0xac8a7d8e, 0xc6751d25, 0x3379fa30],
     );
     ck_sobol(
         0,
@@ -714,7 +714,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0xbbf9eeb8, 0x78d6c646, 0x54e32de5, 0x105b803c],
+        [0xbbf9eeb8, 0x78d6c646, 0x47ba72e6, 0x171c659c],
     );
     ck_sobol(
         0,
@@ -722,7 +722,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0xf8a7f4d8, 0xfda514aa, 0x93b09563, 0x0c8d12af],
+        [0xf8a7f4d8, 0xfda514aa, 0x5780ea29, 0x54936558],
     );
     ck_sobol(
         0,
@@ -730,7 +730,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0xddfa8748, 0x3d960a41, 0x9c8e8ce6, 0xfb5ba37b],
+        [0xddfa8748, 0x3d960a41, 0x65ddf151, 0xcfde39a4],
     );
     ck_sobol(
         0,
@@ -738,7 +738,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0xfc430b3f, 0x0cb32df0, 0x7c515e1d, 0xc2724e73],
+        [0xfc430b3f, 0x0cb32df0, 0x9e61ae3f, 0x927dd95e],
     );
     ck_sobol(
         0,
@@ -746,7 +746,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x6dc6ab6f, 0x282c755f, 0x5ca6674b, 0xc3aa5b57],
+        [0x6dc6ab6f, 0x282c755f, 0x9b284f21, 0xac3f690f],
     );
     ck_sobol(
         0,
@@ -754,7 +754,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x6649cd9d, 0xe7364a61, 0x00fcbc76, 0x2905a832],
+        [0x6649cd9d, 0xe7364a61, 0xea79548b, 0x1926866d],
     );
     ck_sobol(
         0,
@@ -762,7 +762,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x4e43053e, 0xdae97214, 0xa2561e9e, 0x0730f1d3],
+        [0x4e43053e, 0xdae97214, 0x430489a4, 0x7da01d00],
     );
     ck_sobol(
         0,
@@ -770,7 +770,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x9cf18714, 0x63209f21, 0x3c7b8c15, 0x82274aff],
+        [0x9cf18714, 0x63209f21, 0xdb286253, 0x2e4a1e47],
     );
     ck_sobol(
         0,
@@ -778,7 +778,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0x2f30c664, 0x7dd78bbc, 0xdd4f8d09, 0xbd56a9f7],
+        [0x2f30c664, 0x7dd78bbc, 0x29f55eae, 0x73f70cfa],
     );
     ck_sobol(
         0,
@@ -786,7 +786,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0x1bcfcb58, 0x7e9fffa4, 0x091806f5, 0x934440ff],
+        [0x1bcfcb58, 0x7e9fffa4, 0xd22fc059, 0x06d5c61d],
     );
     ck_sobol(
         0,
@@ -794,7 +794,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x41f90260, 0x374894e3, 0x3a7c8e50, 0x5a8a30d4],
+        [0x41f90260, 0x374894e3, 0xc0a8ae48, 0x07fffe73],
     );
     ck_sobol(
         0,
@@ -802,7 +802,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0xc483c97a, 0xc5d675c1, 0xa48761c0, 0x42193533],
+        [0xc483c97a, 0xc5d675c1, 0xc8349514, 0xd96fdf9c],
     );
     ck_sobol(
         0,
@@ -810,7 +810,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x1edd7d27, 0xd0301cbb, 0x6d0e6df1, 0xf087a6b6],
+        [0x1edd7d27, 0xd0301cbb, 0x2095cd28, 0x956714d5],
     );
     ck_sobol(
         0,
@@ -818,7 +818,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0xd06064dc, 0xad5ddc28, 0x76849bea, 0x937fed70],
+        [0xd06064dc, 0xad5ddc28, 0x5abee87b, 0x86ef72b7],
     );
     ck_sobol(
         0,
@@ -826,7 +826,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x4f75c8b9, 0x6711d4b2, 0x8e98e5be, 0x1ea52451],
+        [0x4f75c8b9, 0x6711d4b2, 0x923a3a60, 0xd3bc9968],
     );
     ck_sobol(
         0,
@@ -834,7 +834,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0xfc32c129, 0x14b3e79f, 0x35298ab2, 0x7b16a5bc],
+        [0xfc32c129, 0x14b3e79f, 0x2d923275, 0x2f904a08],
     );
     ck_sobol(
         0,
@@ -842,7 +842,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0xdba6bb73, 0xd90396c0, 0x83f84444, 0xc1152710],
+        [0xdba6bb73, 0xd90396c0, 0xd2913579, 0xe205968d],
     );
     ck_sobol(
         0,
@@ -850,7 +850,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x6b865bbb, 0x9082b9df, 0x11b48eca, 0x45d9cc1e],
+        [0x6b865bbb, 0x9082b9df, 0x9973f0be, 0x395ab92d],
     );
     ck_sobol(
         0,
@@ -858,7 +858,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0x2af6e27c, 0x98ad4b04, 0x46fe00e0, 0x8ceedb3c],
+        [0x2af6e27c, 0x98ad4b04, 0xc7e6c02d, 0xe6ad6a35],
     );
     ck_sobol(
         0,
@@ -866,7 +866,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x17a210e7, 0x4fae403a, 0x7c811dfa, 0x43852e3c],
+        [0x17a210e7, 0x4fae403a, 0x5c4cdb37, 0xa6139c77],
     );
     ck_sobol(
         0,
@@ -874,7 +874,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x6910139b, 0xfe4567a1, 0x506b2271, 0x15931e41],
+        [0x6910139b, 0xfe4567a1, 0x33d1372d, 0xea29c88a],
     );
     ck_sobol(
         0,
@@ -882,7 +882,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x3ce4a687, 0xf7e392a3, 0x46b6251b, 0xd0b0464d],
+        [0x3ce4a687, 0xf7e392a3, 0xc4f76fcb, 0xea7f8453],
     );
     ck_sobol(
         1,
@@ -890,7 +890,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x952b137a, 0xd6e05753, 0xf27cd688, 0x53da4649],
+        [0x952b137a, 0xd6e05753, 0x3381515d, 0x5feba6a2],
     );
     ck_sobol(
         1,
@@ -898,7 +898,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0x3dd410f2, 0x7b989334, 0xc2ea6d42, 0x93cda40c],
+        [0x3dd410f2, 0x7b989334, 0x2517f430, 0xf3b3931f],
     );
     ck_sobol(
         1,
@@ -906,7 +906,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0xee2fb58a, 0x2b50f98b, 0xec0b39d9, 0x25a4d873],
+        [0xee2fb58a, 0x2b50f98b, 0xae6e12d2, 0x7f9a826d],
     );
     ck_sobol(
         1,
@@ -914,7 +914,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x656cf81c, 0x57452eb3, 0x302764e5, 0x8f1ee373],
+        [0x656cf81c, 0x57452eb3, 0xf0d7d48d, 0x87ddbb9d],
     );
     ck_sobol(
         1,
@@ -922,7 +922,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0xe0c3c526, 0xc2d661b4, 0x6be2666d, 0x3b9c21d0],
+        [0xe0c3c526, 0xc2d661b4, 0x89c9efef, 0x5f0aa169],
     );
     ck_sobol(
         1,
@@ -930,7 +930,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0x2235add9, 0xc1d8f160, 0x56458a70, 0xbea79f91],
+        [0x2235add9, 0xc1d8f160, 0x032a3365, 0xeba6cb31],
     );
     ck_sobol(
         1,
@@ -938,7 +938,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0x1cf01f4f, 0xae98acdd, 0xa35ae9e8, 0x05d44cdf],
+        [0x1cf01f4f, 0xae98acdd, 0x5daf78a1, 0xfe2dde7d],
     );
     ck_sobol(
         1,
@@ -946,7 +946,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0xb60b5266, 0x3f3faa14, 0xadb86e72, 0xf9a0c2ae],
+        [0xb60b5266, 0x3f3faa14, 0x5d8d294b, 0x3029d4c7],
     );
     ck_sobol(
         1,
@@ -954,7 +954,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0x72d5c576, 0x7c6100c3, 0xaefe649d, 0x795fcbc5],
+        [0x72d5c576, 0x7c6100c3, 0xec8d1edf, 0xba32e658],
     );
     ck_sobol(
         1,
@@ -962,7 +962,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0x2d762d66, 0xb142c567, 0xf4aa26cd, 0xab8fbe62],
+        [0x2d762d66, 0xb142c567, 0x27099e9c, 0x71306849],
     );
     ck_sobol(
         1,
@@ -970,7 +970,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x6299f5b3, 0xf8048570, 0x216fd954, 0x20c0b1e3],
+        [0x6299f5b3, 0xf8048570, 0xba38cc2f, 0xb3978325],
     );
     ck_sobol(
         1,
@@ -978,7 +978,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x0428076f, 0x4adea795, 0xb3ad9aa7, 0x133a386b],
+        [0x0428076f, 0x4adea795, 0x235b880c, 0x94eac63a],
     );
     ck_sobol(
         1,
@@ -986,7 +986,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xf6bbe577, 0x522de2a1, 0x0ab66aba, 0xbcf77884],
+        [0xf6bbe577, 0x522de2a1, 0x938517a3, 0xacf5fb75],
     );
     ck_sobol(
         1,
@@ -994,7 +994,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0xb0747e84, 0x2e38d7ca, 0xed97fa3e, 0xab9d9ae9],
+        [0xb0747e84, 0x2e38d7ca, 0xaef4dc12, 0xdece2d00],
     );
     ck_sobol(
         1,
@@ -1002,7 +1002,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x24c4010c, 0x4d8ff98f, 0x9112fdbe, 0x50d77e1f],
+        [0x24c4010c, 0x4d8ff98f, 0x85a7d10d, 0x8fd27527],
     );
     ck_sobol(
         1,
@@ -1010,7 +1010,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x555f2098, 0xa4c82aa2, 0x7632ad30, 0xcb8dd0ba],
+        [0x555f2098, 0xa4c82aa2, 0x78f9e0e6, 0x5e8d282f],
     );
     ck_sobol(
         1,
@@ -1018,7 +1018,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x3f7bd3d0, 0xb9018978, 0x85bbb4e7, 0xcc1e46ea],
+        [0x3f7bd3d0, 0xb9018978, 0x25f74236, 0xf98e575b],
     );
     ck_sobol(
         1,
@@ -1026,7 +1026,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x5bd011fa, 0xf46dec77, 0xecca7f05, 0xeeb10f0d],
+        [0x5bd011fa, 0xf46dec77, 0xff99e077, 0x42d5aae1],
     );
     ck_sobol(
         1,
@@ -1034,7 +1034,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0xba00e166, 0x1b7c8fca, 0xc6e5edde, 0x209a0655],
+        [0xba00e166, 0x1b7c8fca, 0xf02acc87, 0xc0c69807],
     );
     ck_sobol(
         1,
@@ -1042,7 +1042,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x8e6992f5, 0xa6fd18c1, 0x26fa151f, 0xee3eea8e],
+        [0x8e6992f5, 0xa6fd18c1, 0xe751ec73, 0x1e7506a5],
     );
     ck_sobol(
         1,
@@ -1050,7 +1050,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x5ec76b28, 0x37c8bf82, 0x24e36386, 0xd5814a03],
+        [0x5ec76b28, 0x37c8bf82, 0xf91bbff0, 0x94049dce],
     );
     ck_sobol(
         1,
@@ -1058,7 +1058,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x555f2098, 0xa4c82aa2, 0x7632ad30, 0xcb8dd0ba],
+        [0x555f2098, 0xa4c82aa2, 0x78f9e0e6, 0x5e8d282f],
     );
     ck_sobol(
         1,
@@ -1066,7 +1066,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x3f7bd3d0, 0xb9018978, 0x85bbb4e7, 0xcc1e46ea],
+        [0x3f7bd3d0, 0xb9018978, 0x25f74236, 0xf98e575b],
     );
     ck_sobol(
         1,
@@ -1074,7 +1074,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x5bd011fa, 0xf46dec77, 0xecca7f05, 0xeeb10f0d],
+        [0x5bd011fa, 0xf46dec77, 0xff99e077, 0x42d5aae1],
     );
     ck_sobol(
         1,
@@ -1082,7 +1082,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0xda9b2480, 0x7704955d, 0xce2b21ce, 0x663b7b91],
+        [0xda9b2480, 0x7704955d, 0xc2251dff, 0xfb82e7f0],
     );
     ck_sobol(
         1,
@@ -1090,7 +1090,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0x8d1dc9a6, 0x59e0fbe6, 0x1779d2fe, 0x1839aa45],
+        [0x8d1dc9a6, 0x59e0fbe6, 0xa884e3e6, 0x2a436ed8],
     );
     ck_sobol(
         1,
@@ -1098,7 +1098,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0x861ffd0d, 0x7a42e06d, 0x0877fa33, 0x32c22db4],
+        [0x861ffd0d, 0x7a42e06d, 0x113ce4b2, 0xa09f804e],
     );
     ck_sobol(
         1,
@@ -1106,7 +1106,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0x88d4194b, 0xfeaa6b00, 0x1efc1a09, 0xb1e936b0],
+        [0x88d4194b, 0xfeaa6b00, 0x14061985, 0x97273d66],
     );
     ck_sobol(
         1,
@@ -1114,7 +1114,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0xc6c62bd3, 0xfccac378, 0xea020ab2, 0xa6e14c33],
+        [0xc6c62bd3, 0xfccac378, 0x53c20bf7, 0x60697254],
     );
     ck_sobol(
         1,
@@ -1122,7 +1122,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0x1d458461, 0x03571246, 0x4a967758, 0x4991a831],
+        [0x1d458461, 0x03571246, 0x5e8193c4, 0x3c083fd9],
     );
     ck_sobol(
         1,
@@ -1130,7 +1130,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xf9abe298, 0x348bbaff, 0xfbf2da42, 0x04aacc29],
+        [0xf9abe298, 0x348bbaff, 0x93344d5b, 0xcb1e7428],
     );
     ck_sobol(
         1,
@@ -1138,7 +1138,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x9db20a3b, 0x6b51e73c, 0xe1e9b895, 0x2003389c],
+        [0x9db20a3b, 0x6b51e73c, 0x76d7dd95, 0x7c6f0576],
     );
     ck_sobol(
         1,
@@ -1146,7 +1146,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0xe1a0e9d1, 0x706e7e76, 0xf564200c, 0xc9887b43],
+        [0xe1a0e9d1, 0x706e7e76, 0x54ede221, 0x45acb99d],
     );
     ck_sobol(
         1,
@@ -1154,7 +1154,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x8a54f510, 0x2a83a69c, 0xdc991e3d, 0x19e415ff],
+        [0x8a54f510, 0x2a83a69c, 0x100da70e, 0xc3a244a2],
     );
     ck_sobol(
         1,
@@ -1162,7 +1162,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0xa92e0335, 0xda045ded, 0x6f0615dc, 0xa90c23e9],
+        [0xa92e0335, 0xda045ded, 0x00f070c4, 0x8b9fe610],
     );
     ck_sobol(
         1,
@@ -1170,7 +1170,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0x65bae9e4, 0x704aa863, 0xde12d636, 0x5cd04541],
+        [0x65bae9e4, 0x704aa863, 0x361199f7, 0x4b4a4946],
     );
     ck_sobol(
         1,
@@ -1178,7 +1178,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x89539ad0, 0xd7611619, 0xd47412c6, 0xf462b967],
+        [0x89539ad0, 0xd7611619, 0x1d4d097a, 0x636c2f36],
     );
     ck_sobol(
         1,
@@ -1186,7 +1186,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0x9003b111, 0x2fcb4aa5, 0x3d82c1d5, 0x3793d221],
+        [0x9003b111, 0x2fcb4aa5, 0x4668ba5f, 0xe68d88e4],
     );
     ck_sobol(
         1,
@@ -1194,7 +1194,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0xdde3f966, 0xea8fb79a, 0x3bf86910, 0xdc322567],
+        [0xdde3f966, 0xea8fb79a, 0x25464baf, 0x05a5c0c6],
     );
     ck_sobol(
         1,
@@ -1202,7 +1202,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xc8af63e7, 0x2f19e3be, 0x1cfcd3fb, 0xed95fb42],
+        [0xc8af63e7, 0x2f19e3be, 0x8ef976a1, 0xd99246e7],
     );
     ck_sobol(
         1,
@@ -1210,7 +1210,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0xcdcead5a, 0x5a0403ba, 0xe7f1ef5b, 0x1f66a551],
+        [0xcdcead5a, 0x5a0403ba, 0xe6af6069, 0x9e3509ad],
     );
     ck_sobol(
         1,
@@ -1218,7 +1218,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0xfd95e7c1, 0x6cb9a7ab, 0x2b152c88, 0x96ae4a76],
+        [0xfd95e7c1, 0x6cb9a7ab, 0xf92774ad, 0x28c12632],
     );
     ck_sobol(
         1,
@@ -1226,7 +1226,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0x18dc7cde, 0x237bf6b2, 0x7156938c, 0x0bdfe722],
+        [0x18dc7cde, 0x237bf6b2, 0x366ef36c, 0x159978ab],
     );
     ck_sobol(
         1,
@@ -1234,7 +1234,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0x46b01465, 0xe33d4edb, 0x80c6bc7f, 0x35b35a3d],
+        [0x46b01465, 0xe33d4edb, 0x4793999f, 0x548d5556],
     );
     ck_sobol(
         1,
@@ -1242,7 +1242,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0xf58ee77d, 0x9a4f3cca, 0x470f187b, 0x8a389bfd],
+        [0xf58ee77d, 0x9a4f3cca, 0x280f87e7, 0x56794d55],
     );
     ck_sobol(
         1,
@@ -1250,7 +1250,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0xf5711744, 0xe888bede, 0xd7704c7c, 0xaa3e5ed5],
+        [0xf5711744, 0xe888bede, 0x81063cae, 0xb8b7a2f4],
     );
     ck_sobol(
         1,
@@ -1258,7 +1258,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x81e000e9, 0x607b4c18, 0x19f03ce8, 0xba2ae462],
+        [0x81e000e9, 0x607b4c18, 0xc2f5cba2, 0xc3b0b23a],
     );
     ck_sobol(
         1,
@@ -1266,7 +1266,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x764e8222, 0x4695fd4c, 0xdadf4535, 0x268c5bd7],
+        [0x764e8222, 0x4695fd4c, 0xb773e908, 0xf0f57377],
     );
     ck_sobol(
         1,
@@ -1274,7 +1274,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x9613e4ff, 0x49e69bf3, 0x3f5bb3e5, 0x6f112e33],
+        [0x9613e4ff, 0x49e69bf3, 0x79c0610a, 0xda2902a9],
     );
     ck_sobol(
         1,
@@ -1282,7 +1282,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0xf4d2523c, 0x973f5ee7, 0xebfe9749, 0x72d4968d],
+        [0xf4d2523c, 0x973f5ee7, 0x3dd194c6, 0x803b5ac7],
     );
     ck_sobol(
         1,
@@ -1290,7 +1290,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0xbf06a1cc, 0x3f6f4fdc, 0xb8c072c2, 0x4bd0af7f],
+        [0xbf06a1cc, 0x3f6f4fdc, 0xd4b2804f, 0x3a9fc71e],
     );
     ck_sobol(
         1,
@@ -1298,7 +1298,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x6e27d424, 0xaa9020a4, 0xd3235ac0, 0x269207e9],
+        [0x6e27d424, 0xaa9020a4, 0x9384c503, 0x93481e90],
     );
     ck_sobol(
         1,
@@ -1306,7 +1306,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0xe18865d9, 0xaaf70486, 0x1426aaa1, 0x500824f8],
+        [0xe18865d9, 0xaaf70486, 0xf074a8aa, 0xd328e8cd],
     );
     ck_sobol(
         1,
@@ -1314,7 +1314,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0xdafd682e, 0x85cc7cca, 0x21a483f8, 0x69dac0b9],
+        [0xdafd682e, 0x85cc7cca, 0x566d9130, 0xaa742180],
     );
     ck_sobol(
         1,
@@ -1322,7 +1322,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x2f53951d, 0x2a66c963, 0xd759deee, 0x1b0fc1be],
+        [0x2f53951d, 0x2a66c963, 0x857c8ce0, 0xb917f32f],
     );
     ck_sobol(
         1,
@@ -1330,7 +1330,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x3a6123d0, 0xbe69de67, 0x453f13e1, 0x3718243f],
+        [0x3a6123d0, 0xbe69de67, 0x17429bf7, 0x361e735d],
     );
     ck_sobol(
         1,
@@ -1338,7 +1338,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0x51bd276d, 0x9cf5b9e0, 0x179af107, 0xd6643c83],
+        [0x51bd276d, 0x9cf5b9e0, 0xfd807885, 0x93afedb0],
     );
     ck_sobol(
         1,
@@ -1346,7 +1346,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0xe62a6695, 0x2bc4a154, 0x06399797, 0x3ef0e29e],
+        [0xe62a6695, 0x2bc4a154, 0x85f651b4, 0x0a37f6d6],
     );
     ck_sobol(
         1,
@@ -1354,7 +1354,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x680f6835, 0xb8253d9e, 0x8564ec8b, 0x1a5bea07],
+        [0x680f6835, 0xb8253d9e, 0x802aac23, 0x50781e9f],
     );
     ck_sobol(
         1,
@@ -1362,7 +1362,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0xefd75602, 0x10d9e672, 0x779e5f76, 0x89b43f9c],
+        [0xefd75602, 0x10d9e672, 0x0c5e025e, 0xbc738d6e],
     );
     ck_sobol(
         1,
@@ -1370,7 +1370,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x6c9cce12, 0x8d6d9131, 0x47224ec9, 0x16bf487b],
+        [0x6c9cce12, 0x8d6d9131, 0x6d95dc1a, 0xe89bea2b],
     );
     ck_sobol(
         1,
@@ -1378,7 +1378,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x77b40e5d, 0x786310f6, 0x21cdf4a9, 0x798f2455],
+        [0x77b40e5d, 0x786310f6, 0x95f60204, 0x06370765],
     );
     ck_sobol(
         1,
@@ -1386,7 +1386,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x5858d387, 0x0092d836, 0xfee3a02f, 0x4e6d028e],
+        [0x5858d387, 0x0092d836, 0xfda37de0, 0xef7c1353],
     );
     ck_sobol(
         2,
@@ -1394,7 +1394,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x53ef8d57, 0xc8b13a89, 0x437acccc, 0x9a65a8a2],
+        [0x53ef8d57, 0xc8b13a89, 0xab82cc93, 0xf165a76c],
     );
     ck_sobol(
         2,
@@ -1402,7 +1402,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xc53ec5f4, 0x659c5e10, 0x4c11ae3b, 0x210e50aa],
+        [0xc53ec5f4, 0x659c5e10, 0xbd1ecd89, 0x9d1af587],
     );
     ck_sobol(
         2,
@@ -1410,7 +1410,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0xc3b5e881, 0x64c0b15a, 0x4ef0ed7f, 0x195e1231],
+        [0xc3b5e881, 0x64c0b15a, 0x6227a001, 0x15292ba9],
     );
     ck_sobol(
         2,
@@ -1418,7 +1418,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x82b0813c, 0x5b646112, 0x8b7f7966, 0x113ca09b],
+        [0x82b0813c, 0x5b646112, 0x6b7b4e90, 0x74f9e7ae],
     );
     ck_sobol(
         2,
@@ -1426,7 +1426,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x5237ed4c, 0xd51cbc7a, 0x8bddba0a, 0x9081a67e],
+        [0x5237ed4c, 0xd51cbc7a, 0x7c50f774, 0x2a27a09e],
     );
     ck_sobol(
         2,
@@ -1434,7 +1434,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0x23847954, 0xddbad079, 0x9a81c8a9, 0xcc709b83],
+        [0x23847954, 0xddbad079, 0xb1c8c95f, 0xc6bf0530],
     );
     ck_sobol(
         2,
@@ -1442,7 +1442,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0xd9bcef39, 0x8b591ddf, 0x058ee7c2, 0xe9726fb2],
+        [0xd9bcef39, 0x8b591ddf, 0xdb335bd4, 0x0c06d45b],
     );
     ck_sobol(
         2,
@@ -1450,7 +1450,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0x2fdaa94d, 0x28c42d7b, 0x296082dd, 0x4647bc2f],
+        [0x2fdaa94d, 0x28c42d7b, 0xfdd1f26f, 0x4a6ee5c3],
     );
     ck_sobol(
         2,
@@ -1458,7 +1458,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0x686fd4db, 0x0ae74e70, 0x046e5a4a, 0x610e3c09],
+        [0x686fd4db, 0x0ae74e70, 0x2946487f, 0x9f8e26b5],
     );
     ck_sobol(
         2,
@@ -1466,7 +1466,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0x0bc275c7, 0xfe2033c0, 0x5a502914, 0xd4eb5393],
+        [0x0bc275c7, 0xfe2033c0, 0x07045ed4, 0xc4b61b5d],
     );
     ck_sobol(
         2,
@@ -1474,7 +1474,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x0f67d4d8, 0x5402cbf5, 0x0ee5a156, 0x3c22d39f],
+        [0x0f67d4d8, 0x5402cbf5, 0x9225519b, 0x774b6967],
     );
     ck_sobol(
         2,
@@ -1482,7 +1482,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x58569949, 0x1472826d, 0x497ff7ce, 0xfd4f55f3],
+        [0x58569949, 0x1472826d, 0x71d704ec, 0x2c222901],
     );
     ck_sobol(
         2,
@@ -1490,7 +1490,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xf076f0e5, 0xfda87136, 0xfebdff45, 0x7cc206a0],
+        [0xf076f0e5, 0xfda87136, 0xb3951685, 0x98072f79],
     );
     ck_sobol(
         2,
@@ -1498,7 +1498,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0x94cba61e, 0x0c53f882, 0x4edcc7ab, 0x516db903],
+        [0x94cba61e, 0x0c53f882, 0xad7ea77c, 0x92b774bf],
     );
     ck_sobol(
         2,
@@ -1506,7 +1506,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x2f6c0735, 0x6e85430f, 0xd80b40fd, 0x9b8f72e7],
+        [0x2f6c0735, 0x6e85430f, 0x98c5b02a, 0x4c7ed4e5],
     );
     ck_sobol(
         2,
@@ -1514,7 +1514,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0xf17e5cdb, 0x797298bf, 0x76ae4f06, 0xde35b84f],
+        [0xf17e5cdb, 0x797298bf, 0x5babe25c, 0x6f2cec28],
     );
     ck_sobol(
         2,
@@ -1522,7 +1522,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x36199da8, 0x24b24288, 0xdad812a3, 0xb3cbefd7],
+        [0x36199da8, 0x24b24288, 0xe3c877e7, 0x8671f183],
     );
     ck_sobol(
         2,
@@ -1530,7 +1530,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x3e321b57, 0x6e6106df, 0x7f09be34, 0x6c187fea],
+        [0x3e321b57, 0x6e6106df, 0x8ce160ce, 0x04a0caba],
     );
     ck_sobol(
         2,
@@ -1538,7 +1538,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x684f73d7, 0xcce685bd, 0xa3c4e7e5, 0x00c7e1e8],
+        [0x684f73d7, 0xcce685bd, 0x46c805db, 0xd549d706],
     );
     ck_sobol(
         2,
@@ -1546,7 +1546,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x15eca201, 0x5175c54a, 0x9d319309, 0xece45607],
+        [0x15eca201, 0x5175c54a, 0x135b61e4, 0x1ec9c8cf],
     );
     ck_sobol(
         2,
@@ -1554,7 +1554,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x1e393de6, 0xbee50ee6, 0x3f0b477c, 0x4effef37],
+        [0x1e393de6, 0xbee50ee6, 0x78b92989, 0x9cfd0733],
     );
     ck_sobol(
         2,
@@ -1562,7 +1562,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0xf17e5cdb, 0x797298bf, 0x76ae4f06, 0xde35b84f],
+        [0xf17e5cdb, 0x797298bf, 0x5babe25c, 0x6f2cec28],
     );
     ck_sobol(
         2,
@@ -1570,7 +1570,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x36199da8, 0x24b24288, 0xdad812a3, 0xb3cbefd7],
+        [0x36199da8, 0x24b24288, 0xe3c877e7, 0x8671f183],
     );
     ck_sobol(
         2,
@@ -1578,7 +1578,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x3e321b57, 0x6e6106df, 0x7f09be34, 0x6c187fea],
+        [0x3e321b57, 0x6e6106df, 0x8ce160ce, 0x04a0caba],
     );
     ck_sobol(
         2,
@@ -1586,7 +1586,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0x752d2295, 0x894df27c, 0x8f744fb9, 0x783c01df],
+        [0x752d2295, 0x894df27c, 0xb823cc93, 0xc9b91093],
     );
     ck_sobol(
         2,
@@ -1594,7 +1594,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0x9c154d01, 0xaf485c50, 0x2cff91ff, 0x607909ce],
+        [0x9c154d01, 0xaf485c50, 0x000b4967, 0x5eb4d317],
     );
     ck_sobol(
         2,
@@ -1602,23 +1602,23 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0xaaeffcc6, 0xeb793eb2, 0xe5ca4545, 0xb81101a1],
-    );
-    ck_sobol(
-        2,
-        7,
-        1,
-        3,
-        0,
-        [0x0988b1a5, 0x0f96f458, 0x3babbc3d, 0xbbc7abe8],
+        [0xaaeffcc6, 0xeb793eb2, 0x15f8b045, 0xedcc0c10],
     );
     ck_sobol(
         2,
         7,
         1,
         3,
+        0,
+        [0x0988b1a5, 0x0f96f458, 0x1d677d65, 0xa39cc713],
+    );
+    ck_sobol(
+        2,
+        7,
         1,
-        [0xf77b2df3, 0x55da529b, 0x81b6ea50, 0xd2bacba8],
+        3,
+        1,
+        [0xf77b2df3, 0x55da529b, 0xb7dab63e, 0x0ce36b64],
     );
     ck_sobol(
         2,
@@ -1626,7 +1626,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0xeabcff2d, 0x03c0aabe, 0x0d9abeb0, 0x14d0ba85],
+        [0xeabcff2d, 0x03c0aabe, 0xf1a8ccbc, 0xa456c976],
     );
     ck_sobol(
         2,
@@ -1634,7 +1634,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xcaacc6a8, 0x2020a5ca, 0x5299820a, 0xab10c378],
+        [0xcaacc6a8, 0x2020a5ca, 0x29cb7b09, 0x49196f01],
     );
     ck_sobol(
         2,
@@ -1642,7 +1642,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x48f720f5, 0xe0b32c44, 0xd70f6abe, 0x0488b4b3],
+        [0x48f720f5, 0xe0b32c44, 0xc5cb29ee, 0x9bd9197a],
     );
     ck_sobol(
         2,
@@ -1650,7 +1650,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0x9187c3f3, 0x2cdeaff4, 0x151fa69c, 0x49a851a3],
+        [0x9187c3f3, 0x2cdeaff4, 0x257632ed, 0x8047ddf6],
     );
     ck_sobol(
         2,
@@ -1658,7 +1658,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x681e47c8, 0x3798ea1d, 0xe9b4a571, 0xe8515b35],
+        [0x681e47c8, 0x3798ea1d, 0x5741d447, 0x145971f9],
     );
     ck_sobol(
         2,
@@ -1666,7 +1666,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0xa4d2696d, 0xa39b1956, 0x05d5fdb6, 0x19200f55],
+        [0xa4d2696d, 0xa39b1956, 0xc9a9df53, 0x40321082],
     );
     ck_sobol(
         2,
@@ -1674,7 +1674,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0x66de780c, 0x588bb4dd, 0x8c276951, 0x61bc21bd],
+        [0x66de780c, 0x588bb4dd, 0xa8902fdd, 0x5fb41905],
     );
     ck_sobol(
         2,
@@ -1682,7 +1682,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x67ca5cab, 0x068963fe, 0xa10a6287, 0xa1e76eb5],
+        [0x67ca5cab, 0x068963fe, 0x5423e72d, 0x60193b09],
     );
     ck_sobol(
         2,
@@ -1690,7 +1690,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0x60bbaf7c, 0xfa1a9ed0, 0x2a6359bd, 0x6f5d3a5e],
+        [0x60bbaf7c, 0xfa1a9ed0, 0x9293583e, 0xdf974a3b],
     );
     ck_sobol(
         2,
@@ -1698,7 +1698,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0x3a1898f9, 0x01607e36, 0xbfdd5ae3, 0x6cc19ead],
+        [0x3a1898f9, 0x01607e36, 0x79cb29c0, 0x0da44088],
     );
     ck_sobol(
         2,
@@ -1706,7 +1706,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xe074551d, 0x41ed29fc, 0xbfa869c3, 0xecb3cb40],
+        [0xe074551d, 0x41ed29fc, 0x91cb6279, 0x6d0d71ac],
     );
     ck_sobol(
         2,
@@ -1714,7 +1714,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x8c91aaaf, 0xe9ea9f75, 0xbc7e33d2, 0xdd597ae3],
+        [0x8c91aaaf, 0xe9ea9f75, 0x61934142, 0x61759655],
     );
     ck_sobol(
         2,
@@ -1722,7 +1722,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0x7a09d2b0, 0xa2cbd89d, 0x2c838c0a, 0xd649d6a7],
+        [0x7a09d2b0, 0xa2cbd89d, 0x5d249507, 0x4ec266d6],
     );
     ck_sobol(
         2,
@@ -1730,7 +1730,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0xc171b806, 0x2a2319da, 0x776518e4, 0xdc5f8253],
+        [0xc171b806, 0x2a2319da, 0x8dd36b44, 0xe4911918],
     );
     ck_sobol(
         2,
@@ -1738,7 +1738,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0xac7da28a, 0x168718ff, 0xeeb0c254, 0x74f6984b],
+        [0xac7da28a, 0x168718ff, 0x2d6fabc9, 0x2d019e0a],
     );
     ck_sobol(
         2,
@@ -1746,7 +1746,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0x7a088e9a, 0xd0813e43, 0xe7c4250f, 0x98ba9779],
+        [0x7a088e9a, 0xd0813e43, 0x23c697b6, 0x95523e87],
     );
     ck_sobol(
         2,
@@ -1754,7 +1754,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x1b52d088, 0xc4f1c090, 0xc0fd818b, 0x7491d7b1],
+        [0x1b52d088, 0xc4f1c090, 0x2b63efcc, 0x4f6f32f3],
     );
     ck_sobol(
         2,
@@ -1762,7 +1762,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x64f7c8db, 0xfec9ca34, 0x3a832fae, 0x994f1ded],
+        [0x64f7c8db, 0xfec9ca34, 0xf755fe52, 0xf157932e],
     );
     ck_sobol(
         2,
@@ -1770,7 +1770,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0xf0d962e2, 0x67531e7d, 0x234e69d0, 0x48d0950a],
+        [0xf0d962e2, 0x67531e7d, 0xe749f86e, 0x4345e134],
     );
     ck_sobol(
         2,
@@ -1778,7 +1778,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x8958abb5, 0x83fb7d15, 0x985b79a9, 0x278d9a10],
+        [0x8958abb5, 0x83fb7d15, 0x62d376de, 0xa8d4f5c6],
     );
     ck_sobol(
         2,
@@ -1786,7 +1786,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0x3d89655c, 0x4ed906e9, 0x8a384b06, 0x2dc0230b],
+        [0x3d89655c, 0x4ed906e9, 0x7057deba, 0x999c56f0],
     );
     ck_sobol(
         2,
@@ -1794,7 +1794,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0x064a9955, 0x1a84aec2, 0x5a59e9d9, 0x0325192c],
+        [0x064a9955, 0x1a84aec2, 0xaa458e1d, 0xfe6a37cb],
     );
     ck_sobol(
         2,
@@ -1802,7 +1802,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0xd9d46163, 0x0701257f, 0x91d30915, 0xf711a197],
+        [0xd9d46163, 0x0701257f, 0x4b9bed0d, 0xb436048f],
     );
     ck_sobol(
         2,
@@ -1810,7 +1810,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0x21e61a5e, 0x6b068c90, 0x37a9baf6, 0x005d9383],
+        [0x21e61a5e, 0x6b068c90, 0xca14c501, 0xeb64bd7e],
     );
     ck_sobol(
         2,
@@ -1818,7 +1818,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0xe8056067, 0xf796adf9, 0x128880d8, 0xef2c26da],
+        [0xe8056067, 0xf796adf9, 0x00f8ccb4, 0x5526dc16],
     );
     ck_sobol(
         2,
@@ -1826,7 +1826,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x815bb371, 0x2b2d30ed, 0xe46fd0ff, 0x9beae42b],
+        [0x815bb371, 0x2b2d30ed, 0x601b4a3b, 0x5d63f45d],
     );
     ck_sobol(
         2,
@@ -1834,7 +1834,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x087da9a7, 0xb63d6a63, 0x3116b213, 0x2af306ea],
+        [0x087da9a7, 0xb63d6a63, 0xcf130602, 0xd241fe03],
     );
     ck_sobol(
         2,
@@ -1842,7 +1842,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0x1d4c9546, 0xb16a65af, 0x7dbaaa2a, 0xa7ba7146],
+        [0x1d4c9546, 0xb16a65af, 0x66bc6602, 0xff8f0584],
     );
     ck_sobol(
         2,
@@ -1850,7 +1850,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0x011e7c5b, 0xcbc0cb96, 0x66376da7, 0x98a048cb],
+        [0x011e7c5b, 0xcbc0cb96, 0x60efe518, 0xcf0ea86a],
     );
     ck_sobol(
         2,
@@ -1858,7 +1858,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x746fc250, 0x1dd567cd, 0x93eced0d, 0x6b5ff531],
+        [0x746fc250, 0x1dd567cd, 0xd0d6953d, 0xd65d9535],
     );
     ck_sobol(
         2,
@@ -1866,7 +1866,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0x96f48e41, 0xf06ed943, 0x1e9572eb, 0xc9b232e3],
+        [0x96f48e41, 0xf06ed943, 0x6449379b, 0xfb02d3e1],
     );
     ck_sobol(
         2,
@@ -1874,7 +1874,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0xd5209716, 0x8ca1876e, 0xb0abe422, 0x9339fb39],
+        [0xd5209716, 0x8ca1876e, 0xf71e90ea, 0xad45ee44],
     );
     ck_sobol(
         2,
@@ -1882,7 +1882,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0xa217c576, 0x33b830ca, 0x0536dcbf, 0xf18eaa09],
+        [0xa217c576, 0x33b830ca, 0x48611197, 0x07509212],
     );
     ck_sobol(
         2,
@@ -1890,7 +1890,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x412409da, 0x9647fc2f, 0x934885fe, 0x3e514806],
+        [0x412409da, 0x9647fc2f, 0xa6242737, 0x8e2eb8b9],
     );
     ck_sobol(
         5,
@@ -1898,7 +1898,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x75c36288, 0xdda5abfd, 0x5af95321, 0xe3423e99],
+        [0x75c36288, 0xdda5abfd, 0xe8bbffd6, 0xd7feac5a],
     );
     ck_sobol(
         5,
@@ -1906,7 +1906,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xd49c1117, 0x8cbcf6fd, 0xca174387, 0x0e71bac8],
+        [0xd49c1117, 0x8cbcf6fd, 0xf8dd52e0, 0x6f94aa6a],
     );
     ck_sobol(
         5,
@@ -1914,7 +1914,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0x74c567ad, 0x2e7edcd4, 0xcd3df442, 0x7bdab695],
+        [0x74c567ad, 0x2e7edcd4, 0x7f4614d7, 0xe7381c6f],
     );
     ck_sobol(
         5,
@@ -1922,7 +1922,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x93fe43e7, 0x7c281990, 0xfe257d90, 0x1f789ffa],
+        [0x93fe43e7, 0x7c281990, 0x4990a1d3, 0x321c27d2],
     );
     ck_sobol(
         5,
@@ -1930,7 +1930,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x5d3aa6e5, 0x2ab36d2d, 0x6b367438, 0x95e64f6a],
+        [0x5d3aa6e5, 0x2ab36d2d, 0x55e4c2fa, 0xe6e92185],
     );
     ck_sobol(
         5,
@@ -1938,7 +1938,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0xa5b6b766, 0x90df0c34, 0x392505e6, 0xa0bfd806],
+        [0xa5b6b766, 0x90df0c34, 0xad612ee4, 0x027ca125],
     );
     ck_sobol(
         5,
@@ -1946,7 +1946,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0x2ab3be26, 0x316b0284, 0xb479ac0f, 0x5c7e58e5],
+        [0x2ab3be26, 0x316b0284, 0x17dad5c4, 0xace7b6e1],
     );
     ck_sobol(
         5,
@@ -1954,7 +1954,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0x9d35ee59, 0x62fa4c72, 0x2dea300b, 0xd0e0f70e],
+        [0x9d35ee59, 0x62fa4c72, 0x14eb0fd4, 0x21229139],
     );
     ck_sobol(
         5,
@@ -1962,7 +1962,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0xebeed8e2, 0x7cae08c6, 0x84eb9477, 0x0e793be0],
+        [0xebeed8e2, 0x7cae08c6, 0x0c775243, 0x73e651b0],
     );
     ck_sobol(
         5,
@@ -1970,7 +1970,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0x70fc7699, 0x383ecb1f, 0x10a48323, 0xb3f311b7],
+        [0x70fc7699, 0x383ecb1f, 0x42e569f0, 0x73305640],
     );
     ck_sobol(
         5,
@@ -1978,7 +1978,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0xd91c2de1, 0xdd97e9ed, 0x49f0f703, 0x9d6f87eb],
+        [0xd91c2de1, 0xdd97e9ed, 0x115cfd02, 0xefe7e597],
     );
     ck_sobol(
         5,
@@ -1986,7 +1986,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0xf999ffde, 0x455bf76c, 0x336ac8a0, 0x39fd53d0],
+        [0xf999ffde, 0x455bf76c, 0x9b860c78, 0x18296093],
     );
     ck_sobol(
         5,
@@ -1994,7 +1994,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xfea92cfa, 0x030f2888, 0x75ab53d2, 0x1dce0cb4],
+        [0xfea92cfa, 0x030f2888, 0x45362cff, 0xfbebe16f],
     );
     ck_sobol(
         5,
@@ -2002,7 +2002,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0xbe4a4f29, 0x4ff56fb4, 0x5f4833af, 0x1b6b331b],
+        [0xbe4a4f29, 0x4ff56fb4, 0xf33ab2e3, 0xc25eccbc],
     );
     ck_sobol(
         5,
@@ -2010,7 +2010,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x3a47fc36, 0x23308805, 0x6dcdd121, 0x3f4e2553],
+        [0x3a47fc36, 0x23308805, 0xb2aa2d55, 0xa738997d],
     );
     ck_sobol(
         5,
@@ -2018,7 +2018,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x6dc7e541, 0x383e200f, 0x83755e3f, 0xc420964b],
+        [0x6dc7e541, 0x383e200f, 0x5757d5ab, 0xf866f018],
     );
     ck_sobol(
         5,
@@ -2026,7 +2026,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x1b9174cd, 0x61c8442d, 0x22e2eba8, 0xc7d0d9da],
+        [0x1b9174cd, 0x61c8442d, 0x5088c997, 0xebf41368],
     );
     ck_sobol(
         5,
@@ -2034,7 +2034,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0xaa763205, 0x95013abc, 0x0d792cf5, 0xa77a3512],
+        [0xaa763205, 0x95013abc, 0x078d271d, 0x644d3baf],
     );
     ck_sobol(
         5,
@@ -2042,7 +2042,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x47a55f23, 0x9fa6f0b4, 0x9628d895, 0xe53551a9],
+        [0x47a55f23, 0x9fa6f0b4, 0x85c18020, 0xcd030142],
     );
     ck_sobol(
         5,
@@ -2050,7 +2050,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x71458aa3, 0x22bffa2c, 0xb02b27de, 0xe1e4e1cd],
+        [0x71458aa3, 0x22bffa2c, 0x410f9e23, 0x8dd80ef8],
     );
     ck_sobol(
         5,
@@ -2058,7 +2058,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x96ee0d3d, 0x60434e03, 0x3abdaf84, 0xc40953d0],
+        [0x96ee0d3d, 0x60434e03, 0x50f52cc2, 0x570dc16e],
     );
     ck_sobol(
         5,
@@ -2066,7 +2066,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x6dc7e541, 0x383e200f, 0x83755e3f, 0xc420964b],
+        [0x6dc7e541, 0x383e200f, 0x5757d5ab, 0xf866f018],
     );
     ck_sobol(
         5,
@@ -2074,7 +2074,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x1b9174cd, 0x61c8442d, 0x22e2eba8, 0xc7d0d9da],
+        [0x1b9174cd, 0x61c8442d, 0x5088c997, 0xebf41368],
     );
     ck_sobol(
         5,
@@ -2082,7 +2082,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0xaa763205, 0x95013abc, 0x0d792cf5, 0xa77a3512],
+        [0xaa763205, 0x95013abc, 0x078d271d, 0x644d3baf],
     );
     ck_sobol(
         5,
@@ -2090,7 +2090,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0x883d2df5, 0xf206f9a1, 0x11891419, 0x76747fb8],
+        [0x883d2df5, 0xf206f9a1, 0xd446391b, 0x4a53ae02],
     );
     ck_sobol(
         5,
@@ -2098,7 +2098,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0xf9d01278, 0xad6f8e5e, 0xdf93e8f8, 0x54b34347],
+        [0xf9d01278, 0xad6f8e5e, 0x9d713b26, 0x66a15584],
     );
     ck_sobol(
         5,
@@ -2106,7 +2106,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0x0a09364a, 0x09a0d7a6, 0xf934d958, 0x3b483c84],
+        [0x0a09364a, 0x09a0d7a6, 0xf4f9213e, 0xf48f468e],
     );
     ck_sobol(
         5,
@@ -2114,7 +2114,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0xcfbec5d8, 0x6e722a10, 0xfb1a7ab1, 0x85422ebd],
+        [0xcfbec5d8, 0x6e722a10, 0x3f5ac5d7, 0x1b3377f4],
     );
     ck_sobol(
         5,
@@ -2122,7 +2122,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0x9a6324c0, 0x09d6dd58, 0x63ee7e54, 0x861d9556],
+        [0x9a6324c0, 0x09d6dd58, 0x1a8f871b, 0x2fd2e77d],
     );
     ck_sobol(
         5,
@@ -2130,7 +2130,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0x72e15679, 0xec9c41e1, 0x44e1de1c, 0xe499ebb5],
+        [0x72e15679, 0xec9c41e1, 0x49c90c74, 0xb313596f],
     );
     ck_sobol(
         5,
@@ -2138,7 +2138,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0x7056db5e, 0x023ea006, 0x602e1f6b, 0xe6a65df9],
+        [0x7056db5e, 0x023ea006, 0x80b958a7, 0xa4031b20],
     );
     ck_sobol(
         5,
@@ -2146,7 +2146,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x47f16f56, 0x3d5cd335, 0x81b1e36e, 0xd9521aac],
+        [0x47f16f56, 0x3d5cd335, 0x299e8be5, 0xb7dd1215],
     );
     ck_sobol(
         5,
@@ -2154,7 +2154,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0x4683a765, 0xbde8d76c, 0x74f55fb2, 0xbc92c4e4],
+        [0x4683a765, 0xbde8d76c, 0x2131e549, 0x8c6a64d2],
     );
     ck_sobol(
         5,
@@ -2162,7 +2162,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x8293399b, 0x07176ed8, 0x07fc700c, 0x65411d34],
+        [0x8293399b, 0x07176ed8, 0x2afd8553, 0x5830250f],
     );
     ck_sobol(
         5,
@@ -2170,7 +2170,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0x9cbb4383, 0x923bee5c, 0x8c30d26e, 0xfb149d39],
+        [0x9cbb4383, 0x923bee5c, 0x3514cf80, 0x805f3d71],
     );
     ck_sobol(
         5,
@@ -2178,7 +2178,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0xdc7a249b, 0x0725de5e, 0x4570ddbb, 0x5bfb1f09],
+        [0xdc7a249b, 0x0725de5e, 0x7435d1b3, 0xb4cf238c],
     );
     ck_sobol(
         5,
@@ -2186,7 +2186,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0xf8b20c09, 0xe56fd4df, 0xf25bdcc3, 0xb5755527],
+        [0xf8b20c09, 0xe56fd4df, 0xafd23603, 0xbeeb71d4],
     );
     ck_sobol(
         5,
@@ -2194,7 +2194,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0x7107eda3, 0xd01905a2, 0xc5917cc9, 0x0e8fa1fd],
+        [0x7107eda3, 0xd01905a2, 0x374d214d, 0xacbc95e1],
     );
     ck_sobol(
         5,
@@ -2202,7 +2202,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0x51c9dabe, 0xc5155971, 0x18ea55a9, 0x2791d8b9],
+        [0x51c9dabe, 0xc5155971, 0xcc085d46, 0x3e4421b1],
     );
     ck_sobol(
         5,
@@ -2210,7 +2210,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0x4a8e4b41, 0xcf83c73a, 0xec67c57c, 0xcf5ef51a],
+        [0x4a8e4b41, 0xcf83c73a, 0x517732a4, 0x986dfd6c],
     );
     ck_sobol(
         5,
@@ -2218,7 +2218,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x0a1340fc, 0x3eff7201, 0xa68e2a8f, 0xda272c3f],
+        [0x0a1340fc, 0x3eff7201, 0xcf5be896, 0x633dd17a],
     );
     ck_sobol(
         5,
@@ -2226,7 +2226,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0xf4406acb, 0xb2430156, 0xb626e876, 0x49c8dcb1],
+        [0xf4406acb, 0xb2430156, 0x0ac12287, 0x518843f2],
     );
     ck_sobol(
         5,
@@ -2234,7 +2234,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0xd6541b8b, 0x6c8ab3e3, 0x416fd8d8, 0xcf736dea],
+        [0xd6541b8b, 0x6c8ab3e3, 0xf258c761, 0x5466b5ad],
     );
     ck_sobol(
         5,
@@ -2242,7 +2242,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0x7788523f, 0x95ccd9a8, 0x60cbf99d, 0x08eb1b5f],
+        [0x7788523f, 0x95ccd9a8, 0x5861470d, 0xb4ca31bd],
     );
     ck_sobol(
         5,
@@ -2250,7 +2250,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0xaa505446, 0x46b99cfd, 0xd5e2e149, 0xb8185495],
+        [0xaa505446, 0x46b99cfd, 0xb58b59f9, 0xc8371ab3],
     );
     ck_sobol(
         5,
@@ -2258,7 +2258,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x0998486b, 0xd2b9ec61, 0xc9c67c6c, 0x0f4db5b7],
+        [0x0998486b, 0xd2b9ec61, 0x6ea0173a, 0xa132fdcd],
     );
     ck_sobol(
         5,
@@ -2266,7 +2266,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x8af13897, 0x6f756a7b, 0x80c402eb, 0xf9a15cec],
+        [0x8af13897, 0x6f756a7b, 0xa2a32b8f, 0x60b893bd],
     );
     ck_sobol(
         5,
@@ -2274,7 +2274,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x1b4fec73, 0xb8e34f92, 0x4ce72416, 0x7d4f5626],
+        [0x1b4fec73, 0xb8e34f92, 0x23d9ef9f, 0x2c1149a5],
     );
     ck_sobol(
         5,
@@ -2282,7 +2282,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x854bcf03, 0x84b7969f, 0x949e9909, 0x6e84750b],
+        [0x854bcf03, 0x84b7969f, 0x3247b96e, 0x29dcad05],
     );
     ck_sobol(
         5,
@@ -2290,7 +2290,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0x39e1d4b8, 0x14075311, 0xf68c7f6e, 0x81cc47e2],
+        [0x39e1d4b8, 0x14075311, 0xcc7c8101, 0xd1062ae4],
     );
     ck_sobol(
         5,
@@ -2298,7 +2298,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0xcc01d04f, 0xf00e6e27, 0x3f563582, 0x14d95095],
+        [0xcc01d04f, 0xf00e6e27, 0x5f776baf, 0x92b6a86f],
     );
     ck_sobol(
         5,
@@ -2306,7 +2306,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0xb4c499db, 0x38033be4, 0x202e0b92, 0x68fac983],
+        [0xb4c499db, 0x38033be4, 0x236e9ca7, 0xc739e9c2],
     );
     ck_sobol(
         5,
@@ -2314,7 +2314,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0x2e631c92, 0xf4de006d, 0xc00912b5, 0x1d245023],
+        [0x2e631c92, 0xf4de006d, 0x304c901a, 0xc7fb34ba],
     );
     ck_sobol(
         5,
@@ -2322,7 +2322,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x325fa37a, 0xa73f7a8a, 0x384adeff, 0xc847a971],
+        [0x325fa37a, 0xa73f7a8a, 0x452fbecf, 0xb8571512],
     );
     ck_sobol(
         5,
@@ -2330,7 +2330,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x198acf43, 0xd52b7554, 0xe988bb53, 0x9c799ca9],
+        [0x198acf43, 0xd52b7554, 0xcd81e9cf, 0xbfa778fd],
     );
     ck_sobol(
         5,
@@ -2338,7 +2338,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x12ea9c0d, 0x05159cf0, 0x03d5e4e3, 0x86b01bd9],
+        [0x12ea9c0d, 0x05159cf0, 0x666a1a7c, 0x12b0a747],
     );
     ck_sobol(
         5,
@@ -2346,7 +2346,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0xaf7be401, 0xc5032c30, 0x4556e926, 0x86e43952],
+        [0xaf7be401, 0xc5032c30, 0x36b3b140, 0x02551da8],
     );
     ck_sobol(
         5,
@@ -2354,7 +2354,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0x7cc0f389, 0x1dc89325, 0x2097ad8e, 0xfa9cfc47],
+        [0x7cc0f389, 0x1dc89325, 0x1c877f86, 0xb3688de5],
     );
     ck_sobol(
         5,
@@ -2362,7 +2362,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0xb6b514f2, 0xd54abeee, 0x599e3b18, 0x90d1e813],
+        [0xb6b514f2, 0xd54abeee, 0x9d41f41e, 0x91be11fe],
     );
     ck_sobol(
         5,
@@ -2370,7 +2370,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0x394cf5fb, 0x347b85d3, 0xaa0f8ce4, 0xb1afb2d7],
+        [0x394cf5fb, 0x347b85d3, 0x68631cd7, 0x1ed1a77d],
     );
     ck_sobol(
         5,
@@ -2378,7 +2378,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x6e4977a3, 0x98a9f392, 0x46ff1fa6, 0xaafc7967],
+        [0x6e4977a3, 0x98a9f392, 0x599158b2, 0x46f5a97e],
     );
     ck_sobol(
         5,
@@ -2386,7 +2386,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x82456b38, 0x17199b60, 0xa3dbe69c, 0x754f86be],
+        [0x82456b38, 0x17199b60, 0xad2e7160, 0x277e1132],
     );
     ck_sobol(
         5,
@@ -2394,7 +2394,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x088769e6, 0x742c0dab, 0xdb2335d9, 0xe76a40ff],
+        [0x088769e6, 0x742c0dab, 0xcb880729, 0x8cda4c64],
     );
     ck_sobol(
         200,
@@ -2402,7 +2402,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x54777f7d, 0x66b0821c, 0xc68ca016, 0xd83a17fd],
+        [0x54777f7d, 0x66b0821c, 0x3700bcd0, 0x1a281839],
     );
     ck_sobol(
         200,
@@ -2410,7 +2410,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xd17a52f1, 0x5acb386f, 0x1e451221, 0x6e4953c9],
+        [0xd17a52f1, 0x5acb386f, 0xa43796fb, 0xdfcdbdeb],
     );
     ck_sobol(
         200,
@@ -2418,7 +2418,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0x9d6b3294, 0xeb6e72df, 0xc0e514d0, 0x6bd247b7],
+        [0x9d6b3294, 0xeb6e72df, 0xb1078d8e, 0x6462151b],
     );
     ck_sobol(
         200,
@@ -2426,7 +2426,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0xe680f9ea, 0xab04bc78, 0x4f1951e0, 0x0eb420bb],
+        [0xe680f9ea, 0xab04bc78, 0xbbae941f, 0xc16e6f26],
     );
     ck_sobol(
         200,
@@ -2434,7 +2434,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x15706715, 0x82405e87, 0xaa0ba9ef, 0xdb1696b5],
+        [0x15706715, 0x82405e87, 0x117d5f5a, 0x6a025ce9],
     );
     ck_sobol(
         200,
@@ -2442,7 +2442,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0x1cad0211, 0x0f3b0386, 0x56ee6086, 0xe818615e],
+        [0x1cad0211, 0x0f3b0386, 0x2172e690, 0xe2837391],
     );
     ck_sobol(
         200,
@@ -2450,7 +2450,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0xa17f7b5d, 0x0c171c60, 0xbb913f89, 0x96b88771],
+        [0xa17f7b5d, 0x0c171c60, 0x4f358cd6, 0x8fefcaf0],
     );
     ck_sobol(
         200,
@@ -2458,7 +2458,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0x4a02785a, 0x2e4cc76e, 0x46caa422, 0x17ecaf84],
+        [0x4a02785a, 0x2e4cc76e, 0xe9e41298, 0x11fbf721],
     );
     ck_sobol(
         200,
@@ -2466,7 +2466,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0xd6117f16, 0x570b26c5, 0x303abfdd, 0x8f14d689],
+        [0xd6117f16, 0x570b26c5, 0x41bb1876, 0x0f9bd6c6],
     );
     ck_sobol(
         200,
@@ -2474,7 +2474,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0x4f4db2bd, 0x8142e537, 0xe986bfc5, 0x7ca96226],
+        [0x4f4db2bd, 0x8142e537, 0x951cebe9, 0x02d7bd80],
     );
     ck_sobol(
         200,
@@ -2482,7 +2482,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x570138ee, 0xff73ec7a, 0x6c7186e5, 0xc72919b7],
+        [0x570138ee, 0xff73ec7a, 0x73ecd8a0, 0x0918bc95],
     );
     ck_sobol(
         200,
@@ -2490,7 +2490,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x63b9a068, 0x48457c34, 0x0030b3dc, 0x0011d0db],
+        [0x63b9a068, 0x48457c34, 0xcc6f5eed, 0x3a80606c],
     );
     ck_sobol(
         200,
@@ -2498,7 +2498,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0x356b07d7, 0xef351113, 0xc01a589e, 0x4f8f733d],
+        [0x356b07d7, 0xef351113, 0x3f116fae, 0x35ed153a],
     );
     ck_sobol(
         200,
@@ -2506,7 +2506,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0xd2daa6e5, 0x6ed6ccc3, 0xd8a57630, 0x750ee800],
+        [0xd2daa6e5, 0x6ed6ccc3, 0x33d44272, 0x9c2d042e],
     );
     ck_sobol(
         200,
@@ -2514,7 +2514,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x72d3bcc7, 0x07a17291, 0x1c69e7b6, 0x3210add8],
+        [0x72d3bcc7, 0x07a17291, 0x190592f7, 0x1ea56804],
     );
     ck_sobol(
         200,
@@ -2522,7 +2522,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0xbb5a9e02, 0x6637e68f, 0xa3ef968c, 0xe040e376],
+        [0xbb5a9e02, 0x6637e68f, 0xc69a06dd, 0x565977f1],
     );
     ck_sobol(
         200,
@@ -2530,7 +2530,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x57c2642f, 0xe58f3e54, 0xbf55cea0, 0x1419c547],
+        [0x57c2642f, 0xe58f3e54, 0xf914e1d8, 0x27da726a],
     );
     ck_sobol(
         200,
@@ -2538,7 +2538,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x8207eb95, 0xdcd168f1, 0x9c17b141, 0xcc0eb48c],
+        [0x8207eb95, 0xdcd168f1, 0xd13e905c, 0xc8b3a354],
     );
     ck_sobol(
         200,
@@ -2546,7 +2546,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x3c4c9572, 0xf8ea46bb, 0xb783e97b, 0xb9aeb055],
+        [0x3c4c9572, 0xf8ea46bb, 0x4c6932b0, 0x4fd45546],
     );
     ck_sobol(
         200,
@@ -2554,7 +2554,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0xd633830b, 0xd5277b60, 0x2c561b5a, 0xf11cf4b5],
+        [0xd633830b, 0xd5277b60, 0xd75a8108, 0xb4de08d1],
     );
     ck_sobol(
         200,
@@ -2562,7 +2562,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x7c114a2a, 0x4719841c, 0x3f623221, 0xd2932f28],
+        [0x7c114a2a, 0x4719841c, 0x47e83246, 0x87db60eb],
     );
     ck_sobol(
         200,
@@ -2570,7 +2570,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0xbb5a9e02, 0x6637e68f, 0xa3ef968c, 0xe040e376],
+        [0xbb5a9e02, 0x6637e68f, 0xc69a06dd, 0x565977f1],
     );
     ck_sobol(
         200,
@@ -2578,7 +2578,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x57c2642f, 0xe58f3e54, 0xbf55cea0, 0x1419c547],
+        [0x57c2642f, 0xe58f3e54, 0xf914e1d8, 0x27da726a],
     );
     ck_sobol(
         200,
@@ -2586,7 +2586,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x8207eb95, 0xdcd168f1, 0x9c17b141, 0xcc0eb48c],
+        [0x8207eb95, 0xdcd168f1, 0xd13e905c, 0xc8b3a354],
     );
     ck_sobol(
         200,
@@ -2594,7 +2594,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0x6d85dff9, 0xb9fe197b, 0x71f400ef, 0x434c08c3],
+        [0x6d85dff9, 0xb9fe197b, 0x20fa1c12, 0xf1055e33],
     );
     ck_sobol(
         200,
@@ -2602,7 +2602,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0xb05f7af7, 0x69d8fd54, 0x1fb9eddf, 0xb21bf388],
+        [0xb05f7af7, 0x69d8fd54, 0x5f8cb397, 0x826aafce],
     );
     ck_sobol(
         200,
@@ -2610,7 +2610,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0x6124e3eb, 0x06666e08, 0x49c486ea, 0x040844c5],
+        [0x6124e3eb, 0x06666e08, 0x28bd33e6, 0x01591085],
     );
     ck_sobol(
         200,
@@ -2618,7 +2618,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0x27fb5b51, 0x2816006a, 0xdba35400, 0x829e46eb],
+        [0x27fb5b51, 0x2816006a, 0xbeffe207, 0x9ba31487],
     );
     ck_sobol(
         200,
@@ -2626,7 +2626,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0xcd91957d, 0x820bf0c5, 0xdca7fc99, 0x7150c0f9],
+        [0xcd91957d, 0x820bf0c5, 0x84e6b9f9, 0xfa33cd8c],
     );
     ck_sobol(
         200,
@@ -2634,7 +2634,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0xc2c39ecf, 0x4166bb95, 0x3355fa2a, 0x4c6e9f57],
+        [0xc2c39ecf, 0x4166bb95, 0x59c5d066, 0xabc7d937],
     );
     ck_sobol(
         200,
@@ -2642,7 +2642,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0x728b14f2, 0x5968985f, 0x581079eb, 0x9f5d5012],
+        [0x728b14f2, 0x5968985f, 0xe727ede3, 0xe63b4ec0],
     );
     ck_sobol(
         200,
@@ -2650,7 +2650,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0xb55f5e4a, 0x8f8eb95b, 0x696a9a72, 0xe1f24201],
+        [0xb55f5e4a, 0x8f8eb95b, 0xf2d1d837, 0x5bdc120d],
     );
     ck_sobol(
         200,
@@ -2658,7 +2658,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0xeda3e79d, 0xaa7b8ac5, 0xf1d99d99, 0x49ad787a],
+        [0xeda3e79d, 0xaa7b8ac5, 0x437e5b83, 0x6dfbe341],
     );
     ck_sobol(
         200,
@@ -2666,7 +2666,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x6a2981cd, 0xa59f8255, 0xde286535, 0xac8ea0ac],
+        [0x6a2981cd, 0xa59f8255, 0xa9539e49, 0xa21cbfdc],
     );
     ck_sobol(
         200,
@@ -2674,7 +2674,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0xefbf7cf7, 0x8f5641ec, 0x68852404, 0xa7dbd1af],
+        [0xefbf7cf7, 0x8f5641ec, 0xc03873aa, 0x565c5473],
     );
     ck_sobol(
         200,
@@ -2682,7 +2682,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0xf7aba1ac, 0x6a7a92e6, 0x2d3ca167, 0x82f710aa],
+        [0xf7aba1ac, 0x6a7a92e6, 0xf4d2f241, 0xbbd52192],
     );
     ck_sobol(
         200,
@@ -2690,7 +2690,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x942e5061, 0xfd87e22b, 0xbba3f045, 0x16a3eaf7],
+        [0x942e5061, 0xfd87e22b, 0x2fba392d, 0xf7278721],
     );
     ck_sobol(
         200,
@@ -2698,7 +2698,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0x424cde7a, 0xe4286eca, 0x22739812, 0xb7e0ad42],
+        [0x424cde7a, 0xe4286eca, 0xa05f434f, 0xd8c062b5],
     );
     ck_sobol(
         200,
@@ -2706,7 +2706,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0xb555f866, 0x96bc834c, 0x6168abd0, 0x05e3b0fb],
+        [0xb555f866, 0x96bc834c, 0x9ed6f29b, 0x0235177b],
     );
     ck_sobol(
         200,
@@ -2714,7 +2714,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xe81e1b80, 0xf89184c4, 0x34170e68, 0x45d620c0],
+        [0xe81e1b80, 0xf89184c4, 0xfe841416, 0xaf4d5f30],
     );
     ck_sobol(
         200,
@@ -2722,7 +2722,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x92bc8db8, 0x79b1c869, 0xdfe4ea06, 0xd81ff292],
+        [0x92bc8db8, 0x79b1c869, 0x8ba7f7d7, 0x53f4fc0d],
     );
     ck_sobol(
         200,
@@ -2730,7 +2730,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0x12884b15, 0x0894abcb, 0x85862274, 0x075987d2],
+        [0x12884b15, 0x0894abcb, 0x8e29c0ae, 0x90b80c5b],
     );
     ck_sobol(
         200,
@@ -2738,7 +2738,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0xfe14c3c7, 0xa12d589a, 0x0ea26384, 0x0f40f73f],
+        [0xfe14c3c7, 0xa12d589a, 0x3f084040, 0xe33b4125],
     );
     ck_sobol(
         200,
@@ -2746,7 +2746,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0x44acf3c2, 0xbbd9ed2d, 0x4fce3c49, 0x032727f3],
+        [0x44acf3c2, 0xbbd9ed2d, 0x46c7bca5, 0x892e1f7b],
     );
     ck_sobol(
         200,
@@ -2754,7 +2754,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0xad4d2409, 0x195909eb, 0x9b3c3ec0, 0x210761bf],
+        [0xad4d2409, 0x195909eb, 0x35bc7152, 0x93a0cf48],
     );
     ck_sobol(
         200,
@@ -2762,7 +2762,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x6a5323be, 0x03cdef1b, 0xc87eb23a, 0xa39ee730],
+        [0x6a5323be, 0x03cdef1b, 0xfaa9f0b4, 0x46f76c30],
     );
     ck_sobol(
         200,
@@ -2770,7 +2770,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x9dc0bba4, 0x12a0dff4, 0x97762948, 0xab6e8099],
+        [0x9dc0bba4, 0x12a0dff4, 0x9f84bee1, 0x28b3ad65],
     );
     ck_sobol(
         200,
@@ -2778,23 +2778,23 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x26c532b9, 0xda3015da, 0x06a41f5f, 0xc22bbe3e],
-    );
-    ck_sobol(
-        200,
-        601,
-        7,
-        3,
-        0,
-        [0x863c0ed7, 0x79692c87, 0x8fa4520a, 0xda6f2d54],
+        [0x26c532b9, 0xda3015da, 0xb0806553, 0x42ce6317],
     );
     ck_sobol(
         200,
         601,
         7,
         3,
+        0,
+        [0x863c0ed7, 0x79692c87, 0xb348e302, 0x80fa0e50],
+    );
+    ck_sobol(
+        200,
+        601,
+        7,
+        3,
         1,
-        [0xf446ee25, 0xc60345e2, 0x0796585e, 0x47687cc8],
+        [0xf446ee25, 0xc60345e2, 0x0aee67d4, 0x64475759],
     );
     ck_sobol(
         200,
@@ -2802,7 +2802,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0xff1135b6, 0xa5a18334, 0x54fdf02a, 0xaa847e29],
+        [0xff1135b6, 0xa5a18334, 0xeeab9e11, 0xecfb5fcd],
     );
     ck_sobol(
         200,
@@ -2810,7 +2810,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x4261bed8, 0x42646d3d, 0xe03cadcd, 0xcd3d71e9],
+        [0x4261bed8, 0x42646d3d, 0x82cab1bf, 0x7756488d],
     );
     ck_sobol(
         200,
@@ -2818,7 +2818,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0xdc97fe8f, 0x7836fb7e, 0xccbcd4ea, 0x42bba30e],
+        [0xdc97fe8f, 0x7836fb7e, 0x1c4199b6, 0xf4a8a8e0],
     );
     ck_sobol(
         200,
@@ -2826,7 +2826,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x59ab4a21, 0x5eebcbe5, 0x9c6262d1, 0xf3dce445],
+        [0x59ab4a21, 0x5eebcbe5, 0x25c75165, 0xb80ec113],
     );
     ck_sobol(
         200,
@@ -2834,7 +2834,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x35b394c9, 0x07823eb5, 0x9f4a6cf3, 0x6127e86f],
+        [0x35b394c9, 0x07823eb5, 0x3387e4a7, 0x885708e5],
     );
     ck_sobol(
         200,
@@ -2842,7 +2842,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x02f341a3, 0x86b8f563, 0xb6b6cb72, 0xd74d0925],
+        [0x02f341a3, 0x86b8f563, 0x4a0d8310, 0x2bab133a],
     );
     ck_sobol(
         200,
@@ -2850,7 +2850,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0xb3a6650e, 0xea901a75, 0xd24ca0e7, 0x79fdf6c9],
+        [0xb3a6650e, 0xea901a75, 0x98f47a57, 0x0d19c665],
     );
     ck_sobol(
         200,
@@ -2858,7 +2858,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0x2952defc, 0xf85ff155, 0x271999d3, 0x0bc6682e],
+        [0x2952defc, 0xf85ff155, 0x7f08b303, 0x031b5c0c],
     );
     ck_sobol(
         200,
@@ -2866,7 +2866,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0xe4b45c49, 0x7ba1ec13, 0xf82c53fb, 0x1f1a77c8],
+        [0xe4b45c49, 0x7ba1ec13, 0x24b02790, 0x8aadd6c2],
     );
     ck_sobol(
         200,
@@ -2874,7 +2874,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0x5d9696f7, 0x455ce553, 0x377b6cd0, 0xbb8918df],
+        [0x5d9696f7, 0x455ce553, 0x23ab6b62, 0x3c06e1ca],
     );
     ck_sobol(
         200,
@@ -2882,7 +2882,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x558054c7, 0x73290549, 0xa77c7085, 0x58db20ff],
+        [0x558054c7, 0x73290549, 0x4a90751f, 0xe41aa212],
     );
     ck_sobol(
         200,
@@ -2890,7 +2890,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x4de3daf3, 0xef10db38, 0x93283e90, 0x1f414d63],
+        [0x4de3daf3, 0xef10db38, 0xf2c6f066, 0x445771ed],
     );
     ck_sobol(
         200,
@@ -2898,7 +2898,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0xbc3c3077, 0xf3e22fc8, 0xc097e57a, 0x6d9cd7a2],
+        [0xbc3c3077, 0xf3e22fc8, 0xbe083a47, 0x4915e606],
     );
     ck_sobol(
         255,
@@ -2906,7 +2906,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x83a788dd, 0x590a1f2d, 0xea196ecb, 0x6f8b9460],
+        [0x83a788dd, 0x590a1f2d, 0x1a9b92ac, 0x3143bbc6],
     );
     ck_sobol(
         255,
@@ -2914,7 +2914,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xc3d0a75d, 0x7daedd01, 0x5d316091, 0x3b92724c],
+        [0xc3d0a75d, 0x7daedd01, 0x7895e51d, 0xd1b59003],
     );
     ck_sobol(
         255,
@@ -2922,7 +2922,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0x4d3e80f6, 0x53df668f, 0x9169e131, 0xa0934f3c],
+        [0x4d3e80f6, 0x53df668f, 0xeac31583, 0x7ca1ee5e],
     );
     ck_sobol(
         255,
@@ -2930,7 +2930,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x09047180, 0xe6e78028, 0x6de26cef, 0xc292b639],
+        [0x09047180, 0xe6e78028, 0x86882ad9, 0x948238f8],
     );
     ck_sobol(
         255,
@@ -2938,7 +2938,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x3a4b6bf8, 0xb1a0d7b3, 0xac6a1da7, 0xd4a161a2],
+        [0x3a4b6bf8, 0xb1a0d7b3, 0x98b7969c, 0x3ccb8dfe],
     );
     ck_sobol(
         255,
@@ -2946,7 +2946,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0xc4f759c9, 0xd92dc630, 0x042b9198, 0x679aba50],
+        [0xc4f759c9, 0xd92dc630, 0x6c186e27, 0xb4c7e614],
     );
     ck_sobol(
         255,
@@ -2954,7 +2954,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0x56136a0c, 0x158b3404, 0xb7d3a7b0, 0x1f5a5de7],
+        [0x56136a0c, 0x158b3404, 0x4c503b68, 0xfe41d111],
     );
     ck_sobol(
         255,
@@ -2962,7 +2962,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0x90f7de9e, 0xe9f6586a, 0xe4ebfc9b, 0xad065e14],
+        [0x90f7de9e, 0xe9f6586a, 0xdad5ad88, 0xaae4da02],
     );
     ck_sobol(
         255,
@@ -2970,7 +2970,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0x11f405e7, 0x8dd41670, 0x56c580d2, 0x3ed5e4b1],
+        [0x11f405e7, 0x8dd41670, 0x3e3d6cf0, 0x265365dd],
     );
     ck_sobol(
         255,
@@ -2978,7 +2978,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0x292b0d5d, 0x4a436a4e, 0xcaa55f0b, 0xc7329f36],
+        [0x292b0d5d, 0x4a436a4e, 0x9100930d, 0x051f5b65],
     );
     ck_sobol(
         255,
@@ -2986,7 +2986,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x04b1911d, 0xa82e4840, 0xe012f177, 0x4246b564],
+        [0x04b1911d, 0xa82e4840, 0xc2b0a347, 0x91ccfd21],
     );
     ck_sobol(
         255,
@@ -2994,7 +2994,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0xd62494f2, 0xe6985322, 0xcc9b6d6a, 0x5ec8bff9],
+        [0xd62494f2, 0xe6985322, 0x828fcdcd, 0xcdde1c67],
     );
     ck_sobol(
         255,
@@ -3002,7 +3002,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0x5ad8bb5f, 0xab838346, 0x63a845ea, 0xb95063f2],
+        [0x5ad8bb5f, 0xab838346, 0x91ce5127, 0x8e88b4fd],
     );
     ck_sobol(
         255,
@@ -3010,7 +3010,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0x989f669f, 0x0faf257e, 0x41610c9e, 0x8152ba79],
+        [0x989f669f, 0x0faf257e, 0xf177d111, 0xc2bef039],
     );
     ck_sobol(
         255,
@@ -3018,7 +3018,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x005d09c7, 0x6179b86f, 0x26551fa2, 0xf30b1664],
+        [0x005d09c7, 0x6179b86f, 0x1fdcd7e5, 0x9387cd56],
     );
     ck_sobol(
         255,
@@ -3026,7 +3026,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x93d4132d, 0x08837b85, 0x915488e7, 0xc81bbc8a],
+        [0x93d4132d, 0x08837b85, 0x3992b46d, 0x2cbbd4db],
     );
     ck_sobol(
         255,
@@ -3034,7 +3034,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0xd42af507, 0x66a1e60a, 0x25c6e219, 0x1fd89794],
+        [0xd42af507, 0x66a1e60a, 0x8a0cd403, 0x33fbb2c7],
     );
     ck_sobol(
         255,
@@ -3042,7 +3042,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0xa48caa22, 0x9216792d, 0xe4a768be, 0xc9e6c0d2],
+        [0xa48caa22, 0x9216792d, 0x31330cd5, 0xcbb35b38],
     );
     ck_sobol(
         255,
@@ -3050,7 +3050,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0xc94bb358, 0x9aeca021, 0xc9034c02, 0x5471c640],
+        [0xc94bb358, 0x9aeca021, 0x096e151b, 0xe76be30b],
     );
     ck_sobol(
         255,
@@ -3058,7 +3058,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x00724d00, 0x19416b92, 0x46b6d42a, 0x5614d212],
+        [0x00724d00, 0x19416b92, 0xcb1637a5, 0xfc55d1e9],
     );
     ck_sobol(
         255,
@@ -3066,7 +3066,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x41a65187, 0x46e28e90, 0x12d14cd7, 0x89474748],
+        [0x41a65187, 0x46e28e90, 0xf7aa65fd, 0x1814b612],
     );
     ck_sobol(
         255,
@@ -3074,7 +3074,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x93d4132d, 0x08837b85, 0x915488e7, 0xc81bbc8a],
+        [0x93d4132d, 0x08837b85, 0x3992b46d, 0x2cbbd4db],
     );
     ck_sobol(
         255,
@@ -3082,7 +3082,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0xd42af507, 0x66a1e60a, 0x25c6e219, 0x1fd89794],
+        [0xd42af507, 0x66a1e60a, 0x8a0cd403, 0x33fbb2c7],
     );
     ck_sobol(
         255,
@@ -3090,7 +3090,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0xa48caa22, 0x9216792d, 0xe4a768be, 0xc9e6c0d2],
+        [0xa48caa22, 0x9216792d, 0x31330cd5, 0xcbb35b38],
     );
     ck_sobol(
         255,
@@ -3098,7 +3098,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0x4ba23f3a, 0xc159c2fd, 0x1fa9f0b5, 0x4cb505bd],
+        [0x4ba23f3a, 0xc159c2fd, 0xa9e39718, 0xa38eed12],
     );
     ck_sobol(
         255,
@@ -3106,7 +3106,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0x6189c632, 0xdcc3477c, 0x8e8d7f18, 0x9c0ff547],
+        [0x6189c632, 0xdcc3477c, 0x20582802, 0xac340a51],
     );
     ck_sobol(
         255,
@@ -3114,7 +3114,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0x60378b5c, 0x09a499d9, 0x1bbe7099, 0x285cb976],
+        [0x60378b5c, 0x09a499d9, 0xd77dd7e6, 0x2b58e32f],
     );
     ck_sobol(
         255,
@@ -3122,7 +3122,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0xdf30b744, 0x87f938a7, 0x7381e0c9, 0x22071ac3],
+        [0xdf30b744, 0x87f938a7, 0xdf52b768, 0x42f62c5e],
     );
     ck_sobol(
         255,
@@ -3130,7 +3130,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0x1c272b4e, 0x3d109747, 0x4dda62c1, 0x77d31a96],
+        [0x1c272b4e, 0x3d109747, 0xea414739, 0xdd6dad4b],
     );
     ck_sobol(
         255,
@@ -3138,7 +3138,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0xd11c097f, 0x6caa2e03, 0x748d4aab, 0x4b14580b],
+        [0xd11c097f, 0x6caa2e03, 0x83c820e7, 0x89d302c1],
     );
     ck_sobol(
         255,
@@ -3146,7 +3146,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xe67304d3, 0x9e073e9f, 0x1b6f189f, 0xeaa03a17],
+        [0xe67304d3, 0x9e073e9f, 0xb728b4c2, 0x982fa260],
     );
     ck_sobol(
         255,
@@ -3154,7 +3154,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x7f174a32, 0x5a82c9b9, 0xa0f88ab4, 0x601369a8],
+        [0x7f174a32, 0x5a82c9b9, 0xbfefa710, 0xb3cccf7a],
     );
     ck_sobol(
         255,
@@ -3162,7 +3162,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0x12953fa8, 0xe8cf0bb8, 0xe3ce7a13, 0x0e588cc0],
+        [0x12953fa8, 0xe8cf0bb8, 0x2dd4d445, 0xf5b48597],
     );
     ck_sobol(
         255,
@@ -3170,7 +3170,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x9c9361c7, 0xdc0773dc, 0x705698c8, 0xe05e35e4],
+        [0x9c9361c7, 0xdc0773dc, 0xf7266c03, 0x49aa5152],
     );
     ck_sobol(
         255,
@@ -3178,7 +3178,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0x78193aeb, 0xc210c245, 0x33d78765, 0xd09dafef],
+        [0x78193aeb, 0xc210c245, 0x734e568b, 0x23e1f2bb],
     );
     ck_sobol(
         255,
@@ -3186,7 +3186,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0x6780feae, 0x9ced81b6, 0xe21a17be, 0x2181322f],
+        [0x6780feae, 0x9ced81b6, 0x1ce91e10, 0xfdef21dd],
     );
     ck_sobol(
         255,
@@ -3194,7 +3194,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x20d0b2a3, 0xeefe46b5, 0xee1136e8, 0x02cae828],
+        [0x20d0b2a3, 0xeefe46b5, 0xc06e2f39, 0x8fe5d016],
     );
     ck_sobol(
         255,
@@ -3202,7 +3202,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0x77dd688c, 0xbb30ae28, 0xa7ba4929, 0xa5fed17a],
+        [0x77dd688c, 0xbb30ae28, 0xd613a4aa, 0xcf70bfe3],
     );
     ck_sobol(
         255,
@@ -3210,7 +3210,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0xfe951675, 0xfd04106e, 0xf1b12b35, 0xb0ce6487],
+        [0xfe951675, 0xfd04106e, 0x16f5d2f1, 0xdb33ee0d],
     );
     ck_sobol(
         255,
@@ -3218,7 +3218,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0x364305ef, 0xd31e8106, 0xc68053c4, 0xd0942a3f],
+        [0x364305ef, 0xd31e8106, 0x42fc8a66, 0x9583d7f2],
     );
     ck_sobol(
         255,
@@ -3226,7 +3226,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x67799951, 0xa8307c0a, 0xfaa60bf9, 0xa4a26016],
+        [0x67799951, 0xa8307c0a, 0xe389de6c, 0x63b49f65],
     );
     ck_sobol(
         255,
@@ -3234,7 +3234,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0x060edd86, 0x01787f39, 0x772ad6e8, 0x2006cc48],
+        [0x060edd86, 0x01787f39, 0x45e311a4, 0x4fe2913f],
     );
     ck_sobol(
         255,
@@ -3242,7 +3242,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0x017a09be, 0x944a1c3d, 0x25c044f9, 0x9e6c8df3],
+        [0x017a09be, 0x944a1c3d, 0xb1b3acf5, 0xb9153b8a],
     );
     ck_sobol(
         255,
@@ -3250,7 +3250,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0x3b613f7e, 0x403cc732, 0xca19a773, 0x8cf14ebc],
+        [0x3b613f7e, 0x403cc732, 0x381df8e6, 0x028b3bc6],
     );
     ck_sobol(
         255,
@@ -3258,7 +3258,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0x8d56df6b, 0xd47f0ff1, 0xbc009688, 0x4d48b9f8],
+        [0x8d56df6b, 0xd47f0ff1, 0x92934717, 0x86c4840e],
     );
     ck_sobol(
         255,
@@ -3266,7 +3266,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x891b795b, 0x0c9189d7, 0xdc66c19e, 0x32778db1],
+        [0x891b795b, 0x0c9189d7, 0x7a75755b, 0x18185852],
     );
     ck_sobol(
         255,
@@ -3274,7 +3274,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0xa15934f9, 0xb82b8017, 0x0f7c0911, 0x0a4dea57],
+        [0xa15934f9, 0xb82b8017, 0xfb0a75a9, 0x8035cc99],
     );
     ck_sobol(
         255,
@@ -3282,7 +3282,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x343af623, 0x67ab6791, 0x6d4a6fe6, 0xfdb81706],
+        [0x343af623, 0x67ab6791, 0x4089a1c0, 0x2c70e1b3],
     );
     ck_sobol(
         255,
@@ -3290,7 +3290,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x6dc99edd, 0x5f3f3cb1, 0xb0a8319f, 0x413e7a5b],
+        [0x6dc99edd, 0x5f3f3cb1, 0x24d1185b, 0xdc0f7c99],
     );
     ck_sobol(
         255,
@@ -3298,7 +3298,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0x590520f6, 0xf73834e4, 0x4373ba78, 0x7462e105],
+        [0x590520f6, 0xf73834e4, 0x81d273a5, 0x7ce3bb13],
     );
     ck_sobol(
         255,
@@ -3306,7 +3306,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0x7965952f, 0xa2a21ad9, 0xc4a312ee, 0x0b3343df],
+        [0x7965952f, 0xa2a21ad9, 0xfb8b21ed, 0x60e23811],
     );
     ck_sobol(
         255,
@@ -3314,7 +3314,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x9c6c0fa3, 0x2aa2ec9b, 0x73e00122, 0x0c1902aa],
+        [0x9c6c0fa3, 0x2aa2ec9b, 0xed2a70dc, 0x6ea0888a],
     );
     ck_sobol(
         255,
@@ -3322,7 +3322,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0x02d15eb4, 0xcecda1cc, 0x5b6df102, 0x31fe104f],
+        [0x02d15eb4, 0xcecda1cc, 0x0dcb9bc4, 0x5cdb7d96],
     );
     ck_sobol(
         255,
@@ -3330,7 +3330,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x19e4dc73, 0xc3c43372, 0x9e95d824, 0xf9bbea01],
+        [0x19e4dc73, 0xc3c43372, 0x53fce8e8, 0xa9c4064c],
     );
     ck_sobol(
         255,
@@ -3338,7 +3338,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x3d9e9ea1, 0x8107b198, 0xe33a8d10, 0x372c34dc],
+        [0x3d9e9ea1, 0x8107b198, 0x3296cce7, 0x1e98b61b],
     );
     ck_sobol(
         255,
@@ -3346,7 +3346,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x6fd2d2ae, 0x040bac61, 0xb1e441a0, 0xbb3590bc],
+        [0x6fd2d2ae, 0x040bac61, 0xc8746fa9, 0xcf039343],
     );
     ck_sobol(
         255,
@@ -3354,7 +3354,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0x8a1d04b6, 0x18d16025, 0x9f9f973f, 0x3a4b398f],
+        [0x8a1d04b6, 0x18d16025, 0x60c9f35e, 0xa54dd174],
     );
     ck_sobol(
         255,
@@ -3362,7 +3362,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0x3ce824c4, 0xe7cdb4d0, 0x2bab51fe, 0x05ccc836],
+        [0x3ce824c4, 0xe7cdb4d0, 0x711ff2d7, 0x9ac132fd],
     );
     ck_sobol(
         255,
@@ -3370,7 +3370,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x68f09bf7, 0xe86e6e23, 0x7bdb0382, 0x2dc0fd8f],
+        [0x68f09bf7, 0xe86e6e23, 0x83006cbe, 0xa510a162],
     );
     ck_sobol(
         255,
@@ -3378,7 +3378,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0xee14605c, 0x017b2f40, 0x92573750, 0xd7ae27a8],
+        [0xee14605c, 0x017b2f40, 0x12c63e6b, 0x8bbc88ec],
     );
     ck_sobol(
         255,
@@ -3386,7 +3386,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x665b8267, 0x034ef759, 0x3d3689cb, 0x7ac17c42],
+        [0x665b8267, 0x034ef759, 0x9368d2e2, 0x997f6d70],
     );
     ck_sobol(
         255,
@@ -3394,7 +3394,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x4dbce6b9, 0x9e4b24f3, 0x5060c0c4, 0x0b1b9f95],
+        [0x4dbce6b9, 0x9e4b24f3, 0x56aca949, 0xb9ee628d],
     );
     ck_sobol(
         255,
@@ -3402,7 +3402,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x036d52c3, 0x9130bece, 0x84cceb6f, 0x30d01f02],
+        [0x036d52c3, 0x9130bece, 0xae93e49b, 0x8b4040aa],
     );
     ck_sobol(
         256,
@@ -3410,7 +3410,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0xce2ac83d, 0x0cda39ad, 0xdd29e246, 0xc2b63350],
+        [0xce2ac83d, 0x0cda39ad, 0x7768e4cc, 0x5aa0b0ee],
     );
     ck_sobol(
         256,
@@ -3418,7 +3418,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0xdb8c6076, 0xaf246882, 0x33b6e2f9, 0x222cc8ff],
+        [0xdb8c6076, 0xaf246882, 0xaed30ce0, 0x10765cae],
     );
     ck_sobol(
         256,
@@ -3426,7 +3426,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0xfcb75925, 0xe4f1c3f8, 0x6f913c55, 0x1b57bc7c],
+        [0xfcb75925, 0xe4f1c3f8, 0x11dc47b8, 0x9e4752bc],
     );
     ck_sobol(
         256,
@@ -3434,7 +3434,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0x0b33d5ff, 0xdadfe377, 0x1a5b1848, 0x70b0e78a],
+        [0x0b33d5ff, 0xdadfe377, 0x9ed2d249, 0xe676394c],
     );
     ck_sobol(
         256,
@@ -3442,7 +3442,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0x777afe5d, 0x4d98f153, 0xe0db2412, 0xc0d5a492],
+        [0x777afe5d, 0x4d98f153, 0x4b6688ad, 0xeb54089e],
     );
     ck_sobol(
         256,
@@ -3450,7 +3450,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0x1bc1e153, 0x44df5678, 0xe7d6abf5, 0xf064c74b],
+        [0x1bc1e153, 0x44df5678, 0x802fd34f, 0x41589494],
     );
     ck_sobol(
         256,
@@ -3458,7 +3458,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0x7016ca4f, 0x7b88241c, 0x8707b6b0, 0xa019d9d7],
+        [0x7016ca4f, 0x7b88241c, 0x0cf0faec, 0x97525351],
     );
     ck_sobol(
         256,
@@ -3466,7 +3466,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0xb93c9285, 0x10ad5793, 0xb74120b9, 0x86841fbc],
+        [0xb93c9285, 0x10ad5793, 0x2b1eb506, 0x66ac3769],
     );
     ck_sobol(
         256,
@@ -3474,7 +3474,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0x44cbf396, 0xac088b39, 0x3eb78e06, 0x679e94a1],
+        [0x44cbf396, 0xac088b39, 0x4635621b, 0x2945bc0a],
     );
     ck_sobol(
         256,
@@ -3482,7 +3482,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0xb3daac56, 0x26d20f9a, 0xc557de22, 0x9378da05],
+        [0xb3daac56, 0x26d20f9a, 0xe02d24f7, 0x7783eeff],
     );
     ck_sobol(
         256,
@@ -3490,7 +3490,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x0e5bbf43, 0xe6e09267, 0xedf46494, 0x633fb8d8],
+        [0x0e5bbf43, 0xe6e09267, 0x6940d7c8, 0xf40a9121],
     );
     ck_sobol(
         256,
@@ -3498,7 +3498,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x2346d6b4, 0x3fa83f76, 0xdcc75a8e, 0xabeddeda],
+        [0x2346d6b4, 0x3fa83f76, 0xf879c5fb, 0x6fac15da],
     );
     ck_sobol(
         256,
@@ -3506,7 +3506,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xd272c048, 0xfc59c785, 0x8f0a4273, 0x980cd6b0],
+        [0xd272c048, 0xfc59c785, 0x1b64fb24, 0x83d48f84],
     );
     ck_sobol(
         256,
@@ -3514,7 +3514,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0xc65ad3f6, 0x9142c312, 0x21c0978f, 0x60a90214],
+        [0xc65ad3f6, 0x9142c312, 0x25991082, 0x27547bb0],
     );
     ck_sobol(
         256,
@@ -3522,7 +3522,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0x01aa0e5e, 0x85fe4e62, 0xcd5067c0, 0x07300212],
+        [0x01aa0e5e, 0x85fe4e62, 0x174d9815, 0x6d1ff6a4],
     );
     ck_sobol(
         256,
@@ -3530,7 +3530,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x124882f5, 0xd4a22a51, 0xc9f6af6a, 0x85f10965],
+        [0x124882f5, 0xd4a22a51, 0x7069d912, 0xb2bd7284],
     );
     ck_sobol(
         256,
@@ -3538,7 +3538,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x4971fff4, 0xcd4ab6c9, 0x8e2d7516, 0xe7fcd2ae],
+        [0x4971fff4, 0xcd4ab6c9, 0x4b4dab28, 0xc8135677],
     );
     ck_sobol(
         256,
@@ -3546,7 +3546,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x5346a991, 0xc55626fa, 0x57c23280, 0xa240c181],
+        [0x5346a991, 0xc55626fa, 0x2dc3b01a, 0x60fc4f96],
     );
     ck_sobol(
         256,
@@ -3554,7 +3554,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x93da2f37, 0x5f78dfa7, 0x97f70dc4, 0x3394c494],
+        [0x93da2f37, 0x5f78dfa7, 0xda7df9f4, 0x7e825d23],
     );
     ck_sobol(
         256,
@@ -3562,7 +3562,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x6fd439f2, 0xc2a5ecf9, 0x33b0563a, 0x829434cb],
+        [0x6fd439f2, 0xc2a5ecf9, 0xa9877b94, 0x958dd210],
     );
     ck_sobol(
         256,
@@ -3570,7 +3570,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x201e9a68, 0xb537b11a, 0xea798745, 0x130baf92],
+        [0x201e9a68, 0xb537b11a, 0x4ab9c3ae, 0x95260239],
     );
     ck_sobol(
         256,
@@ -3578,7 +3578,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x124882f5, 0xd4a22a51, 0xc9f6af6a, 0x85f10965],
+        [0x124882f5, 0xd4a22a51, 0x7069d912, 0xb2bd7284],
     );
     ck_sobol(
         256,
@@ -3586,7 +3586,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x4971fff4, 0xcd4ab6c9, 0x8e2d7516, 0xe7fcd2ae],
+        [0x4971fff4, 0xcd4ab6c9, 0x4b4dab28, 0xc8135677],
     );
     ck_sobol(
         256,
@@ -3594,7 +3594,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x5346a991, 0xc55626fa, 0x57c23280, 0xa240c181],
+        [0x5346a991, 0xc55626fa, 0x2dc3b01a, 0x60fc4f96],
     );
     ck_sobol(
         256,
@@ -3602,7 +3602,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0xeacce99b, 0x0d1b1abd, 0x2cce059a, 0x1ffffdb0],
+        [0xeacce99b, 0x0d1b1abd, 0xa7347466, 0x3ef097e8],
     );
     ck_sobol(
         256,
@@ -3610,7 +3610,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0x99bfe03b, 0x66d1423b, 0x77a8e849, 0x2cfb9519],
+        [0x99bfe03b, 0x66d1423b, 0xad2f2e99, 0x0b13ab11],
     );
     ck_sobol(
         256,
@@ -3618,7 +3618,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0xe19b3d9f, 0x2a33fd10, 0xf78ff67d, 0x44f95262],
+        [0xe19b3d9f, 0x2a33fd10, 0x8373f301, 0x9cb0af34],
     );
     ck_sobol(
         256,
@@ -3626,7 +3626,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0x7d3ad499, 0x61eccfed, 0x655402be, 0x625aafa1],
+        [0x7d3ad499, 0x61eccfed, 0xddbf5839, 0xdd32c9fd],
     );
     ck_sobol(
         256,
@@ -3634,7 +3634,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0x1d90b5b6, 0x329984c3, 0x07d30611, 0x7e40244e],
+        [0x1d90b5b6, 0x329984c3, 0xf5d4dc3f, 0xb5531c69],
     );
     ck_sobol(
         256,
@@ -3642,7 +3642,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0x8c81a512, 0x80821e39, 0x3aa60d9c, 0xdca9bd5a],
+        [0x8c81a512, 0x80821e39, 0x43b301aa, 0xfbb43c56],
     );
     ck_sobol(
         256,
@@ -3650,7 +3650,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xfdd8b464, 0x23d98959, 0xb97beebc, 0x2d6894ba],
+        [0xfdd8b464, 0x23d98959, 0x049cabdf, 0x456ebdb5],
     );
     ck_sobol(
         256,
@@ -3658,7 +3658,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x25516be0, 0xe22240a9, 0x99710146, 0xbbd142e0],
+        [0x25516be0, 0xe22240a9, 0xd674856c, 0xe8919292],
     );
     ck_sobol(
         256,
@@ -3666,7 +3666,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0xc09965a5, 0x3ae2b038, 0x99371044, 0xed02833d],
+        [0xc09965a5, 0x3ae2b038, 0xf4984253, 0x0c07e490],
     );
     ck_sobol(
         256,
@@ -3674,7 +3674,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x24fc5d2a, 0x9688e7db, 0xa3c8501e, 0xa95e9df2],
+        [0x24fc5d2a, 0x9688e7db, 0xae7a2d58, 0x7bfb8345],
     );
     ck_sobol(
         256,
@@ -3682,7 +3682,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0x7fc5d09a, 0xe3ce0e7b, 0xda1cfcb3, 0xe1bb5457],
+        [0x7fc5d09a, 0xe3ce0e7b, 0x33b2c42b, 0x5b44767b],
     );
     ck_sobol(
         256,
@@ -3690,7 +3690,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0xef941b5d, 0x5e189221, 0x501b6378, 0x3d144885],
+        [0xef941b5d, 0x5e189221, 0x19c775fa, 0x5b7f012e],
     );
     ck_sobol(
         256,
@@ -3698,7 +3698,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x2a8fccba, 0x7c3a912f, 0xd8b9cdfc, 0x43e241b5],
+        [0x2a8fccba, 0x7c3a912f, 0x409fe5a0, 0x0f2a13fc],
     );
     ck_sobol(
         256,
@@ -3706,7 +3706,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0xc38151ed, 0x0f67e53a, 0xb7a7ad36, 0xd2d27d17],
+        [0xc38151ed, 0x0f67e53a, 0x76903955, 0x46137386],
     );
     ck_sobol(
         256,
@@ -3714,7 +3714,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0xa9e025cd, 0xb5bf7f01, 0xffd83e5e, 0x49dbfaf7],
+        [0xa9e025cd, 0xb5bf7f01, 0x94087eee, 0x9a8b9c81],
     );
     ck_sobol(
         256,
@@ -3722,7 +3722,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xc729d8c2, 0x88e2b2ff, 0x3b4b8d1b, 0xe0e8574c],
+        [0xc729d8c2, 0x88e2b2ff, 0x0cc0655c, 0x92a92921],
     );
     ck_sobol(
         256,
@@ -3730,7 +3730,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x4db2a992, 0xac8a7d8e, 0x6e8f0786, 0xe36b7b1d],
+        [0x4db2a992, 0xac8a7d8e, 0xc6751d25, 0x3379fa30],
     );
     ck_sobol(
         256,
@@ -3738,7 +3738,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0xbbf9eeb8, 0x78d6c646, 0x54e32de5, 0x105b803c],
+        [0xbbf9eeb8, 0x78d6c646, 0x47ba72e6, 0x171c659c],
     );
     ck_sobol(
         256,
@@ -3746,7 +3746,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0xf8a7f4d8, 0xfda514aa, 0x93b09563, 0x0c8d12af],
+        [0xf8a7f4d8, 0xfda514aa, 0x5780ea29, 0x54936558],
     );
     ck_sobol(
         256,
@@ -3754,7 +3754,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0xddfa8748, 0x3d960a41, 0x9c8e8ce6, 0xfb5ba37b],
+        [0xddfa8748, 0x3d960a41, 0x65ddf151, 0xcfde39a4],
     );
     ck_sobol(
         256,
@@ -3762,7 +3762,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0xfc430b3f, 0x0cb32df0, 0x7c515e1d, 0xc2724e73],
+        [0xfc430b3f, 0x0cb32df0, 0x9e61ae3f, 0x927dd95e],
     );
     ck_sobol(
         256,
@@ -3770,7 +3770,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x6dc6ab6f, 0x282c755f, 0x5ca6674b, 0xc3aa5b57],
+        [0x6dc6ab6f, 0x282c755f, 0x9b284f21, 0xac3f690f],
     );
     ck_sobol(
         256,
@@ -3778,7 +3778,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x6649cd9d, 0xe7364a61, 0x00fcbc76, 0x2905a832],
+        [0x6649cd9d, 0xe7364a61, 0xea79548b, 0x1926866d],
     );
     ck_sobol(
         256,
@@ -3786,7 +3786,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0x4e43053e, 0xdae97214, 0xa2561e9e, 0x0730f1d3],
+        [0x4e43053e, 0xdae97214, 0x430489a4, 0x7da01d00],
     );
     ck_sobol(
         256,
@@ -3794,7 +3794,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0x9cf18714, 0x63209f21, 0x3c7b8c15, 0x82274aff],
+        [0x9cf18714, 0x63209f21, 0xdb286253, 0x2e4a1e47],
     );
     ck_sobol(
         256,
@@ -3802,7 +3802,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0x2f30c664, 0x7dd78bbc, 0xdd4f8d09, 0xbd56a9f7],
+        [0x2f30c664, 0x7dd78bbc, 0x29f55eae, 0x73f70cfa],
     );
     ck_sobol(
         256,
@@ -3810,7 +3810,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0x1bcfcb58, 0x7e9fffa4, 0x091806f5, 0x934440ff],
+        [0x1bcfcb58, 0x7e9fffa4, 0xd22fc059, 0x06d5c61d],
     );
     ck_sobol(
         256,
@@ -3818,7 +3818,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x41f90260, 0x374894e3, 0x3a7c8e50, 0x5a8a30d4],
+        [0x41f90260, 0x374894e3, 0xc0a8ae48, 0x07fffe73],
     );
     ck_sobol(
         256,
@@ -3826,7 +3826,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0xc483c97a, 0xc5d675c1, 0xa48761c0, 0x42193533],
+        [0xc483c97a, 0xc5d675c1, 0xc8349514, 0xd96fdf9c],
     );
     ck_sobol(
         256,
@@ -3834,7 +3834,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x1edd7d27, 0xd0301cbb, 0x6d0e6df1, 0xf087a6b6],
+        [0x1edd7d27, 0xd0301cbb, 0x2095cd28, 0x956714d5],
     );
     ck_sobol(
         256,
@@ -3842,7 +3842,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0xd06064dc, 0xad5ddc28, 0x76849bea, 0x937fed70],
+        [0xd06064dc, 0xad5ddc28, 0x5abee87b, 0x86ef72b7],
     );
     ck_sobol(
         256,
@@ -3850,7 +3850,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x4f75c8b9, 0x6711d4b2, 0x8e98e5be, 0x1ea52451],
+        [0x4f75c8b9, 0x6711d4b2, 0x923a3a60, 0xd3bc9968],
     );
     ck_sobol(
         256,
@@ -3858,7 +3858,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0xfc32c129, 0x14b3e79f, 0x35298ab2, 0x7b16a5bc],
+        [0xfc32c129, 0x14b3e79f, 0x2d923275, 0x2f904a08],
     );
     ck_sobol(
         256,
@@ -3866,7 +3866,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0xdba6bb73, 0xd90396c0, 0x83f84444, 0xc1152710],
+        [0xdba6bb73, 0xd90396c0, 0xd2913579, 0xe205968d],
     );
     ck_sobol(
         256,
@@ -3874,7 +3874,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x6b865bbb, 0x9082b9df, 0x11b48eca, 0x45d9cc1e],
+        [0x6b865bbb, 0x9082b9df, 0x9973f0be, 0x395ab92d],
     );
     ck_sobol(
         256,
@@ -3882,7 +3882,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0x2af6e27c, 0x98ad4b04, 0x46fe00e0, 0x8ceedb3c],
+        [0x2af6e27c, 0x98ad4b04, 0xc7e6c02d, 0xe6ad6a35],
     );
     ck_sobol(
         256,
@@ -3890,7 +3890,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0x17a210e7, 0x4fae403a, 0x7c811dfa, 0x43852e3c],
+        [0x17a210e7, 0x4fae403a, 0x5c4cdb37, 0xa6139c77],
     );
     ck_sobol(
         256,
@@ -3898,7 +3898,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0x6910139b, 0xfe4567a1, 0x506b2271, 0x15931e41],
+        [0x6910139b, 0xfe4567a1, 0x33d1372d, 0xea29c88a],
     );
     ck_sobol(
         256,
@@ -3906,7 +3906,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x3ce4a687, 0xf7e392a3, 0x46b6251b, 0xd0b0464d],
+        [0x3ce4a687, 0xf7e392a3, 0xc4f76fcb, 0xea7f8453],
     );
     ck_sobol(
         1000,
@@ -3914,7 +3914,7 @@ fn golden_sobol() {
         0,
         0,
         0,
-        [0x6a6ba789, 0xdce17aca, 0x00b64c9c, 0xfe0d70d8],
+        [0x6a6ba789, 0xdce17aca, 0xe2f1721e, 0x3bca7b0a],
     );
     ck_sobol(
         1000,
@@ -3922,7 +3922,7 @@ fn golden_sobol() {
         0,
         0,
         1,
-        [0x05cf59fe, 0xd175709a, 0x763c203c, 0x7c430196],
+        [0x05cf59fe, 0xd175709a, 0xc6a2eb6b, 0x1d534eeb],
     );
     ck_sobol(
         1000,
@@ -3930,7 +3930,7 @@ fn golden_sobol() {
         0,
         0,
         13,
-        [0x050213fc, 0x0635ae10, 0x29d480c5, 0x232adea4],
+        [0x050213fc, 0x0635ae10, 0x25e92920, 0x419a5ac7],
     );
     ck_sobol(
         1000,
@@ -3938,7 +3938,7 @@ fn golden_sobol() {
         0,
         1,
         0,
-        [0xc80998ed, 0x2b58979c, 0xfc6c8887, 0x253c73cf],
+        [0xc80998ed, 0x2b58979c, 0x1bf0785b, 0xee0302df],
     );
     ck_sobol(
         1000,
@@ -3946,7 +3946,7 @@ fn golden_sobol() {
         0,
         1,
         1,
-        [0xca07a035, 0x636f2d37, 0xa90dbfba, 0xf31a95b1],
+        [0xca07a035, 0x636f2d37, 0x3d8f49a1, 0x95791c68],
     );
     ck_sobol(
         1000,
@@ -3954,7 +3954,7 @@ fn golden_sobol() {
         0,
         1,
         13,
-        [0xeff88c7a, 0xeb7c9d25, 0xe7d65b5a, 0xc89f65de],
+        [0xeff88c7a, 0xeb7c9d25, 0xe89cc503, 0x9e42507e],
     );
     ck_sobol(
         1000,
@@ -3962,7 +3962,7 @@ fn golden_sobol() {
         0,
         3,
         0,
-        [0xb5a1df6e, 0xb09c9c5e, 0x6866d7e6, 0xa5a1b54f],
+        [0xb5a1df6e, 0xb09c9c5e, 0xbab8df9e, 0xbb6c7ce7],
     );
     ck_sobol(
         1000,
@@ -3970,7 +3970,7 @@ fn golden_sobol() {
         0,
         3,
         1,
-        [0x8cd63c76, 0x97b55b2b, 0x107612ef, 0x12525a94],
+        [0x8cd63c76, 0x97b55b2b, 0x9234d8d7, 0xfe6b397e],
     );
     ck_sobol(
         1000,
@@ -3978,7 +3978,7 @@ fn golden_sobol() {
         0,
         3,
         13,
-        [0xbf145ae3, 0x64fb1f60, 0x54859655, 0x6c7a6068],
+        [0xbf145ae3, 0x64fb1f60, 0x5d255c6a, 0xf15ba100],
     );
     ck_sobol(
         1000,
@@ -3986,7 +3986,7 @@ fn golden_sobol() {
         0,
         42,
         0,
-        [0xfeec552c, 0x8c417fc7, 0x7b590b1f, 0xdf46cc43],
+        [0xfeec552c, 0x8c417fc7, 0x31a5589c, 0x91d9e03f],
     );
     ck_sobol(
         1000,
@@ -3994,7 +3994,7 @@ fn golden_sobol() {
         0,
         42,
         1,
-        [0x75d97de3, 0xab4f9fc0, 0xc5c84e8e, 0x6f5d6212],
+        [0x75d97de3, 0xab4f9fc0, 0xb0d61f01, 0x63ef5eef],
     );
     ck_sobol(
         1000,
@@ -4002,7 +4002,7 @@ fn golden_sobol() {
         0,
         42,
         13,
-        [0x4838f28d, 0x78fbdac3, 0x77a74c3f, 0xb709f300],
+        [0x4838f28d, 0x78fbdac3, 0xb95c3b6c, 0xd01b71a4],
     );
     ck_sobol(
         1000,
@@ -4010,7 +4010,7 @@ fn golden_sobol() {
         0,
         65535,
         0,
-        [0xffc1c643, 0x1c87f749, 0x21b09caf, 0x8ee98bfc],
+        [0xffc1c643, 0x1c87f749, 0x27b64fef, 0x3498508e],
     );
     ck_sobol(
         1000,
@@ -4018,7 +4018,7 @@ fn golden_sobol() {
         0,
         65535,
         1,
-        [0x42dd80bb, 0xbc5d18b5, 0x1804ed8d, 0x23353091],
+        [0x42dd80bb, 0xbc5d18b5, 0xa66cd4ca, 0xe0bf8f2b],
     );
     ck_sobol(
         1000,
@@ -4026,7 +4026,7 @@ fn golden_sobol() {
         0,
         65535,
         13,
-        [0xf7240289, 0xe656284b, 0xd70d5d1d, 0x3bd2af91],
+        [0xf7240289, 0xe656284b, 0x308f703c, 0x8d07d29d],
     );
     ck_sobol(
         1000,
@@ -4034,7 +4034,7 @@ fn golden_sobol() {
         0,
         65536,
         0,
-        [0x81d0dc62, 0x0f7c9247, 0x538447b8, 0x0f30646f],
+        [0x81d0dc62, 0x0f7c9247, 0xbb11cf4f, 0x27c63479],
     );
     ck_sobol(
         1000,
@@ -4042,7 +4042,7 @@ fn golden_sobol() {
         0,
         65536,
         1,
-        [0x00cd8d83, 0xc2cf0087, 0x0f3a0b7c, 0x80d13544],
+        [0x00cd8d83, 0xc2cf0087, 0x324427c9, 0xf4b8ca25],
     );
     ck_sobol(
         1000,
@@ -4050,7 +4050,7 @@ fn golden_sobol() {
         0,
         65536,
         13,
-        [0x9d748161, 0xf6c223ad, 0x61ba9b8b, 0x47e574af],
+        [0x9d748161, 0xf6c223ad, 0xbcfb7326, 0xadeb287e],
     );
     ck_sobol(
         1000,
@@ -4058,7 +4058,7 @@ fn golden_sobol() {
         0,
         70000,
         0,
-        [0x25650658, 0x2b1ff318, 0x1e1a153d, 0xe9c9a9f5],
+        [0x25650658, 0x2b1ff318, 0x25784cca, 0xe45d08fe],
     );
     ck_sobol(
         1000,
@@ -4066,7 +4066,7 @@ fn golden_sobol() {
         0,
         70000,
         1,
-        [0x92603fdf, 0x887642ed, 0xf1e17d9c, 0x5c4ee879],
+        [0x92603fdf, 0x887642ed, 0x9086ab58, 0xa69913dc],
     );
     ck_sobol(
         1000,
@@ -4074,7 +4074,7 @@ fn golden_sobol() {
         0,
         70000,
         13,
-        [0x54f17170, 0x0f191d3d, 0x61ed90ad, 0xb126afee],
+        [0x54f17170, 0x0f191d3d, 0xb6d161be, 0xa1959f98],
     );
     ck_sobol(
         1000,
@@ -4082,7 +4082,7 @@ fn golden_sobol() {
         1,
         0,
         0,
-        [0x81d0dc62, 0x0f7c9247, 0x538447b8, 0x0f30646f],
+        [0x81d0dc62, 0x0f7c9247, 0xbb11cf4f, 0x27c63479],
     );
     ck_sobol(
         1000,
@@ -4090,7 +4090,7 @@ fn golden_sobol() {
         1,
         0,
         1,
-        [0x00cd8d83, 0xc2cf0087, 0x0f3a0b7c, 0x80d13544],
+        [0x00cd8d83, 0xc2cf0087, 0x324427c9, 0xf4b8ca25],
     );
     ck_sobol(
         1000,
@@ -4098,7 +4098,7 @@ fn golden_sobol() {
         1,
         0,
         13,
-        [0x9d748161, 0xf6c223ad, 0x61ba9b8b, 0x47e574af],
+        [0x9d748161, 0xf6c223ad, 0xbcfb7326, 0xadeb287e],
     );
     ck_sobol(
         1000,
@@ -4106,7 +4106,7 @@ fn golden_sobol() {
         1,
         1,
         0,
-        [0x45967902, 0xf045375f, 0xd43cd944, 0x93cc3cae],
+        [0x45967902, 0xf045375f, 0x2e425e39, 0xae9f69c7],
     );
     ck_sobol(
         1000,
@@ -4114,7 +4114,7 @@ fn golden_sobol() {
         1,
         1,
         1,
-        [0xf6331450, 0x0dc948a3, 0x9c7ce0b0, 0x5f252cc5],
+        [0xf6331450, 0x0dc948a3, 0xbabc4fdc, 0x1d88943f],
     );
     ck_sobol(
         1000,
@@ -4122,7 +4122,7 @@ fn golden_sobol() {
         1,
         1,
         13,
-        [0x1336033d, 0x1dbfe03e, 0xc290956f, 0xa972c3a2],
+        [0x1336033d, 0x1dbfe03e, 0x0e45b5af, 0x40c792b7],
     );
     ck_sobol(
         1000,
@@ -4130,7 +4130,7 @@ fn golden_sobol() {
         1,
         3,
         0,
-        [0x1bec48b3, 0x77d40321, 0x08038c05, 0x69d20fb4],
+        [0x1bec48b3, 0x77d40321, 0xeba60e18, 0xd4f4536a],
     );
     ck_sobol(
         1000,
@@ -4138,7 +4138,7 @@ fn golden_sobol() {
         1,
         3,
         1,
-        [0x8f2ec250, 0xbcab09cd, 0x58561ecc, 0xcac77587],
+        [0x8f2ec250, 0xbcab09cd, 0x67f51e60, 0x66c93a3a],
     );
     ck_sobol(
         1000,
@@ -4146,7 +4146,7 @@ fn golden_sobol() {
         1,
         3,
         13,
-        [0xf1fef261, 0x7d47bb82, 0x89a97a2f, 0xea3d3fc6],
+        [0xf1fef261, 0x7d47bb82, 0x53f359f7, 0xec6df324],
     );
     ck_sobol(
         1000,
@@ -4154,7 +4154,7 @@ fn golden_sobol() {
         1,
         42,
         0,
-        [0xa4ef2593, 0xe12486b9, 0xfdaeb3fb, 0x0961b290],
+        [0xa4ef2593, 0xe12486b9, 0xaa18fdc1, 0x8f62a674],
     );
     ck_sobol(
         1000,
@@ -4162,7 +4162,7 @@ fn golden_sobol() {
         1,
         42,
         1,
-        [0x2cd9ffad, 0x161be73c, 0xbeaa4dc5, 0x853e12a8],
+        [0x2cd9ffad, 0x161be73c, 0x26a3b114, 0x38724966],
     );
     ck_sobol(
         1000,
@@ -4170,7 +4170,7 @@ fn golden_sobol() {
         1,
         42,
         13,
-        [0x37e87ec8, 0x99d26709, 0x290b4ffb, 0x624ecec6],
+        [0x37e87ec8, 0x99d26709, 0x2211669d, 0x0d835736],
     );
     ck_sobol(
         1000,
@@ -4178,7 +4178,7 @@ fn golden_sobol() {
         1,
         65535,
         0,
-        [0x314453d4, 0x1df42f12, 0xa0b7a147, 0x1978d68a],
+        [0x314453d4, 0x1df42f12, 0xca84df2f, 0x73389594],
     );
     ck_sobol(
         1000,
@@ -4186,7 +4186,7 @@ fn golden_sobol() {
         1,
         65535,
         1,
-        [0x6e6bedc9, 0xf07bc532, 0x26c3f1e6, 0x4d959914],
+        [0x6e6bedc9, 0xf07bc532, 0x603182c5, 0xfe7a643a],
     );
     ck_sobol(
         1000,
@@ -4194,7 +4194,7 @@ fn golden_sobol() {
         1,
         65535,
         13,
-        [0xba943930, 0x33a2804b, 0xd00a1ad5, 0xed85447b],
+        [0xba943930, 0x33a2804b, 0xdabb26dc, 0x46b3e270],
     );
     ck_sobol(
         1000,
@@ -4202,7 +4202,7 @@ fn golden_sobol() {
         1,
         65536,
         0,
-        [0x72c87ac4, 0x5ddf6ca8, 0x49547b8f, 0x9a3964c4],
+        [0x72c87ac4, 0x5ddf6ca8, 0x89041fc4, 0x40e436d4],
     );
     ck_sobol(
         1000,
@@ -4210,7 +4210,7 @@ fn golden_sobol() {
         1,
         65536,
         1,
-        [0xda6b1cd3, 0x79d4f2f1, 0x63b09c8a, 0x424196cb],
+        [0xda6b1cd3, 0x79d4f2f1, 0x91d7be29, 0xb427cf73],
     );
     ck_sobol(
         1000,
@@ -4218,7 +4218,7 @@ fn golden_sobol() {
         1,
         65536,
         13,
-        [0x1fd22b0c, 0xc47cfb32, 0x90c34f71, 0x5cb9cbc6],
+        [0x1fd22b0c, 0xc47cfb32, 0x21376ce9, 0x54eb35b3],
     );
     ck_sobol(
         1000,
@@ -4226,7 +4226,7 @@ fn golden_sobol() {
         1,
         70000,
         0,
-        [0xdda5083c, 0x18348ab0, 0x4fc2b420, 0x47565518],
+        [0xdda5083c, 0x18348ab0, 0xb237781e, 0x60582574],
     );
     ck_sobol(
         1000,
@@ -4234,7 +4234,7 @@ fn golden_sobol() {
         1,
         70000,
         1,
-        [0x66856892, 0x3c16a8cc, 0xf234a865, 0x6b116302],
+        [0x66856892, 0x3c16a8cc, 0x02db6d2d, 0xcc6e188e],
     );
     ck_sobol(
         1000,
@@ -4242,7 +4242,7 @@ fn golden_sobol() {
         1,
         70000,
         13,
-        [0x5d1e76e2, 0x55f2fc28, 0x2a744824, 0x143b7ce0],
+        [0x5d1e76e2, 0x55f2fc28, 0xf26c1dcc, 0xa2759d6e],
     );
     ck_sobol(
         1000,
@@ -4250,7 +4250,7 @@ fn golden_sobol() {
         7,
         0,
         0,
-        [0x0412d3b0, 0x0b76111f, 0x40f388f1, 0x9ff04eaf],
+        [0x0412d3b0, 0x0b76111f, 0x83012802, 0x793be149],
     );
     ck_sobol(
         1000,
@@ -4258,7 +4258,7 @@ fn golden_sobol() {
         7,
         0,
         1,
-        [0x98480110, 0x8a18a692, 0x0655735d, 0x7a990201],
+        [0x98480110, 0x8a18a692, 0x55dd251e, 0x99ae4075],
     );
     ck_sobol(
         1000,
@@ -4266,7 +4266,7 @@ fn golden_sobol() {
         7,
         0,
         13,
-        [0x445c9a02, 0x47861524, 0x4098174e, 0x4cb5c05a],
+        [0x445c9a02, 0x47861524, 0x0736881e, 0x4954853d],
     );
     ck_sobol(
         1000,
@@ -4274,7 +4274,7 @@ fn golden_sobol() {
         7,
         1,
         0,
-        [0x90c1278a, 0xc746a3a9, 0xb8fed4a1, 0x392d5abe],
+        [0x90c1278a, 0xc746a3a9, 0x6954abb0, 0xc5efd245],
     );
     ck_sobol(
         1000,
@@ -4282,7 +4282,7 @@ fn golden_sobol() {
         7,
         1,
         1,
-        [0x7dce252b, 0x0116c2b0, 0x9956f626, 0xb4d42459],
+        [0x7dce252b, 0x0116c2b0, 0xd1ed5e1c, 0x52e77dcd],
     );
     ck_sobol(
         1000,
@@ -4290,7 +4290,7 @@ fn golden_sobol() {
         7,
         1,
         13,
-        [0xa98ec518, 0x8a927031, 0xb8eb48f6, 0xcbe194c7],
+        [0xa98ec518, 0x8a927031, 0xc269d4f6, 0xcf27ef12],
     );
     ck_sobol(
         1000,
@@ -4298,7 +4298,7 @@ fn golden_sobol() {
         7,
         3,
         0,
-        [0xc7e01284, 0x6aeb7f1e, 0x284d90b9, 0xc62edaf8],
+        [0xc7e01284, 0x6aeb7f1e, 0xd9f8da08, 0x9c5f3d70],
     );
     ck_sobol(
         1000,
@@ -4306,7 +4306,7 @@ fn golden_sobol() {
         7,
         3,
         1,
-        [0xee3f0060, 0x426fee45, 0xe6332dec, 0xea225d25],
+        [0xee3f0060, 0x426fee45, 0xbc8f29b8, 0xc1057e03],
     );
     ck_sobol(
         1000,
@@ -4314,7 +4314,7 @@ fn golden_sobol() {
         7,
         3,
         13,
-        [0xf157e979, 0x35251c9e, 0x2e73b196, 0x0a1bfd29],
+        [0xf157e979, 0x35251c9e, 0x7fbc90e3, 0x80eececd],
     );
     ck_sobol(
         1000,
@@ -4322,7 +4322,7 @@ fn golden_sobol() {
         7,
         42,
         0,
-        [0x10fdb6a8, 0xedf7c120, 0x728d2321, 0x6fa51baf],
+        [0x10fdb6a8, 0xedf7c120, 0x4d89c807, 0x6da67e0d],
     );
     ck_sobol(
         1000,
@@ -4330,7 +4330,7 @@ fn golden_sobol() {
         7,
         42,
         1,
-        [0x26613d0d, 0x7836d9ab, 0x50d16673, 0xa36eae6f],
+        [0x26613d0d, 0x7836d9ab, 0x803e31a3, 0x35c4969d],
     );
     ck_sobol(
         1000,
@@ -4338,7 +4338,7 @@ fn golden_sobol() {
         7,
         42,
         13,
-        [0x2cc2b01b, 0x8f2ff970, 0x1110bc0b, 0x0647798d],
+        [0x2cc2b01b, 0x8f2ff970, 0x0192ade5, 0x8fb764ad],
     );
     ck_sobol(
         1000,
@@ -4346,7 +4346,7 @@ fn golden_sobol() {
         7,
         65535,
         0,
-        [0x8df9e767, 0x399de473, 0x15768e58, 0x0b7608a9],
+        [0x8df9e767, 0x399de473, 0xb856cf2b, 0xbeb9611a],
     );
     ck_sobol(
         1000,
@@ -4354,7 +4354,7 @@ fn golden_sobol() {
         7,
         65535,
         1,
-        [0x5351b446, 0x8cd57307, 0xa93ff0f4, 0x1f7eb868],
+        [0x5351b446, 0x8cd57307, 0x814a313f, 0x4b77b411],
     );
     ck_sobol(
         1000,
@@ -4362,7 +4362,7 @@ fn golden_sobol() {
         7,
         65535,
         13,
-        [0xc76c5bf3, 0xd3a80b20, 0xa056ac49, 0x68320df6],
+        [0xc76c5bf3, 0xd3a80b20, 0x5a50961b, 0xd9fb6645],
     );
     ck_sobol(
         1000,
@@ -4370,7 +4370,7 @@ fn golden_sobol() {
         7,
         65536,
         0,
-        [0xbefa76b4, 0xc311896e, 0x7caf7fd3, 0x8744b741],
+        [0xbefa76b4, 0xc311896e, 0x6335de44, 0x04b53791],
     );
     ck_sobol(
         1000,
@@ -4378,7 +4378,7 @@ fn golden_sobol() {
         7,
         65536,
         1,
-        [0x4f97f28b, 0x7b8f5fa4, 0x14ed9961, 0x30abefd0],
+        [0x4f97f28b, 0x7b8f5fa4, 0x6cf105bd, 0xefeef871],
     );
     ck_sobol(
         1000,
@@ -4386,7 +4386,7 @@ fn golden_sobol() {
         7,
         65536,
         13,
-        [0xe59d7dae, 0x78c870ec, 0x22f1f6d0, 0xee28c071],
+        [0xe59d7dae, 0x78c870ec, 0x63f5c80f, 0x882b3d44],
     );
     ck_sobol(
         1000,
@@ -4394,7 +4394,7 @@ fn golden_sobol() {
         7,
         70000,
         0,
-        [0xda919ae8, 0xdab957cf, 0xb86218bd, 0xb201d46f],
+        [0xda919ae8, 0xdab957cf, 0xda98bbf3, 0xb87d8306],
     );
     ck_sobol(
         1000,
@@ -4402,7 +4402,7 @@ fn golden_sobol() {
         7,
         70000,
         1,
-        [0xc83b2aba, 0x17fe18b0, 0xc0ada964, 0x89030bb7],
+        [0xc83b2aba, 0x17fe18b0, 0x5cfd6bf9, 0xbc92af60],
     );
     ck_sobol(
         1000,
@@ -4410,7 +4410,7 @@ fn golden_sobol() {
         7,
         70000,
         13,
-        [0x4fdcfdbb, 0x764a4bdb, 0x56a73a91, 0x12e45dd6],
+        [0x4fdcfdbb, 0x764a4bdb, 0xe72ba05d, 0x782353f2],
     );
 }
 
@@ -12494,7 +12494,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x7cb05a2e, 0xe5bd87cc, 0xca7ccc27, 0x9e81feda],
+        [0x7cb05a2e, 0xe5bd87cc, 0x8b63265d, 0x44541524],
     );
     ck_sobolbn(
         0,
@@ -12502,7 +12502,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         0,
@@ -12510,7 +12510,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x9d4c55a2, 0xe6f900df, 0xef2b2ced, 0xa37a5b12],
+        [0x9d4c55a2, 0xe6f900df, 0xe251a78a, 0x31a87bbc],
     );
     ck_sobolbn(
         0,
@@ -12518,7 +12518,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0x9c45d872, 0x2160c74c, 0x38377cdf, 0x5b02b331],
+        [0x9c45d872, 0x2160c74c, 0x4541a5f6, 0x8f7695c4],
     );
     ck_sobolbn(
         0,
@@ -12526,7 +12526,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0xb753be70, 0x21ff3297, 0x0dac5004, 0xe0b4a1fa],
+        [0xb753be70, 0x21ff3297, 0x92a48f2c, 0x68b6f1b0],
     );
     ck_sobolbn(
         0,
@@ -12534,7 +12534,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0x539a4648, 0x4bc685ae, 0x67a67fb5, 0x2984729b],
+        [0x539a4648, 0x4bc685ae, 0x687f69c4, 0xbabd7a76],
     );
     ck_sobolbn(
         0,
@@ -12542,7 +12542,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x023a77ff, 0x5fe6ab40, 0x670f9f72, 0x228bb0b4],
+        [0x023a77ff, 0x5fe6ab40, 0x1b3a39bd, 0x34d11930],
     );
     ck_sobolbn(
         0,
@@ -12550,7 +12550,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0xe4f20f5f, 0xb7fce96d, 0x8e96f43d, 0x53f69afa],
+        [0xe4f20f5f, 0xb7fce96d, 0x11c9a108, 0x346a5e93],
     );
     ck_sobolbn(
         0,
@@ -12558,7 +12558,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x0caa674f, 0xb620638d, 0x8a8b146e, 0xe9ef17a8],
+        [0x0caa674f, 0xb620638d, 0x843a0b95, 0xf67673a7],
     );
     ck_sobolbn(
         0,
@@ -12566,7 +12566,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x6d1c97ce, 0xc1e14397, 0x6de985d6, 0xade4d42b],
+        [0x6d1c97ce, 0xc1e14397, 0x34a9e8e1, 0x2aa5ea68],
     );
     ck_sobolbn(
         0,
@@ -12574,7 +12574,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x9fa2a726, 0x999e35d1, 0x9d0c3b19, 0x322dcbdd],
+        [0x9fa2a726, 0x999e35d1, 0xb66559d1, 0x0bcc04e4],
     );
     ck_sobolbn(
         0,
@@ -12582,7 +12582,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0x1a6f594f, 0x94e9e95b, 0x688bd08d, 0xd6e954ff],
+        [0x1a6f594f, 0x94e9e95b, 0x4ee41589, 0xad5ab01d],
     );
     ck_sobolbn(
         0,
@@ -12590,7 +12590,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0x07c45de0, 0x06c2dc78, 0xd0b56fcc, 0xa55fdda4],
+        [0x07c45de0, 0x06c2dc78, 0x32e10770, 0x57923aa5],
     );
     ck_sobolbn(
         0,
@@ -12598,7 +12598,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0x6ad90c31, 0xe5797841, 0x2e508cf8, 0x5bb86f83],
+        [0x6ad90c31, 0xe5797841, 0x635134ae, 0x4fbed86c],
     );
     ck_sobolbn(
         0,
@@ -12606,7 +12606,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0xfa54e5f1, 0x449fba97, 0x2e5ea728, 0x9b157400],
+        [0xfa54e5f1, 0x449fba97, 0x886165ae, 0x5e467ef5],
     );
     ck_sobolbn(
         0,
@@ -12614,7 +12614,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         0,
@@ -12622,7 +12622,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         0,
@@ -12630,7 +12630,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0xdd671d82, 0x4e18545c, 0xab53e66f, 0xd5a76cf5],
+        [0xdd671d82, 0x4e18545c, 0xcb4f9327, 0x8c46fb57],
     );
     ck_sobolbn(
         0,
@@ -12638,7 +12638,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0xfd9ad3cd, 0x00b7d040, 0xf34519c8, 0x889a5cfc],
+        [0xfd9ad3cd, 0x00b7d040, 0xb4f4abf7, 0xb166f3b1],
     );
     ck_sobolbn(
         0,
@@ -12646,7 +12646,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0x607d9449, 0x7839b2f1, 0x1bba8e5d, 0x6ded6593],
+        [0x607d9449, 0x7839b2f1, 0x4e6aac25, 0x30a8b2ac],
     );
     ck_sobolbn(
         0,
@@ -12654,7 +12654,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xb8ad83ce, 0xfd657866, 0x8c3cb721, 0xff159e1f],
+        [0xb8ad83ce, 0xfd657866, 0x8b81d7de, 0x82df0735],
     );
     ck_sobolbn(
         0,
@@ -12662,7 +12662,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         0,
@@ -12670,7 +12670,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         0,
@@ -12678,7 +12678,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0xdd671d82, 0x4e18545c, 0xab53e66f, 0xd5a76cf5],
+        [0xdd671d82, 0x4e18545c, 0xcb4f9327, 0x8c46fb57],
     );
     ck_sobolbn(
         0,
@@ -12686,7 +12686,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0xb753be70, 0x21ff3297, 0x0dac5004, 0xe0b4a1fa],
+        [0xb753be70, 0x21ff3297, 0x92a48f2c, 0x68b6f1b0],
     );
     ck_sobolbn(
         0,
@@ -12694,7 +12694,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x1cf81dd4, 0x0d997ef0, 0x31d93e71, 0x73737374],
+        [0x1cf81dd4, 0x0d997ef0, 0x00420454, 0x09891421],
     );
     ck_sobolbn(
         0,
@@ -12702,7 +12702,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x0c0e3a37, 0x9a12615c, 0x7152ff0b, 0x0b94d7da],
+        [0x0c0e3a37, 0x9a12615c, 0x292487bd, 0x64fe0762],
     );
     ck_sobolbn(
         0,
@@ -12710,7 +12710,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0xe4f20f5f, 0xb7fce96d, 0x8e96f43d, 0x53f69afa],
+        [0xe4f20f5f, 0xb7fce96d, 0x11c9a108, 0x346a5e93],
     );
     ck_sobolbn(
         0,
@@ -12718,7 +12718,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x8eea024b, 0x7dbb13a5, 0x6940eeae, 0x15c4694b],
+        [0x8eea024b, 0x7dbb13a5, 0x5afc9f4f, 0xbc91ad98],
     );
     ck_sobolbn(
         0,
@@ -12726,7 +12726,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x7ecab9e4, 0x24d9dd9d, 0xc7e55e6b, 0xa08df414],
+        [0x7ecab9e4, 0x24d9dd9d, 0xa22c3046, 0x394938d6],
     );
     ck_sobolbn(
         0,
@@ -12734,7 +12734,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x9fa2a726, 0x999e35d1, 0x9d0c3b19, 0x322dcbdd],
+        [0x9fa2a726, 0x999e35d1, 0xb66559d1, 0x0bcc04e4],
     );
     ck_sobolbn(
         0,
@@ -12742,7 +12742,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x7a9e8e1b, 0x5a0a8f68, 0xdcdeaf96, 0x60cbcdde],
+        [0x7a9e8e1b, 0x5a0a8f68, 0x799eef6b, 0x7809eb1c],
     );
     ck_sobolbn(
         0,
@@ -12750,7 +12750,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0xf11e14dd, 0xfb7e3e0d, 0x35185d5e, 0x24d60588],
+        [0xf11e14dd, 0xfb7e3e0d, 0xe6ff30c3, 0xc1cfca34],
     );
     ck_sobolbn(
         0,
@@ -12758,7 +12758,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0x6ad90c31, 0xe5797841, 0x2e508cf8, 0x5bb86f83],
+        [0x6ad90c31, 0xe5797841, 0x635134ae, 0x4fbed86c],
     );
     ck_sobolbn(
         0,
@@ -12766,7 +12766,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x23ca975e, 0x84228a29, 0x1dc0922a, 0xe263dbf5],
+        [0x23ca975e, 0x84228a29, 0x4f31aab9, 0x0d3da177],
     );
     ck_sobolbn(
         0,
@@ -12774,7 +12774,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0xbf06643b, 0xc84d5ace, 0x68a4239c, 0x717ca95f],
+        [0xbf06643b, 0xc84d5ace, 0xb48e1798, 0x6fb9f8cb],
     );
     ck_sobolbn(
         0,
@@ -12782,7 +12782,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         0,
@@ -12790,7 +12790,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x53e002eb, 0xb67d6bdd, 0xbca56ebf, 0xf7120627],
+        [0x53e002eb, 0xb67d6bdd, 0x5760f27b, 0x62987287],
     );
     ck_sobolbn(
         0,
@@ -12798,7 +12798,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0x40dc834e, 0x8dacb628, 0xb85f11e5, 0x6e9096d1],
+        [0x40dc834e, 0x8dacb628, 0xa043ddb1, 0x23846959],
     );
     ck_sobolbn(
         0,
@@ -12806,7 +12806,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0x607d9449, 0x7839b2f1, 0x1bba8e5d, 0x6ded6593],
+        [0x607d9449, 0x7839b2f1, 0x4e6aac25, 0x30a8b2ac],
     );
     ck_sobolbn(
         0,
@@ -12814,7 +12814,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0xfbbecbe8, 0x95562899, 0xb4b9cafa, 0x61200ea3],
+        [0xfbbecbe8, 0x95562899, 0x7346e278, 0x7319b9f7],
     );
     ck_sobolbn(
         0,
@@ -12822,7 +12822,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x02ea1369, 0xc1202792, 0x89d851f8, 0x20c5be4a],
+        [0x02ea1369, 0xc1202792, 0x3646cac3, 0x0d0b44e7],
     );
     ck_sobolbn(
         0,
@@ -12830,7 +12830,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x63a81451, 0x23b8cab6, 0xb3673f4a, 0xbb424bdf],
+        [0x63a81451, 0x23b8cab6, 0x3f202dc2, 0xb0899c63],
     );
     ck_sobolbn(
         0,
@@ -12838,7 +12838,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0x2763dea3, 0xa29fc4b3, 0x3dff6a5b, 0xfbc204d8],
+        [0x2763dea3, 0xa29fc4b3, 0x8c2e8ac7, 0xf9e236ee],
     );
     ck_sobolbn(
         0,
@@ -12846,7 +12846,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0xe32a74b9, 0x9e332128, 0xc93c00b3, 0x8ad7ebc2],
+        [0xe32a74b9, 0x9e332128, 0xacfdf523, 0xca21542f],
     );
     ck_sobolbn(
         0,
@@ -12854,7 +12854,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0xf73a4135, 0x995dd937, 0x60ed26c9, 0x65fcc72b],
+        [0xf73a4135, 0x995dd937, 0xc8cfdf6c, 0x6c683e72],
     );
     ck_sobolbn(
         0,
@@ -12862,7 +12862,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0xc0f19659, 0x7a3ac8ca, 0xa45fcd21, 0x6a4320d6],
+        [0xc0f19659, 0x7a3ac8ca, 0x07f1091a, 0x68de7b38],
     );
     ck_sobolbn(
         0,
@@ -12870,7 +12870,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x0ed39dd8, 0x3b0a8fca, 0x036a043e, 0x2a61463b],
+        [0x0ed39dd8, 0x3b0a8fca, 0x50c95fe4, 0x6cac9277],
     );
     ck_sobolbn(
         0,
@@ -12878,7 +12878,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0xb2660a83, 0x462f4226, 0xe3c3c46c, 0xed2de442],
+        [0xb2660a83, 0x462f4226, 0x41bc7b03, 0x0de0d760],
     );
     ck_sobolbn(
         0,
@@ -12886,7 +12886,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0xab850323, 0xeb1c9a70, 0x662441f7, 0x9ccda234],
+        [0xab850323, 0xeb1c9a70, 0xdc0a717f, 0x092c2ea3],
     );
     ck_sobolbn(
         0,
@@ -12894,7 +12894,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x5453e0ec, 0xc235592f, 0x99b547d7, 0xee552b0f],
+        [0x5453e0ec, 0xc235592f, 0xfdea8f5e, 0x182c270c],
     );
     ck_sobolbn(
         0,
@@ -12902,7 +12902,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0x3de64c8e, 0x6cbb4322, 0x236fe119, 0xac016305],
+        [0x3de64c8e, 0x6cbb4322, 0x68b9be74, 0xf8cec962],
     );
     ck_sobolbn(
         0,
@@ -12910,7 +12910,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0x41d12766, 0x55ea7142, 0xc32ec55b, 0x7ddfe644],
+        [0x41d12766, 0x55ea7142, 0x3d44878f, 0xa4a87f52],
     );
     ck_sobolbn(
         0,
@@ -12918,7 +12918,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x4b8a16aa, 0x5ae13847, 0xb20e6e2f, 0x38c316ce],
+        [0x4b8a16aa, 0x5ae13847, 0x0bcb13dc, 0x0f5c4eb7],
     );
     ck_sobolbn(
         0,
@@ -12926,7 +12926,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xc49d2110, 0x4118857f, 0x66110cb5, 0x35f1946f],
+        [0xc49d2110, 0x4118857f, 0xc2162846, 0x4284fa9d],
     );
     ck_sobolbn(
         0,
@@ -12934,7 +12934,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0xd853593e, 0x73ed4150, 0x597297fd, 0xcd011192],
+        [0xd853593e, 0x73ed4150, 0x74d1a1cd, 0x316b1dfd],
     );
     ck_sobolbn(
         0,
@@ -12942,7 +12942,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0x945dd241, 0x637c73ce, 0xb44a2af6, 0xf2e56d33],
+        [0x945dd241, 0x637c73ce, 0x3318eed4, 0x35649e26],
     );
     ck_sobolbn(
         0,
@@ -12950,7 +12950,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0x2763dea3, 0xa29fc4b3, 0x3dff6a5b, 0xfbc204d8],
+        [0x2763dea3, 0xa29fc4b3, 0x8c2e8ac7, 0xf9e236ee],
     );
     ck_sobolbn(
         0,
@@ -12958,7 +12958,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0xcc1cf14e, 0xbef11b8d, 0x85a509a8, 0x68843f4c],
+        [0xcc1cf14e, 0xbef11b8d, 0x8967f187, 0x2c870a35],
     );
     ck_sobolbn(
         0,
@@ -12966,7 +12966,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0x81afcb42, 0xece6e163, 0xd5633a04, 0xb604e798],
+        [0x81afcb42, 0xece6e163, 0x065aa404, 0xc5dc1bf1],
     );
     ck_sobolbn(
         0,
@@ -12974,7 +12974,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xfcca0337, 0x5282c6a7, 0x20e6fa05, 0x78799a07],
+        [0xfcca0337, 0x5282c6a7, 0x4ad225e8, 0xdaeeca3b],
     );
     ck_sobolbn(
         0,
@@ -12982,7 +12982,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x64b65e8f, 0xeb12034f, 0x5b712a71, 0xffd8a120],
+        [0x64b65e8f, 0xeb12034f, 0x359aef1d, 0xd134572f],
     );
     ck_sobolbn(
         0,
@@ -12990,7 +12990,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0x76e6e985, 0x32c41340, 0x8815b365, 0x8a697a32],
+        [0x76e6e985, 0x32c41340, 0x8e981c5f, 0x35e44415],
     );
     ck_sobolbn(
         1,
@@ -12998,7 +12998,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x53a48d4d, 0xa03ff60a, 0xfe6293b4, 0x2eaf650f],
+        [0x53a48d4d, 0xa03ff60a, 0x8762bae4, 0x038ca5dc],
     );
     ck_sobolbn(
         1,
@@ -13006,7 +13006,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0x911b1453, 0x9ede7b72, 0x589da224, 0x26da0887],
+        [0x911b1453, 0x9ede7b72, 0xae954db1, 0xb5323f69],
     );
     ck_sobolbn(
         1,
@@ -13014,7 +13014,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x38ca6f9b, 0xa5969a2f, 0x3e5ee7a9, 0x8652bf7a],
+        [0x38ca6f9b, 0xa5969a2f, 0x4dafba8b, 0x9e6745f4],
     );
     ck_sobolbn(
         1,
@@ -13022,7 +13022,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0xde47b033, 0x5c591d49, 0x4601f5bc, 0xcd9150c1],
+        [0xde47b033, 0x5c591d49, 0x24f160e1, 0xf8d848fe],
     );
     ck_sobolbn(
         1,
@@ -13030,7 +13030,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0x7f9c6f27, 0x3b524ff9, 0x8b1af91c, 0x9bf80a1c],
+        [0x7f9c6f27, 0x3b524ff9, 0x739a6022, 0x0ec57986],
     );
     ck_sobolbn(
         1,
@@ -13038,7 +13038,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0x98f50f38, 0x75790b52, 0xeb092215, 0x7eb13a76],
+        [0x98f50f38, 0x75790b52, 0xbf4c4f42, 0x6f61f2bf],
     );
     ck_sobolbn(
         1,
@@ -13046,7 +13046,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x94a4436d, 0xd7c840fa, 0xaa576746, 0x7f6ee87a],
+        [0x94a4436d, 0xd7c840fa, 0xd3d4f3f3, 0x861760d0],
     );
     ck_sobolbn(
         1,
@@ -13054,7 +13054,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0xff77c881, 0x51d0f45e, 0xf48b1dc8, 0xc920f2af],
+        [0xff77c881, 0x51d0f45e, 0x22e63397, 0xe197a789],
     );
     ck_sobolbn(
         1,
@@ -13062,7 +13062,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x4f59a507, 0x24007cba, 0x8f6e4255, 0x0fe7193c],
+        [0x4f59a507, 0x24007cba, 0xc9b0f7ac, 0xc035b85b],
     );
     ck_sobolbn(
         1,
@@ -13070,7 +13070,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0xdb6457a0, 0xde54f16e, 0x18cbee57, 0x8b0f7660],
+        [0xdb6457a0, 0xde54f16e, 0x8e13ceee, 0x528e51bb],
     );
     ck_sobolbn(
         1,
@@ -13078,7 +13078,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x62a42908, 0x00ad7670, 0x056f7545, 0xada25834],
+        [0x62a42908, 0x00ad7670, 0xf1e654fb, 0x5cc80c42],
     );
     ck_sobolbn(
         1,
@@ -13086,7 +13086,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0xdd5d569a, 0xd794768d, 0x3a9fadb6, 0x55d55314],
+        [0xdd5d569a, 0xd794768d, 0x5622258d, 0xa9504780],
     );
     ck_sobolbn(
         1,
@@ -13094,7 +13094,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0xb98d7462, 0x5c75d6f2, 0xda06e142, 0xffcbfb84],
+        [0xb98d7462, 0x5c75d6f2, 0xe1a95d99, 0x0f2790b1],
     );
     ck_sobolbn(
         1,
@@ -13102,7 +13102,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0xca6aefe5, 0x530a2816, 0xae381f1d, 0x17fb7a36],
+        [0xca6aefe5, 0x530a2816, 0x04bd196f, 0x141926cf],
     );
     ck_sobolbn(
         1,
@@ -13110,7 +13110,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0x093a7c93, 0xdb54a92d, 0x29850ac7, 0x0d00a770],
+        [0x093a7c93, 0xdb54a92d, 0xecbd3054, 0x986249e6],
     );
     ck_sobolbn(
         1,
@@ -13118,7 +13118,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0x911b1453, 0x9ede7b72, 0x589da224, 0x26da0887],
+        [0x911b1453, 0x9ede7b72, 0xae954db1, 0xb5323f69],
     );
     ck_sobolbn(
         1,
@@ -13126,7 +13126,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xfd5393e4, 0xa1512dd5, 0x6addeea2, 0xfb3f3310],
+        [0xfd5393e4, 0xa1512dd5, 0x39c1c29b, 0xed065779],
     );
     ck_sobolbn(
         1,
@@ -13134,7 +13134,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0x2f33099a, 0xddc91ae6, 0x61a62a22, 0xfa224114],
+        [0x2f33099a, 0xddc91ae6, 0x5023a273, 0xc031e71a],
     );
     ck_sobolbn(
         1,
@@ -13142,7 +13142,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0x16e563aa, 0x73882944, 0x306e0d33, 0xb0784bcc],
+        [0x16e563aa, 0x73882944, 0x2665ad1e, 0x73d6fd7f],
     );
     ck_sobolbn(
         1,
@@ -13150,7 +13150,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0xf08b7ab0, 0x7755761d, 0xe5dec625, 0xde969995],
+        [0xf08b7ab0, 0x7755761d, 0x456f624b, 0x8d714a80],
     );
     ck_sobolbn(
         1,
@@ -13158,7 +13158,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xf025f79a, 0xef6892c7, 0x18aec714, 0xac9842ff],
+        [0xf025f79a, 0xef6892c7, 0xa55e095f, 0x2c75cc27],
     );
     ck_sobolbn(
         1,
@@ -13166,7 +13166,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0x911b1453, 0x9ede7b72, 0x589da224, 0x26da0887],
+        [0x911b1453, 0x9ede7b72, 0xae954db1, 0xb5323f69],
     );
     ck_sobolbn(
         1,
@@ -13174,7 +13174,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xfd5393e4, 0xa1512dd5, 0x6addeea2, 0xfb3f3310],
+        [0xfd5393e4, 0xa1512dd5, 0x39c1c29b, 0xed065779],
     );
     ck_sobolbn(
         1,
@@ -13182,7 +13182,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0x2f33099a, 0xddc91ae6, 0x61a62a22, 0xfa224114],
+        [0x2f33099a, 0xddc91ae6, 0x5023a273, 0xc031e71a],
     );
     ck_sobolbn(
         1,
@@ -13190,7 +13190,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0x7f9c6f27, 0x3b524ff9, 0x8b1af91c, 0x9bf80a1c],
+        [0x7f9c6f27, 0x3b524ff9, 0x739a6022, 0x0ec57986],
     );
     ck_sobolbn(
         1,
@@ -13198,7 +13198,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x0a0f3180, 0x5f6c897d, 0x9ed21981, 0x14b94f06],
+        [0x0a0f3180, 0x5f6c897d, 0xef0a492a, 0x09fce7d9],
     );
     ck_sobolbn(
         1,
@@ -13206,7 +13206,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0xb5be5f26, 0x3217ad12, 0xc5bafd9a, 0x5254cdd3],
+        [0xb5be5f26, 0x3217ad12, 0xfbc11022, 0x6b53d197],
     );
     ck_sobolbn(
         1,
@@ -13214,7 +13214,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0xff77c881, 0x51d0f45e, 0xf48b1dc8, 0xc920f2af],
+        [0xff77c881, 0x51d0f45e, 0x22e63397, 0xe197a789],
     );
     ck_sobolbn(
         1,
@@ -13222,7 +13222,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x5de24047, 0xd3116d0d, 0x16d199e1, 0x8db57e54],
+        [0x5de24047, 0xd3116d0d, 0x5b839bd8, 0x56c47d80],
     );
     ck_sobolbn(
         1,
@@ -13230,7 +13230,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0xf2b4293e, 0x9b685afa, 0x233b591c, 0xb3eef1a2],
+        [0xf2b4293e, 0x9b685afa, 0x1007306b, 0x38558214],
     );
     ck_sobolbn(
         1,
@@ -13238,7 +13238,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x62a42908, 0x00ad7670, 0x056f7545, 0xada25834],
+        [0x62a42908, 0x00ad7670, 0xf1e654fb, 0x5cc80c42],
     );
     ck_sobolbn(
         1,
@@ -13246,7 +13246,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x3e6c6848, 0xfc1d0eb5, 0x0229e0ac, 0xd4f907cb],
+        [0x3e6c6848, 0xfc1d0eb5, 0xc8170cbb, 0x6718f675],
     );
     ck_sobolbn(
         1,
@@ -13254,7 +13254,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0x85264d54, 0x708a41b9, 0xe33b4795, 0x16880bef],
+        [0x85264d54, 0x708a41b9, 0x923938bd, 0x424adc0a],
     );
     ck_sobolbn(
         1,
@@ -13262,7 +13262,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0xca6aefe5, 0x530a2816, 0xae381f1d, 0x17fb7a36],
+        [0xca6aefe5, 0x530a2816, 0x04bd196f, 0x141926cf],
     );
     ck_sobolbn(
         1,
@@ -13270,7 +13270,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0xf2336627, 0x633264b9, 0x20e8126f, 0xbc76447b],
+        [0xf2336627, 0x633264b9, 0x3ebd2ced, 0x5cd845f2],
     );
     ck_sobolbn(
         1,
@@ -13278,7 +13278,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0x16c2a94d, 0xc601077b, 0x13cc5116, 0x8ad073a2],
+        [0x16c2a94d, 0xc601077b, 0x86eada84, 0x30049a79],
     );
     ck_sobolbn(
         1,
@@ -13286,7 +13286,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xfd5393e4, 0xa1512dd5, 0x6addeea2, 0xfb3f3310],
+        [0xfd5393e4, 0xa1512dd5, 0x39c1c29b, 0xed065779],
     );
     ck_sobolbn(
         1,
@@ -13294,7 +13294,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0xa6e2b629, 0x511121a5, 0xf927d2fe, 0x629b8af8],
+        [0xa6e2b629, 0x511121a5, 0xcf138f96, 0xceb4d03f],
     );
     ck_sobolbn(
         1,
@@ -13302,7 +13302,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0xc69e909e, 0x4b10b886, 0xbd3175e2, 0xff30821e],
+        [0xc69e909e, 0x4b10b886, 0x7c4fb25a, 0x188ba51c],
     );
     ck_sobolbn(
         1,
@@ -13310,7 +13310,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0xf08b7ab0, 0x7755761d, 0xe5dec625, 0xde969995],
+        [0xf08b7ab0, 0x7755761d, 0x456f624b, 0x8d714a80],
     );
     ck_sobolbn(
         1,
@@ -13318,7 +13318,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0xb2161a21, 0x3635668b, 0x513267d0, 0x74398db8],
+        [0xb2161a21, 0x3635668b, 0x483ae154, 0xae093b19],
     );
     ck_sobolbn(
         1,
@@ -13326,7 +13326,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0xb13010ba, 0x8b792cdc, 0xdf70e77f, 0x34cf6dfc],
+        [0xb13010ba, 0x8b792cdc, 0x90ed30b4, 0xefe1c46b],
     );
     ck_sobolbn(
         1,
@@ -13334,7 +13334,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x559c7191, 0x451eee30, 0x26f288d8, 0xe96917f6],
+        [0x559c7191, 0x451eee30, 0x51a3de2f, 0xee832c7c],
     );
     ck_sobolbn(
         1,
@@ -13342,7 +13342,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0x8084a525, 0xd5650338, 0x553e4be9, 0x10c94a42],
+        [0x8084a525, 0xd5650338, 0xd68c19de, 0xe46cbedb],
     );
     ck_sobolbn(
         1,
@@ -13350,7 +13350,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0xf566709c, 0x3b5f339b, 0xb1aaaa10, 0x79e04333],
+        [0xf566709c, 0x3b5f339b, 0xd3634ef8, 0xfa21a99d],
     );
     ck_sobolbn(
         1,
@@ -13358,7 +13358,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0xff15d5ab, 0x9eed9494, 0x8a8092e0, 0x51abd35f],
+        [0xff15d5ab, 0x9eed9494, 0xf0897354, 0x558ebdc3],
     );
     ck_sobolbn(
         1,
@@ -13366,7 +13366,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0x231cd2e1, 0x40c5f798, 0xa75735c3, 0xc42661e4],
+        [0x231cd2e1, 0x40c5f798, 0x1003870d, 0x3f11ea01],
     );
     ck_sobolbn(
         1,
@@ -13374,7 +13374,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x632d7678, 0xc0ac3835, 0x17957523, 0xd436c4a7],
+        [0x632d7678, 0xc0ac3835, 0x70c46269, 0x578e0f33],
     );
     ck_sobolbn(
         1,
@@ -13382,7 +13382,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0x3b760e93, 0xf374980d, 0xea2c2285, 0x1df4b442],
+        [0x3b760e93, 0xf374980d, 0x998133ac, 0xb54d5a56],
     );
     ck_sobolbn(
         1,
@@ -13390,7 +13390,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0xd7982455, 0x0d21e603, 0xea8e973b, 0xa814a428],
+        [0xd7982455, 0x0d21e603, 0x765e453d, 0x90d07899],
     );
     ck_sobolbn(
         1,
@@ -13398,7 +13398,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x07b11557, 0x556f09ea, 0xd7e01426, 0x2e1782e9],
+        [0x07b11557, 0x556f09ea, 0xb7537113, 0x090bb105],
     );
     ck_sobolbn(
         1,
@@ -13406,7 +13406,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0x51cd9587, 0xf8dcf666, 0x595127ab, 0x90b4a43c],
+        [0x51cd9587, 0xf8dcf666, 0xf9ef3184, 0x1ec25412],
     );
     ck_sobolbn(
         1,
@@ -13414,7 +13414,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0xceea3940, 0xbd0c3288, 0xd5350d09, 0x0d718528],
+        [0xceea3940, 0xbd0c3288, 0xbb6fc432, 0x8e88f03f],
     );
     ck_sobolbn(
         1,
@@ -13422,7 +13422,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x1ce7732f, 0x64c215fd, 0x1c7906dd, 0x05f85143],
+        [0x1ce7732f, 0x64c215fd, 0x4bcc5869, 0x40930b71],
     );
     ck_sobolbn(
         1,
@@ -13430,7 +13430,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xb8a788b7, 0xa1c39538, 0x26bb9387, 0xd5eb07c1],
+        [0xb8a788b7, 0xa1c39538, 0x59b57bf0, 0xe15061cc],
     );
     ck_sobolbn(
         1,
@@ -13438,7 +13438,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0xa1cdce54, 0x0dd85e46, 0x1bbbeccc, 0xd0df2f61],
+        [0xa1cdce54, 0x0dd85e46, 0x6298fd0a, 0x5091321e],
     );
     ck_sobolbn(
         1,
@@ -13446,7 +13446,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0x8178c766, 0x9ffdce25, 0x85648355, 0x77e0558a],
+        [0x8178c766, 0x9ffdce25, 0x422dc705, 0xdcb78ab1],
     );
     ck_sobolbn(
         1,
@@ -13454,7 +13454,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0x8084a525, 0xd5650338, 0x553e4be9, 0x10c94a42],
+        [0x8084a525, 0xd5650338, 0xd68c19de, 0xe46cbedb],
     );
     ck_sobolbn(
         1,
@@ -13462,7 +13462,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0x9b7e4901, 0x181c0419, 0xa10fe9fe, 0x6873304d],
+        [0x9b7e4901, 0x181c0419, 0x93a924a7, 0x9fb7d3e1],
     );
     ck_sobolbn(
         1,
@@ -13470,7 +13470,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0x7d6aef76, 0x210fed83, 0x6edcc621, 0x222d5ef0],
+        [0x7d6aef76, 0x210fed83, 0xa3bf1666, 0x052f2e07],
     );
     ck_sobolbn(
         1,
@@ -13478,7 +13478,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xe6ddb980, 0xca60da2b, 0x64c924f4, 0x1c801453],
+        [0xe6ddb980, 0xca60da2b, 0xb57b690d, 0xe472adc0],
     );
     ck_sobolbn(
         1,
@@ -13486,7 +13486,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x8a54623c, 0xa4475ed6, 0xf6bea592, 0x22a4259d],
+        [0x8a54623c, 0xa4475ed6, 0x3b9341eb, 0x5d4fd29b],
     );
     ck_sobolbn(
         1,
@@ -13494,7 +13494,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0xb4aa39a5, 0x592356e5, 0xe1ffbe06, 0x628f92b5],
+        [0xb4aa39a5, 0x592356e5, 0x931d53d7, 0x4fce7151],
     );
     ck_sobolbn(
         2,
@@ -13502,7 +13502,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x6b1f2b0a, 0x7b3fe322, 0xd462b858, 0xddddea65],
+        [0x6b1f2b0a, 0x7b3fe322, 0xb1bc2820, 0x5211ca48],
     );
     ck_sobolbn(
         2,
@@ -13510,7 +13510,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0xe67f5a48, 0xe2b98dc4, 0x82e7bdb3, 0xa85bf9fd],
+        [0xe67f5a48, 0xe2b98dc4, 0x4c7f9387, 0x4774a15f],
     );
     ck_sobolbn(
         2,
@@ -13518,7 +13518,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x545ff275, 0xf958d38c, 0xd204f0c6, 0x97ca3e0c],
+        [0x545ff275, 0xf958d38c, 0xda0431a5, 0x1b2aecb1],
     );
     ck_sobolbn(
         2,
@@ -13526,7 +13526,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0xcd6dcb6f, 0xb991b511, 0x1addd7e1, 0x18caf8f4],
+        [0xcd6dcb6f, 0xb991b511, 0x5a60ea20, 0xa757a86c],
     );
     ck_sobolbn(
         2,
@@ -13534,7 +13534,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0x5f9afb47, 0x38ae6303, 0x5ea8b3d7, 0x171584f8],
+        [0x5f9afb47, 0x38ae6303, 0x968ac99a, 0xf4ebde45],
     );
     ck_sobolbn(
         2,
@@ -13542,7 +13542,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0x92f394fe, 0x13a01588, 0x14d3a241, 0x5525f260],
+        [0x92f394fe, 0x13a01588, 0x19eed761, 0xf6434307],
     );
     ck_sobolbn(
         2,
@@ -13550,7 +13550,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x816b501a, 0x11a71947, 0xac112a7d, 0x9a1b7547],
+        [0x816b501a, 0x11a71947, 0xc86eef8b, 0xed4b6761],
     );
     ck_sobolbn(
         2,
@@ -13558,7 +13558,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0xb958660d, 0x5dfb76df, 0x1e79c0bf, 0x7f789eb0],
+        [0xb958660d, 0x5dfb76df, 0xfdc9e316, 0x3c190e94],
     );
     ck_sobolbn(
         2,
@@ -13566,7 +13566,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0xe41bcfe6, 0x9e13170a, 0xa803790c, 0xf10f9b5e],
+        [0xe41bcfe6, 0x9e13170a, 0xa3d1d730, 0x92b97548],
     );
     ck_sobolbn(
         2,
@@ -13574,7 +13574,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x5b3c7297, 0x63cf3297, 0xab4cd4dc, 0x463c2be9],
+        [0x5b3c7297, 0x63cf3297, 0xdc1387ee, 0xcf9ba3e1],
     );
     ck_sobolbn(
         2,
@@ -13582,7 +13582,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x3d04d3f0, 0x4b3aebbc, 0x30ca8674, 0xcf091e89],
+        [0x3d04d3f0, 0x4b3aebbc, 0x178d08c8, 0x13f68fde],
     );
     ck_sobolbn(
         2,
@@ -13590,7 +13590,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0x75999275, 0x096eb6bd, 0x377fec64, 0x92946e90],
+        [0x75999275, 0x096eb6bd, 0xc12fa7c7, 0xd8ff9829],
     );
     ck_sobolbn(
         2,
@@ -13598,7 +13598,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0x021e985f, 0xfeb7642a, 0xd722c5e1, 0xe775e1bc],
+        [0x021e985f, 0xfeb7642a, 0xaff342be, 0x544b4123],
     );
     ck_sobolbn(
         2,
@@ -13606,7 +13606,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0xb46085de, 0xcd843268, 0xfcc8dc28, 0x13619fa2],
+        [0xb46085de, 0xcd843268, 0xb1bae02a, 0x97f39eb9],
     );
     ck_sobolbn(
         2,
@@ -13614,7 +13614,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0x8f63beb6, 0x6dace1f4, 0xc732fe65, 0xd0b69ca0],
+        [0x8f63beb6, 0x6dace1f4, 0x670cea5a, 0x0436a2fb],
     );
     ck_sobolbn(
         2,
@@ -13622,7 +13622,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0xe67f5a48, 0xe2b98dc4, 0x82e7bdb3, 0xa85bf9fd],
+        [0xe67f5a48, 0xe2b98dc4, 0x4c7f9387, 0x4774a15f],
     );
     ck_sobolbn(
         2,
@@ -13630,7 +13630,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xc2f225d4, 0xae036b9d, 0x0316f992, 0xa9250f5a],
+        [0xc2f225d4, 0xae036b9d, 0x597d06df, 0x9b608fc5],
     );
     ck_sobolbn(
         2,
@@ -13638,7 +13638,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0x7dfc18dd, 0xe23b08ba, 0xd84eab5f, 0x2169c270],
+        [0x7dfc18dd, 0xe23b08ba, 0xb6504cc9, 0x982848a9],
     );
     ck_sobolbn(
         2,
@@ -13646,7 +13646,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0xcf5910c7, 0x50d54751, 0xc7d2e7f8, 0x8de456b1],
+        [0xcf5910c7, 0x50d54751, 0x74803e46, 0xb3507580],
     );
     ck_sobolbn(
         2,
@@ -13654,7 +13654,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0xaab3fa6b, 0x9ad84a09, 0x09e62277, 0xd2150ebe],
+        [0xaab3fa6b, 0x9ad84a09, 0x6a137dca, 0x862e54d0],
     );
     ck_sobolbn(
         2,
@@ -13662,7 +13662,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xe5509425, 0x4b0df238, 0xaf6cccf0, 0xa9f5ed3c],
+        [0xe5509425, 0x4b0df238, 0x4ad43764, 0x32e4a564],
     );
     ck_sobolbn(
         2,
@@ -13670,7 +13670,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0xe67f5a48, 0xe2b98dc4, 0x82e7bdb3, 0xa85bf9fd],
+        [0xe67f5a48, 0xe2b98dc4, 0x4c7f9387, 0x4774a15f],
     );
     ck_sobolbn(
         2,
@@ -13678,7 +13678,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xc2f225d4, 0xae036b9d, 0x0316f992, 0xa9250f5a],
+        [0xc2f225d4, 0xae036b9d, 0x597d06df, 0x9b608fc5],
     );
     ck_sobolbn(
         2,
@@ -13686,7 +13686,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0x7dfc18dd, 0xe23b08ba, 0xd84eab5f, 0x2169c270],
+        [0x7dfc18dd, 0xe23b08ba, 0xb6504cc9, 0x982848a9],
     );
     ck_sobolbn(
         2,
@@ -13694,7 +13694,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0x5f9afb47, 0x38ae6303, 0x5ea8b3d7, 0x171584f8],
+        [0x5f9afb47, 0x38ae6303, 0x968ac99a, 0xf4ebde45],
     );
     ck_sobolbn(
         2,
@@ -13702,7 +13702,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x30bbfbac, 0x619f291a, 0xd2099ed8, 0x465a7961],
+        [0x30bbfbac, 0x619f291a, 0xb77fefa2, 0x686c54b9],
     );
     ck_sobolbn(
         2,
@@ -13710,23 +13710,23 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x8d4590ef, 0x0c087a78, 0x2f1e4b04, 0xf414c29d],
-    );
-    ck_sobolbn(
-        2,
-        7,
-        1,
-        3,
-        0,
-        [0xb958660d, 0x5dfb76df, 0x1e79c0bf, 0x7f789eb0],
+        [0x8d4590ef, 0x0c087a78, 0x7131b86a, 0x601c1cce],
     );
     ck_sobolbn(
         2,
         7,
         1,
         3,
+        0,
+        [0xb958660d, 0x5dfb76df, 0xfdc9e316, 0x3c190e94],
+    );
+    ck_sobolbn(
+        2,
+        7,
         1,
-        [0x9231c4c2, 0x3eed4e44, 0x9867166c, 0x1d69b26f],
+        3,
+        1,
+        [0x9231c4c2, 0x3eed4e44, 0xf4c4eb22, 0xfbf60874],
     );
     ck_sobolbn(
         2,
@@ -13734,7 +13734,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x0c098534, 0x5147ad50, 0x779ea6a5, 0xa9ebfef5],
+        [0x0c098534, 0x5147ad50, 0x29f608fe, 0xc502116e],
     );
     ck_sobolbn(
         2,
@@ -13742,7 +13742,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x3d04d3f0, 0x4b3aebbc, 0x30ca8674, 0xcf091e89],
+        [0x3d04d3f0, 0x4b3aebbc, 0x178d08c8, 0x13f68fde],
     );
     ck_sobolbn(
         2,
@@ -13750,7 +13750,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x195614a4, 0xe6063f8d, 0x74274f2d, 0x9a186500],
+        [0x195614a4, 0xe6063f8d, 0x8afaa33c, 0x1cc59f0e],
     );
     ck_sobolbn(
         2,
@@ -13758,7 +13758,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0x04d45476, 0x0a60fb02, 0x98e4b395, 0x4b24e1cd],
+        [0x04d45476, 0x0a60fb02, 0xb0635304, 0x1704a929],
     );
     ck_sobolbn(
         2,
@@ -13766,7 +13766,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0xb46085de, 0xcd843268, 0xfcc8dc28, 0x13619fa2],
+        [0xb46085de, 0xcd843268, 0xb1bae02a, 0x97f39eb9],
     );
     ck_sobolbn(
         2,
@@ -13774,7 +13774,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x0626a52b, 0xc10421a5, 0xea00e6a9, 0xb97e31e6],
+        [0x0626a52b, 0xc10421a5, 0x63be2334, 0x76c1418d],
     );
     ck_sobolbn(
         2,
@@ -13782,7 +13782,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0x90e1d804, 0x228c606c, 0x2dd9a921, 0xca387451],
+        [0x90e1d804, 0x228c606c, 0x6b9ba94f, 0x69647a8b],
     );
     ck_sobolbn(
         2,
@@ -13790,7 +13790,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xc2f225d4, 0xae036b9d, 0x0316f992, 0xa9250f5a],
+        [0xc2f225d4, 0xae036b9d, 0x597d06df, 0x9b608fc5],
     );
     ck_sobolbn(
         2,
@@ -13798,7 +13798,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x61197bed, 0xe365643d, 0xadb908c7, 0x37674d7b],
+        [0x61197bed, 0xe365643d, 0xe0e6dc5e, 0x47e74fe3],
     );
     ck_sobolbn(
         2,
@@ -13806,7 +13806,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0xfe13e279, 0xe67daef8, 0x556998fb, 0x23f6ae02],
+        [0xfe13e279, 0xe67daef8, 0xe1342ae1, 0xaaa7e131],
     );
     ck_sobolbn(
         2,
@@ -13814,7 +13814,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0xaab3fa6b, 0x9ad84a09, 0x09e62277, 0xd2150ebe],
+        [0xaab3fa6b, 0x9ad84a09, 0x6a137dca, 0x862e54d0],
     );
     ck_sobolbn(
         2,
@@ -13822,7 +13822,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0xe9f294d5, 0x39400df5, 0x0045c85f, 0xb2d9abfe],
+        [0xe9f294d5, 0x39400df5, 0xd1e560f7, 0xafcb08ec],
     );
     ck_sobolbn(
         2,
@@ -13830,7 +13830,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x16517411, 0x458865af, 0xc29e2721, 0x556efd59],
+        [0x16517411, 0x458865af, 0x3fee0d60, 0x655ca39c],
     );
     ck_sobolbn(
         2,
@@ -13838,7 +13838,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x1fac248e, 0xc17e48b7, 0x16075013, 0x6f304f05],
+        [0x1fac248e, 0xc17e48b7, 0x345fd3d2, 0x1fbcb75a],
     );
     ck_sobolbn(
         2,
@@ -13846,7 +13846,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0xc79f548a, 0xabbe575a, 0x6a0ea330, 0x5579ea09],
+        [0xc79f548a, 0xabbe575a, 0x8fced814, 0xc9d90ea0],
     );
     ck_sobolbn(
         2,
@@ -13854,7 +13854,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0xba4093a0, 0xe80bab2f, 0x5a1b2494, 0x7291e047],
+        [0xba4093a0, 0xe80bab2f, 0xe45c46fd, 0x0e5a0a24],
     );
     ck_sobolbn(
         2,
@@ -13862,7 +13862,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0x90da34c8, 0x3b6ab632, 0xd7190cda, 0xdd3984a9],
+        [0x90da34c8, 0x3b6ab632, 0xfccae537, 0xb3d5848a],
     );
     ck_sobolbn(
         2,
@@ -13870,7 +13870,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0x7e0e9d84, 0x03053a9c, 0x84fd3e22, 0xd1aa4a42],
+        [0x7e0e9d84, 0x03053a9c, 0x6046cd42, 0x46e739af],
     );
     ck_sobolbn(
         2,
@@ -13878,7 +13878,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x4826b90a, 0x16274526, 0x8e9145f2, 0xf52f203f],
+        [0x4826b90a, 0x16274526, 0x1ec83a9a, 0x917553a0],
     );
     ck_sobolbn(
         2,
@@ -13886,7 +13886,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0xcddd5b43, 0xb1e1c24e, 0x6065a672, 0x251894fc],
+        [0xcddd5b43, 0xb1e1c24e, 0x5f668c13, 0xec7feb2f],
     );
     ck_sobolbn(
         2,
@@ -13894,7 +13894,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0xa36f1f9e, 0x670b71f7, 0xe0244a14, 0xa8f88183],
+        [0xa36f1f9e, 0x670b71f7, 0x3a5d95f7, 0xb4d51c09],
     );
     ck_sobolbn(
         2,
@@ -13902,7 +13902,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x267d6d95, 0x94b3caed, 0x0bf8c4e9, 0x23c0911c],
+        [0x267d6d95, 0x94b3caed, 0x9989255c, 0xc74a4d41],
     );
     ck_sobolbn(
         2,
@@ -13910,7 +13910,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0xd5f1d857, 0x4164b9a1, 0x5069b16d, 0xc747cea1],
+        [0xd5f1d857, 0x4164b9a1, 0x980cc0e3, 0xfe665430],
     );
     ck_sobolbn(
         2,
@@ -13918,7 +13918,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0x20353522, 0x3beeb5d2, 0x903dedde, 0x9c5b0d16],
+        [0x20353522, 0x3beeb5d2, 0xc55f2ddc, 0x7867e20a],
     );
     ck_sobolbn(
         2,
@@ -13926,7 +13926,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x83c094c8, 0x0de9ca9f, 0xb830848f, 0x7609a8f4],
+        [0x83c094c8, 0x0de9ca9f, 0xfce7f390, 0xa12525c9],
     );
     ck_sobolbn(
         2,
@@ -13934,7 +13934,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0x8a047ee6, 0xd548adc4, 0x5d4844a4, 0x16b40a0b],
+        [0x8a047ee6, 0xd548adc4, 0xbdbef1b7, 0xe6a53640],
     );
     ck_sobolbn(
         2,
@@ -13942,7 +13942,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0x0f9a19cc, 0xf2f1da1e, 0x5febc64d, 0x354e5ee5],
+        [0x0f9a19cc, 0xf2f1da1e, 0xd629d0d9, 0xc9992b2f],
     );
     ck_sobolbn(
         2,
@@ -13950,7 +13950,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0x76dc285c, 0x1ffa5265, 0x960126c3, 0x5f6376eb],
+        [0x76dc285c, 0x1ffa5265, 0x88c84c77, 0x9955390d],
     );
     ck_sobolbn(
         2,
@@ -13958,7 +13958,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0xc79f548a, 0xabbe575a, 0x6a0ea330, 0x5579ea09],
+        [0xc79f548a, 0xabbe575a, 0x8fced814, 0xc9d90ea0],
     );
     ck_sobolbn(
         2,
@@ -13966,7 +13966,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0xac89cff8, 0xe073b0b3, 0x974a56f9, 0xe8b53b5f],
+        [0xac89cff8, 0xe073b0b3, 0xe15af17b, 0x8b5574a9],
     );
     ck_sobolbn(
         2,
@@ -13974,7 +13974,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0xc216f627, 0xf6dbb32b, 0x2564e432, 0xf3b69cfe],
+        [0xc216f627, 0xf6dbb32b, 0x27dfb477, 0xd2598c99],
     );
     ck_sobolbn(
         2,
@@ -13982,7 +13982,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xf05bbd3d, 0x1378b7f3, 0xf9c00a26, 0xb315bb42],
+        [0xf05bbd3d, 0x1378b7f3, 0xb31c8735, 0x8239ded1],
     );
     ck_sobolbn(
         2,
@@ -13990,7 +13990,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x325a5ae5, 0x0bfbff7b, 0x6a7d49cf, 0x9099a6e1],
+        [0x325a5ae5, 0x0bfbff7b, 0x0be7b537, 0xd4d56cc6],
     );
     ck_sobolbn(
         2,
@@ -13998,7 +13998,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0x1b7c77f7, 0xd7779983, 0x6181e730, 0x9b14da08],
+        [0x1b7c77f7, 0xd7779983, 0x16b53418, 0x28dd3cc2],
     );
     ck_sobolbn(
         5,
@@ -14006,7 +14006,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x977325ec, 0x83cc319e, 0x27024b18, 0x68c317d8],
+        [0x977325ec, 0x83cc319e, 0x5392330b, 0xff8ecaed],
     );
     ck_sobolbn(
         5,
@@ -14014,7 +14014,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0xf1c39028, 0xe4124bf5, 0xf5728618, 0x0b4c0875],
+        [0xf1c39028, 0xe4124bf5, 0x9c0133b2, 0xa3962a48],
     );
     ck_sobolbn(
         5,
@@ -14022,7 +14022,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x4f4d5b0e, 0xe88fafc6, 0x1373234a, 0xb0ee2777],
+        [0x4f4d5b0e, 0xe88fafc6, 0x025627bd, 0xc112fd03],
     );
     ck_sobolbn(
         5,
@@ -14030,7 +14030,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0x0a936d98, 0x0900f923, 0xbd8513c5, 0xae363d4b],
+        [0x0a936d98, 0x0900f923, 0xce6ec90a, 0x1189e4f9],
     );
     ck_sobolbn(
         5,
@@ -14038,7 +14038,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0x6952e684, 0x2b98661b, 0x21066b90, 0xe52ce3e3],
+        [0x6952e684, 0x2b98661b, 0x63d68315, 0x6c916091],
     );
     ck_sobolbn(
         5,
@@ -14046,7 +14046,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0xc19ba9dc, 0x1bbad1d1, 0xc0c366c1, 0x6808b9db],
+        [0xc19ba9dc, 0x1bbad1d1, 0xd9133e5f, 0x3bdfdc0d],
     );
     ck_sobolbn(
         5,
@@ -14054,7 +14054,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x45234c5b, 0xe5691ae3, 0x4623b3e9, 0x36d24ad0],
+        [0x45234c5b, 0xe5691ae3, 0x32c43924, 0x4cd931d4],
     );
     ck_sobolbn(
         5,
@@ -14062,7 +14062,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0x8b6c3b0b, 0x7b58a465, 0x5471cd02, 0x92f3bd62],
+        [0x8b6c3b0b, 0x7b58a465, 0x0e6546ff, 0xc6f2ffd1],
     );
     ck_sobolbn(
         5,
@@ -14070,7 +14070,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x9befc377, 0x89400446, 0x6c69ceff, 0xe3a820a1],
+        [0x9befc377, 0x89400446, 0x74d4e345, 0x4496307d],
     );
     ck_sobolbn(
         5,
@@ -14078,7 +14078,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x3764ed05, 0x988e604c, 0x13b0959b, 0xaa76b6c0],
+        [0x3764ed05, 0x988e604c, 0xd8cca458, 0xc0d3e08f],
     );
     ck_sobolbn(
         5,
@@ -14086,7 +14086,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x7cf108d5, 0x18a40d22, 0xbd091f34, 0xcbcfb230],
+        [0x7cf108d5, 0x18a40d22, 0xf58a6b2d, 0x2490971e],
     );
     ck_sobolbn(
         5,
@@ -14094,7 +14094,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0x1cf40f9e, 0x1d2eb396, 0x4aa4ce06, 0xef86b51e],
+        [0x1cf40f9e, 0x1d2eb396, 0x0591d51a, 0x4ced2528],
     );
     ck_sobolbn(
         5,
@@ -14102,7 +14102,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0xc29265e7, 0x22c2a471, 0xd2834914, 0xf964ca7e],
+        [0xc29265e7, 0x22c2a471, 0xa3e0b767, 0xbf75fb64],
     );
     ck_sobolbn(
         5,
@@ -14110,7 +14110,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0x62937abe, 0x75eb771a, 0x4f73bb60, 0xa0033ea2],
+        [0x62937abe, 0x75eb771a, 0xa08cafec, 0xdc976eef],
     );
     ck_sobolbn(
         5,
@@ -14118,7 +14118,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0x1345d43f, 0xc3a12e24, 0x70d56039, 0x6b94717c],
+        [0x1345d43f, 0xc3a12e24, 0xd34d7f06, 0x7802c610],
     );
     ck_sobolbn(
         5,
@@ -14126,7 +14126,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0xf1c39028, 0xe4124bf5, 0xf5728618, 0x0b4c0875],
+        [0xf1c39028, 0xe4124bf5, 0x9c0133b2, 0xa3962a48],
     );
     ck_sobolbn(
         5,
@@ -14134,7 +14134,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0x23b91a24, 0x32a79c04, 0x9eb5fb05, 0x4e0a6b89],
+        [0x23b91a24, 0x32a79c04, 0x66b17548, 0x10dd84de],
     );
     ck_sobolbn(
         5,
@@ -14142,7 +14142,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0x119ff30f, 0x72f121e0, 0x257d5e8f, 0x5fede908],
+        [0x119ff30f, 0x72f121e0, 0x2ced3104, 0x1ce827d5],
     );
     ck_sobolbn(
         5,
@@ -14150,7 +14150,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0x0f3b98ac, 0x4785b16d, 0xd43fae81, 0x907a24ea],
+        [0x0f3b98ac, 0x4785b16d, 0xe36d56fc, 0x97ee8de2],
     );
     ck_sobolbn(
         5,
@@ -14158,7 +14158,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0x9d9b9e93, 0xd5bb1b02, 0xc92c6548, 0xbfcf6040],
+        [0x9d9b9e93, 0xd5bb1b02, 0xe08cc4a2, 0xbfa56861],
     );
     ck_sobolbn(
         5,
@@ -14166,7 +14166,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0x80809d85, 0xa567dff1, 0x2c007d87, 0xa1ab46d2],
+        [0x80809d85, 0xa567dff1, 0x05bfacf4, 0x2d738e92],
     );
     ck_sobolbn(
         5,
@@ -14174,7 +14174,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0xf1c39028, 0xe4124bf5, 0xf5728618, 0x0b4c0875],
+        [0xf1c39028, 0xe4124bf5, 0x9c0133b2, 0xa3962a48],
     );
     ck_sobolbn(
         5,
@@ -14182,7 +14182,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0x23b91a24, 0x32a79c04, 0x9eb5fb05, 0x4e0a6b89],
+        [0x23b91a24, 0x32a79c04, 0x66b17548, 0x10dd84de],
     );
     ck_sobolbn(
         5,
@@ -14190,7 +14190,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0x119ff30f, 0x72f121e0, 0x257d5e8f, 0x5fede908],
+        [0x119ff30f, 0x72f121e0, 0x2ced3104, 0x1ce827d5],
     );
     ck_sobolbn(
         5,
@@ -14198,7 +14198,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0x6952e684, 0x2b98661b, 0x21066b90, 0xe52ce3e3],
+        [0x6952e684, 0x2b98661b, 0x63d68315, 0x6c916091],
     );
     ck_sobolbn(
         5,
@@ -14206,7 +14206,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0xf69333c4, 0x8187b8c2, 0x5de62f05, 0xa5dceb70],
+        [0xf69333c4, 0x8187b8c2, 0xa80b3218, 0xc94416fa],
     );
     ck_sobolbn(
         5,
@@ -14214,7 +14214,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x92fb69d4, 0x8c99975a, 0x828a8cbb, 0xb572cc61],
+        [0x92fb69d4, 0x8c99975a, 0x8a166ec1, 0xc29761ec],
     );
     ck_sobolbn(
         5,
@@ -14222,7 +14222,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0x8b6c3b0b, 0x7b58a465, 0x5471cd02, 0x92f3bd62],
+        [0x8b6c3b0b, 0x7b58a465, 0x0e6546ff, 0xc6f2ffd1],
     );
     ck_sobolbn(
         5,
@@ -14230,7 +14230,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x7ca947a8, 0xddfc255b, 0x03300fb6, 0xe2f04a66],
+        [0x7ca947a8, 0xddfc255b, 0xc863253a, 0x7b27f513],
     );
     ck_sobolbn(
         5,
@@ -14238,7 +14238,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0xd808e023, 0x388e0993, 0x6ab8f04d, 0x2c91f37a],
+        [0xd808e023, 0x388e0993, 0x60c3d6a6, 0x8cd58f7a],
     );
     ck_sobolbn(
         5,
@@ -14246,7 +14246,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x7cf108d5, 0x18a40d22, 0xbd091f34, 0xcbcfb230],
+        [0x7cf108d5, 0x18a40d22, 0xf58a6b2d, 0x2490971e],
     );
     ck_sobolbn(
         5,
@@ -14254,7 +14254,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0xf3595a78, 0x70fac674, 0x1a19f800, 0xc957730f],
+        [0xf3595a78, 0x70fac674, 0x69fe84a8, 0x7dcf0b49],
     );
     ck_sobolbn(
         5,
@@ -14262,7 +14262,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0xe0f8250a, 0x4fa7d777, 0x4725f80f, 0x46120439],
+        [0xe0f8250a, 0x4fa7d777, 0x19715d14, 0xb9f2ec4f],
     );
     ck_sobolbn(
         5,
@@ -14270,7 +14270,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0x62937abe, 0x75eb771a, 0x4f73bb60, 0xa0033ea2],
+        [0x62937abe, 0x75eb771a, 0xa08cafec, 0xdc976eef],
     );
     ck_sobolbn(
         5,
@@ -14278,7 +14278,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x0897ad24, 0x560c4af6, 0xbe2630da, 0x2ec8dc4b],
+        [0x0897ad24, 0x560c4af6, 0x301ce16a, 0x1a38bbc4],
     );
     ck_sobolbn(
         5,
@@ -14286,7 +14286,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0x04d2f425, 0x18821124, 0xa572f49a, 0x69d75ad4],
+        [0x04d2f425, 0x18821124, 0xe2414694, 0xe2d68f38],
     );
     ck_sobolbn(
         5,
@@ -14294,7 +14294,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0x23b91a24, 0x32a79c04, 0x9eb5fb05, 0x4e0a6b89],
+        [0x23b91a24, 0x32a79c04, 0x66b17548, 0x10dd84de],
     );
     ck_sobolbn(
         5,
@@ -14302,7 +14302,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x3f56cb09, 0x3b2f6dca, 0xf3a0820f, 0x7e2643fd],
+        [0x3f56cb09, 0x3b2f6dca, 0x72dec5ce, 0x0bbfd04c],
     );
     ck_sobolbn(
         5,
@@ -14310,7 +14310,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0x80fc8437, 0x7f2163f5, 0xc56be3be, 0xc9a6d4e2],
+        [0x80fc8437, 0x7f2163f5, 0x0bbc00b3, 0x728ef1a5],
     );
     ck_sobolbn(
         5,
@@ -14318,7 +14318,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0x9d9b9e93, 0xd5bb1b02, 0xc92c6548, 0xbfcf6040],
+        [0x9d9b9e93, 0xd5bb1b02, 0xe08cc4a2, 0xbfa56861],
     );
     ck_sobolbn(
         5,
@@ -14326,7 +14326,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0x3d720fdd, 0x620ab6c4, 0x8e66b123, 0x2b7591ee],
+        [0x3d720fdd, 0x620ab6c4, 0xe486d8dc, 0xfc66b044],
     );
     ck_sobolbn(
         5,
@@ -14334,7 +14334,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x56eaf33d, 0x5647d8d3, 0x6d5ea53f, 0x6c5aca25],
+        [0x56eaf33d, 0x5647d8d3, 0x3279bd2e, 0x32d8d60a],
     );
     ck_sobolbn(
         5,
@@ -14342,7 +14342,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x25385391, 0x7394220e, 0xa019d0cb, 0xeac755a2],
+        [0x25385391, 0x7394220e, 0x18bfe910, 0x576fdb64],
     );
     ck_sobolbn(
         5,
@@ -14350,7 +14350,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0xeece9e78, 0x6ff670c1, 0x971a81f8, 0x03a9d9fd],
+        [0xeece9e78, 0x6ff670c1, 0x5ed005a0, 0x45e67430],
     );
     ck_sobolbn(
         5,
@@ -14358,7 +14358,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0x0dd1d921, 0x6d8be861, 0xa1fe976b, 0x05a3ceb8],
+        [0x0dd1d921, 0x6d8be861, 0x4a1dc999, 0x10da4d42],
     );
     ck_sobolbn(
         5,
@@ -14366,7 +14366,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0xa94e44f5, 0xc1495cf0, 0x7544cb72, 0x31c7ab84],
+        [0xa94e44f5, 0xc1495cf0, 0xf4c19853, 0xb2c7fc47],
     );
     ck_sobolbn(
         5,
@@ -14374,7 +14374,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0x367b5a76, 0x87fed162, 0x79ea9b18, 0x94e8108b],
+        [0x367b5a76, 0x87fed162, 0xad450f90, 0xc0553cda],
     );
     ck_sobolbn(
         5,
@@ -14382,7 +14382,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x9894f793, 0xa62681f6, 0x7236113f, 0xcf70365e],
+        [0x9894f793, 0xa62681f6, 0x97d1e147, 0xdd5a7cb6],
     );
     ck_sobolbn(
         5,
@@ -14390,7 +14390,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0x6a7cee08, 0x9ebecff3, 0x126b4bb9, 0x4aca0f3c],
+        [0x6a7cee08, 0x9ebecff3, 0xa8f0abc6, 0x2453157e],
     );
     ck_sobolbn(
         5,
@@ -14398,7 +14398,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0x4db16ce7, 0x0a534644, 0xe0c7bcf1, 0x72a37d37],
+        [0x4db16ce7, 0x0a534644, 0x1393b9cc, 0xa2971379],
     );
     ck_sobolbn(
         5,
@@ -14406,7 +14406,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x5964dd6f, 0xc740aefe, 0x27bd3f52, 0x9df5e003],
+        [0x5964dd6f, 0xc740aefe, 0xedcfbc2c, 0x60e11a70],
     );
     ck_sobolbn(
         5,
@@ -14414,7 +14414,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0xd0963378, 0xfb57a692, 0x6b9ad357, 0x60cebefb],
+        [0xd0963378, 0xfb57a692, 0x48ff5d56, 0x8fa3aa5b],
     );
     ck_sobolbn(
         5,
@@ -14422,7 +14422,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0xa27d7b8c, 0x804e15a3, 0xc36d4735, 0x79289fa6],
+        [0xa27d7b8c, 0x804e15a3, 0x5b654455, 0xaebe3319],
     );
     ck_sobolbn(
         5,
@@ -14430,7 +14430,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x42d171ec, 0x1632327b, 0x1a33bc53, 0x105cb83b],
+        [0x42d171ec, 0x1632327b, 0x3a75dda2, 0x7b3fdf5c],
     );
     ck_sobolbn(
         5,
@@ -14438,7 +14438,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0x5985a1b9, 0x69bf23d2, 0xf89c767e, 0x71fbd816],
+        [0x5985a1b9, 0x69bf23d2, 0x5c5f3378, 0xfb8ea7eb],
     );
     ck_sobolbn(
         5,
@@ -14446,7 +14446,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0x2d0b7501, 0xd4b9e414, 0x04daeb77, 0xd35aa9c5],
+        [0x2d0b7501, 0xd4b9e414, 0x372006ec, 0x2a0b572a],
     );
     ck_sobolbn(
         5,
@@ -14454,7 +14454,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0xe3412ad5, 0xcc0f537f, 0x81e28d6f, 0x23fe4a89],
+        [0xe3412ad5, 0xcc0f537f, 0x0eb9b7cd, 0x18b2d2e4],
     );
     ck_sobolbn(
         5,
@@ -14462,7 +14462,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0xeece9e78, 0x6ff670c1, 0x971a81f8, 0x03a9d9fd],
+        [0xeece9e78, 0x6ff670c1, 0x5ed005a0, 0x45e67430],
     );
     ck_sobolbn(
         5,
@@ -14470,7 +14470,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0x2c49e7f1, 0x597ec5e2, 0x1130e817, 0xce3824e1],
+        [0x2c49e7f1, 0x597ec5e2, 0x70bbf1b0, 0xcb838983],
     );
     ck_sobolbn(
         5,
@@ -14478,7 +14478,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0xa0143890, 0xcede9226, 0x264d4916, 0xadb5feab],
+        [0xa0143890, 0xcede9226, 0x16ceee77, 0x0f4e9cee],
     );
     ck_sobolbn(
         5,
@@ -14486,7 +14486,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0x3e8f75a5, 0x91b17ec6, 0xadcf543d, 0x2efac37b],
+        [0x3e8f75a5, 0x91b17ec6, 0x0e3d103a, 0x4ce1bd5b],
     );
     ck_sobolbn(
         5,
@@ -14494,7 +14494,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x44ff5f64, 0x297a64b1, 0xcdda755f, 0x36083698],
+        [0x44ff5f64, 0x297a64b1, 0x4ebd14f2, 0x7ae7b395],
     );
     ck_sobolbn(
         5,
@@ -14502,7 +14502,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0xf5ee4a31, 0x79f8b1ec, 0x37b3ec00, 0x49df70b1],
+        [0xf5ee4a31, 0x79f8b1ec, 0x9a53fed6, 0x3bc850a2],
     );
     ck_sobolbn(
         200,
@@ -14510,7 +14510,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x56e8e3a1, 0x9036f3e6, 0x2b0e3b03, 0xa99f57a8],
+        [0x56e8e3a1, 0x9036f3e6, 0x09d073dd, 0x848e40db],
     );
     ck_sobolbn(
         200,
@@ -14518,7 +14518,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0x39e82590, 0x032055e4, 0x3f1c1819, 0xd2920a0c],
+        [0x39e82590, 0x032055e4, 0xfe45409d, 0x492b1eb0],
     );
     ck_sobolbn(
         200,
@@ -14526,7 +14526,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x0729f066, 0xd94a5c00, 0x1defe409, 0x117a7d4a],
+        [0x0729f066, 0xd94a5c00, 0x0bcd54eb, 0x3ae924b5],
     );
     ck_sobolbn(
         200,
@@ -14534,7 +14534,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0x8c2edcc7, 0x402e4528, 0xc497c547, 0x33337929],
+        [0x8c2edcc7, 0x402e4528, 0xf6002de0, 0x0335abee],
     );
     ck_sobolbn(
         200,
@@ -14542,7 +14542,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0xfeae00a5, 0x9a0237ce, 0xc2827e96, 0x118f4265],
+        [0xfeae00a5, 0x9a0237ce, 0x176fc0af, 0xa4402595],
     );
     ck_sobolbn(
         200,
@@ -14550,7 +14550,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0xd84fe75f, 0x46befe2c, 0xa57cf2cf, 0xa4303945],
+        [0xd84fe75f, 0x46befe2c, 0xb743afd5, 0x89c88279],
     );
     ck_sobolbn(
         200,
@@ -14558,7 +14558,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x20d9d6c8, 0x17aa37a4, 0xbad574a2, 0x4037524a],
+        [0x20d9d6c8, 0x17aa37a4, 0x9e86ec73, 0xe5df12bd],
     );
     ck_sobolbn(
         200,
@@ -14566,7 +14566,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0x6ff7d451, 0xe52e52e1, 0x89fced7f, 0x55d1a338],
+        [0x6ff7d451, 0xe52e52e1, 0x6cc86f15, 0x00af147f],
     );
     ck_sobolbn(
         200,
@@ -14574,7 +14574,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x733aa0de, 0x3631ade2, 0xc28e5cb9, 0xc3fa13d0],
+        [0x733aa0de, 0x3631ade2, 0xdbb041ce, 0x4776b0b8],
     );
     ck_sobolbn(
         200,
@@ -14582,7 +14582,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x93c52f95, 0x60987c1f, 0x6eeeb905, 0x1c284750],
+        [0x93c52f95, 0x60987c1f, 0x7d3eb930, 0x77014f0d],
     );
     ck_sobolbn(
         200,
@@ -14590,7 +14590,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x69cd668b, 0x0fce6765, 0xdbf81587, 0x33491413],
+        [0x69cd668b, 0x0fce6765, 0xbf022fe0, 0xa01c8bf5],
     );
     ck_sobolbn(
         200,
@@ -14598,7 +14598,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0xa57ad763, 0x7fdaa885, 0xb8d0b95b, 0xe67887e6],
+        [0xa57ad763, 0x7fdaa885, 0x462cbe52, 0xb35e0b90],
     );
     ck_sobolbn(
         200,
@@ -14606,7 +14606,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0x5471631d, 0x2e22a01e, 0x1024c2bf, 0x180e78d3],
+        [0x5471631d, 0x2e22a01e, 0x6928e874, 0xa87065fe],
     );
     ck_sobolbn(
         200,
@@ -14614,7 +14614,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0xecd35151, 0x6a4bcd56, 0x8f6ce7d5, 0x103c2df7],
+        [0xecd35151, 0x6a4bcd56, 0x45eb6008, 0x29d1708e],
     );
     ck_sobolbn(
         200,
@@ -14622,7 +14622,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0x68e82e3f, 0x8f6ff9b1, 0xceae8bd5, 0x08a44f08],
+        [0x68e82e3f, 0x8f6ff9b1, 0xf5aab0af, 0x5fa0170b],
     );
     ck_sobolbn(
         200,
@@ -14630,7 +14630,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0x39e82590, 0x032055e4, 0x3f1c1819, 0xd2920a0c],
+        [0x39e82590, 0x032055e4, 0xfe45409d, 0x492b1eb0],
     );
     ck_sobolbn(
         200,
@@ -14638,7 +14638,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xec324765, 0x34c5cede, 0x12b07ec2, 0x36a7d254],
+        [0xec324765, 0x34c5cede, 0xbbd5a8ba, 0x70a4111c],
     );
     ck_sobolbn(
         200,
@@ -14646,7 +14646,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0x283e4618, 0x8a9d1831, 0x8f21e4e3, 0x687a712a],
+        [0x283e4618, 0x8a9d1831, 0x973a12ce, 0x70b2d958],
     );
     ck_sobolbn(
         200,
@@ -14654,7 +14654,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0x9ce36793, 0xb3b87234, 0x9be26123, 0x3fc4f145],
+        [0x9ce36793, 0xb3b87234, 0xea9e26be, 0x1f8c545c],
     );
     ck_sobolbn(
         200,
@@ -14662,7 +14662,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0x4527cc2a, 0x9d7c3fde, 0x740351ca, 0xf8010b44],
+        [0x4527cc2a, 0x9d7c3fde, 0xb7dfbb50, 0x818c152a],
     );
     ck_sobolbn(
         200,
@@ -14670,7 +14670,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xff558cc3, 0xe3a73e16, 0xe8b271dc, 0xe1c599ba],
+        [0xff558cc3, 0xe3a73e16, 0x947ac4e7, 0x9a82c521],
     );
     ck_sobolbn(
         200,
@@ -14678,7 +14678,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0x39e82590, 0x032055e4, 0x3f1c1819, 0xd2920a0c],
+        [0x39e82590, 0x032055e4, 0xfe45409d, 0x492b1eb0],
     );
     ck_sobolbn(
         200,
@@ -14686,7 +14686,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xec324765, 0x34c5cede, 0x12b07ec2, 0x36a7d254],
+        [0xec324765, 0x34c5cede, 0xbbd5a8ba, 0x70a4111c],
     );
     ck_sobolbn(
         200,
@@ -14694,7 +14694,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0x283e4618, 0x8a9d1831, 0x8f21e4e3, 0x687a712a],
+        [0x283e4618, 0x8a9d1831, 0x973a12ce, 0x70b2d958],
     );
     ck_sobolbn(
         200,
@@ -14702,7 +14702,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0xfeae00a5, 0x9a0237ce, 0xc2827e96, 0x118f4265],
+        [0xfeae00a5, 0x9a0237ce, 0x176fc0af, 0xa4402595],
     );
     ck_sobolbn(
         200,
@@ -14710,7 +14710,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x7810bd13, 0xca5133ea, 0xa2b9bd20, 0xb6f8f878],
+        [0x7810bd13, 0xca5133ea, 0x0e244519, 0xe16b7678],
     );
     ck_sobolbn(
         200,
@@ -14718,7 +14718,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x918f6669, 0x735d90de, 0x04bcdbe9, 0xec3e3a67],
+        [0x918f6669, 0x735d90de, 0x1b85a21b, 0xff65195b],
     );
     ck_sobolbn(
         200,
@@ -14726,7 +14726,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0x6ff7d451, 0xe52e52e1, 0x89fced7f, 0x55d1a338],
+        [0x6ff7d451, 0xe52e52e1, 0x6cc86f15, 0x00af147f],
     );
     ck_sobolbn(
         200,
@@ -14734,7 +14734,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x1854aa15, 0x6afb4db1, 0x4fcc5f79, 0x487041b9],
+        [0x1854aa15, 0x6afb4db1, 0xf592850c, 0x8d6d552b],
     );
     ck_sobolbn(
         200,
@@ -14742,7 +14742,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x6b98f0e5, 0x3a6faf1c, 0x467827ca, 0x9d8be17d],
+        [0x6b98f0e5, 0x3a6faf1c, 0x5544e185, 0x0a3502ed],
     );
     ck_sobolbn(
         200,
@@ -14750,7 +14750,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x69cd668b, 0x0fce6765, 0xdbf81587, 0x33491413],
+        [0x69cd668b, 0x0fce6765, 0xbf022fe0, 0xa01c8bf5],
     );
     ck_sobolbn(
         200,
@@ -14758,7 +14758,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x350cc437, 0x0b7fc1ef, 0x7bc41b71, 0x2066c93e],
+        [0x350cc437, 0x0b7fc1ef, 0x9b0a8632, 0xb3af504b],
     );
     ck_sobolbn(
         200,
@@ -14766,7 +14766,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0x1526e2e1, 0xcae68db1, 0xaf3d1641, 0x045bd688],
+        [0x1526e2e1, 0xcae68db1, 0xe04b5b57, 0x58ce5aaf],
     );
     ck_sobolbn(
         200,
@@ -14774,7 +14774,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0xecd35151, 0x6a4bcd56, 0x8f6ce7d5, 0x103c2df7],
+        [0xecd35151, 0x6a4bcd56, 0x45eb6008, 0x29d1708e],
     );
     ck_sobolbn(
         200,
@@ -14782,7 +14782,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x6a7828c1, 0xc8227f16, 0x84787fc8, 0x73a93409],
+        [0x6a7828c1, 0xc8227f16, 0x8e0707d4, 0xd991db9b],
     );
     ck_sobolbn(
         200,
@@ -14790,7 +14790,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0xd385deef, 0x9e258efb, 0x79eade6e, 0x080dc802],
+        [0xd385deef, 0x9e258efb, 0x3d93f345, 0x272e7690],
     );
     ck_sobolbn(
         200,
@@ -14798,7 +14798,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xec324765, 0x34c5cede, 0x12b07ec2, 0x36a7d254],
+        [0xec324765, 0x34c5cede, 0xbbd5a8ba, 0x70a4111c],
     );
     ck_sobolbn(
         200,
@@ -14806,7 +14806,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x83475801, 0x6a06a446, 0xc2130345, 0x5a92f4e5],
+        [0x83475801, 0x6a06a446, 0xc7063e44, 0xfb2ee0af],
     );
     ck_sobolbn(
         200,
@@ -14814,7 +14814,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0x50c1842a, 0x9c2c6a48, 0x6a87da22, 0xc6930a5b],
+        [0x50c1842a, 0x9c2c6a48, 0xf7c99348, 0xa9b2a911],
     );
     ck_sobolbn(
         200,
@@ -14822,7 +14822,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0x4527cc2a, 0x9d7c3fde, 0x740351ca, 0xf8010b44],
+        [0x4527cc2a, 0x9d7c3fde, 0xb7dfbb50, 0x818c152a],
     );
     ck_sobolbn(
         200,
@@ -14830,7 +14830,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0x2b3d66cd, 0xadadad40, 0xdec3dcd9, 0x4169eb09],
+        [0x2b3d66cd, 0xadadad40, 0x5aff99c4, 0xe8169914],
     );
     ck_sobolbn(
         200,
@@ -14838,7 +14838,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x5ec446f6, 0x570e5d17, 0x8f304f24, 0x3ebbdeb5],
+        [0x5ec446f6, 0x570e5d17, 0xcbf6789a, 0x1443c8ce],
     );
     ck_sobolbn(
         200,
@@ -14846,7 +14846,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x9b1cbfeb, 0x7bceebef, 0xf68e8218, 0xd9e7ddaa],
+        [0x9b1cbfeb, 0x7bceebef, 0xf90ed489, 0xe4f4ef5c],
     );
     ck_sobolbn(
         200,
@@ -14854,7 +14854,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0xcb45e730, 0x972235da, 0xd16f5816, 0x557dbd35],
+        [0xcb45e730, 0x972235da, 0x9502b2d8, 0x02924a99],
     );
     ck_sobolbn(
         200,
@@ -14862,7 +14862,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0x3e6826c1, 0xef69a7b6, 0x29b11cc9, 0x034bf9a0],
+        [0x3e6826c1, 0xef69a7b6, 0xfef594c1, 0x062e8a33],
     );
     ck_sobolbn(
         200,
@@ -14870,7 +14870,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0x6d248c2a, 0xa98ef552, 0x0d7612bf, 0x27a26c13],
+        [0x6d248c2a, 0xa98ef552, 0x004648c5, 0x0bfc4489],
     );
     ck_sobolbn(
         200,
@@ -14878,7 +14878,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0x1f898e10, 0x636d3e83, 0x2897b482, 0x83b47de4],
+        [0x1f898e10, 0x636d3e83, 0x587b6f22, 0xfc99fe95],
     );
     ck_sobolbn(
         200,
@@ -14886,23 +14886,23 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0xd36c91f8, 0x7f3abe9d, 0xd428d417, 0xba42f1df],
-    );
-    ck_sobolbn(
-        200,
-        601,
-        7,
-        3,
-        0,
-        [0xc0049c54, 0xd6e45e32, 0x5eea6121, 0x65fba319],
+        [0xd36c91f8, 0x7f3abe9d, 0x186c3f08, 0xbcabd3a8],
     );
     ck_sobolbn(
         200,
         601,
         7,
         3,
+        0,
+        [0xc0049c54, 0xd6e45e32, 0x543a7256, 0x8b423786],
+    );
+    ck_sobolbn(
+        200,
+        601,
+        7,
+        3,
         1,
-        [0x653a0223, 0xcb761cb2, 0xbb6a72a5, 0x02edae53],
+        [0x653a0223, 0xcb761cb2, 0xe7b47467, 0x83f9c572],
     );
     ck_sobolbn(
         200,
@@ -14910,7 +14910,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0xad597316, 0x85d87af6, 0x6cbd82ad, 0x6e46c298],
+        [0xad597316, 0x85d87af6, 0x9c5c2d3e, 0xd2d7b06e],
     );
     ck_sobolbn(
         200,
@@ -14918,7 +14918,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0xbe1f9455, 0xebbf2678, 0x47125da9, 0x06fc2923],
+        [0xbe1f9455, 0xebbf2678, 0xd6896272, 0xa5b4ed53],
     );
     ck_sobolbn(
         200,
@@ -14926,7 +14926,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0x9c79acc8, 0x65d0fa3d, 0x94302ef5, 0x0d44091e],
+        [0x9c79acc8, 0x65d0fa3d, 0x92605eed, 0x8f11bdef],
     );
     ck_sobolbn(
         200,
@@ -14934,7 +14934,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x10ec11fe, 0x3e84eac1, 0xbf86e5f8, 0x8cbcc753],
+        [0x10ec11fe, 0x3e84eac1, 0xc81addae, 0x4f5ee01f],
     );
     ck_sobolbn(
         200,
@@ -14942,7 +14942,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xe0907d43, 0x61535ff9, 0xb5f213b2, 0xe044cc79],
+        [0xe0907d43, 0x61535ff9, 0x5c948551, 0x440b2613],
     );
     ck_sobolbn(
         200,
@@ -14950,7 +14950,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0x6ad9a0a8, 0x89ef3286, 0xb4ade40c, 0xcef39166],
+        [0x6ad9a0a8, 0x89ef3286, 0xcb4dbb42, 0xb0249564],
     );
     ck_sobolbn(
         200,
@@ -14958,7 +14958,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0xeab1da5f, 0xf8faa06e, 0x12a63020, 0xb61402e0],
+        [0xeab1da5f, 0xf8faa06e, 0xa916377c, 0x1b56b8f3],
     );
     ck_sobolbn(
         200,
@@ -14966,7 +14966,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0xcb45e730, 0x972235da, 0xd16f5816, 0x557dbd35],
+        [0xcb45e730, 0x972235da, 0x9502b2d8, 0x02924a99],
     );
     ck_sobolbn(
         200,
@@ -14974,7 +14974,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0xf627b927, 0xa1f36d93, 0xc38264b0, 0x8c139845],
+        [0xf627b927, 0xa1f36d93, 0xe526f7f2, 0x9579cb2e],
     );
     ck_sobolbn(
         200,
@@ -14982,7 +14982,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0x5aa941bd, 0x022d6b93, 0xdf5ef94e, 0x1c8f428a],
+        [0x5aa941bd, 0x022d6b93, 0x3aba7cca, 0x4f9e330c],
     );
     ck_sobolbn(
         200,
@@ -14990,7 +14990,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0x37944434, 0x8ef7e44e, 0x8423f66c, 0x33b69b60],
+        [0x37944434, 0x8ef7e44e, 0x15628586, 0xb349f227],
     );
     ck_sobolbn(
         200,
@@ -14998,7 +14998,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x736e4841, 0x2520ae3e, 0xfef3634c, 0x115390f7],
+        [0x736e4841, 0x2520ae3e, 0x0cbc888a, 0x967c7406],
     );
     ck_sobolbn(
         200,
@@ -15006,7 +15006,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0xf610ec4a, 0x50bd3291, 0x1b469337, 0xde715742],
+        [0xf610ec4a, 0x50bd3291, 0x9b85cfc5, 0x31226a88],
     );
     ck_sobolbn(
         255,
@@ -15014,7 +15014,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0xc0df1745, 0x8f1527f1, 0x1fb06ca2, 0x0d42c905],
+        [0xc0df1745, 0x8f1527f1, 0xbbc63dbb, 0x6f8d93b0],
     );
     ck_sobolbn(
         255,
@@ -15022,7 +15022,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0xd8069094, 0x9f594e51, 0xb6ffacfe, 0xad3e103c],
+        [0xd8069094, 0x9f594e51, 0x7993710c, 0x56583f96],
     );
     ck_sobolbn(
         255,
@@ -15030,7 +15030,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x8f92aec2, 0x716434ea, 0x5f9de1a5, 0xa10309d6],
+        [0x8f92aec2, 0x716434ea, 0x4014d17c, 0x388584f8],
     );
     ck_sobolbn(
         255,
@@ -15038,7 +15038,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0x069a7ba6, 0x5304c534, 0xccc38e39, 0xef121945],
+        [0x069a7ba6, 0x5304c534, 0x595d1372, 0xaddc6ee3],
     );
     ck_sobolbn(
         255,
@@ -15046,7 +15046,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0x406756bb, 0x3dad0432, 0x2b915b73, 0x499bb40f],
+        [0x406756bb, 0x3dad0432, 0xee9971ff, 0xb50e997c],
     );
     ck_sobolbn(
         255,
@@ -15054,7 +15054,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0x3b04e206, 0xf9604eed, 0xa2fc9707, 0x70cfea17],
+        [0x3b04e206, 0xf9604eed, 0xb0e4a95a, 0xdcb81a58],
     );
     ck_sobolbn(
         255,
@@ -15062,7 +15062,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0xa778cb16, 0x15ff9524, 0x873ad251, 0x8396eb0f],
+        [0xa778cb16, 0x15ff9524, 0x2964d0de, 0x2afddaab],
     );
     ck_sobolbn(
         255,
@@ -15070,7 +15070,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0x81b40bb5, 0x60750969, 0x766fb8dc, 0x117109e8],
+        [0x81b40bb5, 0x60750969, 0xb908e35f, 0x0e04036d],
     );
     ck_sobolbn(
         255,
@@ -15078,7 +15078,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0xffa75546, 0xadeab1a3, 0xf0eaa6cd, 0x260ca1f3],
+        [0xffa75546, 0xadeab1a3, 0xeba82515, 0x6874da19],
     );
     ck_sobolbn(
         255,
@@ -15086,7 +15086,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0xd9bf56df, 0xb896d754, 0x8b32c61d, 0x2411458a],
+        [0xd9bf56df, 0xb896d754, 0x0430e128, 0x3010cfb5],
     );
     ck_sobolbn(
         255,
@@ -15094,7 +15094,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0xd7e2c68e, 0xd81f13e8, 0x0e1f7ec8, 0x41649fa0],
+        [0xd7e2c68e, 0xd81f13e8, 0xbc542e7d, 0xbb1b6826],
     );
     ck_sobolbn(
         255,
@@ -15102,7 +15102,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0xbafe910b, 0x81c070d7, 0xebe21ccf, 0x40a159e6],
+        [0xbafe910b, 0x81c070d7, 0x799229df, 0x5271367d],
     );
     ck_sobolbn(
         255,
@@ -15110,7 +15110,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0x1a569aa8, 0x4ca9d8c1, 0xc3791e1b, 0x6fe6e4d9],
+        [0x1a569aa8, 0x4ca9d8c1, 0x51b523d8, 0xbf904c71],
     );
     ck_sobolbn(
         255,
@@ -15118,7 +15118,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0xd1d9e7e4, 0xd9c5c595, 0x850fb941, 0x6eb380c8],
+        [0xd1d9e7e4, 0xd9c5c595, 0x2130b1b0, 0x4cfff045],
     );
     ck_sobolbn(
         255,
@@ -15126,7 +15126,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0x939791e5, 0x306026c9, 0xa548a186, 0xcf28dc0b],
+        [0x939791e5, 0x306026c9, 0xb2e47789, 0xe0a64f70],
     );
     ck_sobolbn(
         255,
@@ -15134,7 +15134,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0xd8069094, 0x9f594e51, 0xb6ffacfe, 0xad3e103c],
+        [0xd8069094, 0x9f594e51, 0x7993710c, 0x56583f96],
     );
     ck_sobolbn(
         255,
@@ -15142,7 +15142,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xc5c482ba, 0xd3819500, 0xd639dedb, 0xe9dc3fc6],
+        [0xc5c482ba, 0xd3819500, 0x8a58629c, 0x00e78da6],
     );
     ck_sobolbn(
         255,
@@ -15150,7 +15150,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0x2e3205eb, 0x0bf9e0f6, 0x51f991a2, 0x70b67365],
+        [0x2e3205eb, 0x0bf9e0f6, 0x4972771b, 0xc2b51333],
     );
     ck_sobolbn(
         255,
@@ -15158,7 +15158,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0xc75c8014, 0x1f11dd64, 0x0a412465, 0x3945f544],
+        [0xc75c8014, 0x1f11dd64, 0xb3c73a23, 0x90abc9a6],
     );
     ck_sobolbn(
         255,
@@ -15166,7 +15166,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0xaaa6cca8, 0xe22d0787, 0x43610df9, 0xce843a49],
+        [0xaaa6cca8, 0xe22d0787, 0x36515c3e, 0xab49e928],
     );
     ck_sobolbn(
         255,
@@ -15174,7 +15174,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xab7c6c45, 0xa6356b2c, 0x0fb26d88, 0xc945fb02],
+        [0xab7c6c45, 0xa6356b2c, 0x16e1f796, 0x28548a9f],
     );
     ck_sobolbn(
         255,
@@ -15182,7 +15182,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0xd8069094, 0x9f594e51, 0xb6ffacfe, 0xad3e103c],
+        [0xd8069094, 0x9f594e51, 0x7993710c, 0x56583f96],
     );
     ck_sobolbn(
         255,
@@ -15190,7 +15190,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xc5c482ba, 0xd3819500, 0xd639dedb, 0xe9dc3fc6],
+        [0xc5c482ba, 0xd3819500, 0x8a58629c, 0x00e78da6],
     );
     ck_sobolbn(
         255,
@@ -15198,7 +15198,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0x2e3205eb, 0x0bf9e0f6, 0x51f991a2, 0x70b67365],
+        [0x2e3205eb, 0x0bf9e0f6, 0x4972771b, 0xc2b51333],
     );
     ck_sobolbn(
         255,
@@ -15206,7 +15206,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0x406756bb, 0x3dad0432, 0x2b915b73, 0x499bb40f],
+        [0x406756bb, 0x3dad0432, 0xee9971ff, 0xb50e997c],
     );
     ck_sobolbn(
         255,
@@ -15214,7 +15214,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x4326c5b2, 0x25de936a, 0x405335b3, 0x4beb47ba],
+        [0x4326c5b2, 0x25de936a, 0x1ceb92ec, 0xacaddcc1],
     );
     ck_sobolbn(
         255,
@@ -15222,7 +15222,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x8f17b167, 0x8268bf2e, 0xa9c86f6f, 0xce81bd7d],
+        [0x8f17b167, 0x8268bf2e, 0xb875bd4f, 0x7a12edeb],
     );
     ck_sobolbn(
         255,
@@ -15230,7 +15230,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0x81b40bb5, 0x60750969, 0x766fb8dc, 0x117109e8],
+        [0x81b40bb5, 0x60750969, 0xb908e35f, 0x0e04036d],
     );
     ck_sobolbn(
         255,
@@ -15238,7 +15238,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x2b4d605b, 0xa572355c, 0x941b9ddf, 0x88ce95c7],
+        [0x2b4d605b, 0xa572355c, 0xcbd953e1, 0xd2e2f74e],
     );
     ck_sobolbn(
         255,
@@ -15246,7 +15246,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x52d33a8f, 0xe01cf79b, 0xdd72e497, 0xae927c74],
+        [0x52d33a8f, 0xe01cf79b, 0xca5c6f21, 0xa28b5fe1],
     );
     ck_sobolbn(
         255,
@@ -15254,7 +15254,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0xd7e2c68e, 0xd81f13e8, 0x0e1f7ec8, 0x41649fa0],
+        [0xd7e2c68e, 0xd81f13e8, 0xbc542e7d, 0xbb1b6826],
     );
     ck_sobolbn(
         255,
@@ -15262,7 +15262,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x5ec5e6c3, 0x1def9825, 0x9a508c16, 0x71b6fda8],
+        [0x5ec5e6c3, 0x1def9825, 0xecf6d6eb, 0xcdaff9d3],
     );
     ck_sobolbn(
         255,
@@ -15270,7 +15270,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0x92ccbd87, 0x3f6ee0cb, 0x911ca1f5, 0x05a75527],
+        [0x92ccbd87, 0x3f6ee0cb, 0x7d42d963, 0x608a641c],
     );
     ck_sobolbn(
         255,
@@ -15278,7 +15278,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0xd1d9e7e4, 0xd9c5c595, 0x850fb941, 0x6eb380c8],
+        [0xd1d9e7e4, 0xd9c5c595, 0x2130b1b0, 0x4cfff045],
     );
     ck_sobolbn(
         255,
@@ -15286,7 +15286,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0xf53c9d4f, 0x44ac75af, 0xc3f7c447, 0xb96fe675],
+        [0xf53c9d4f, 0x44ac75af, 0x477fb871, 0x0a4766b4],
     );
     ck_sobolbn(
         255,
@@ -15294,7 +15294,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0x4bfec9c5, 0x8449ef32, 0x13b9a43c, 0xefeb91bb],
+        [0x4bfec9c5, 0x8449ef32, 0x995ed416, 0x3d94fa4b],
     );
     ck_sobolbn(
         255,
@@ -15302,7 +15302,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xc5c482ba, 0xd3819500, 0xd639dedb, 0xe9dc3fc6],
+        [0xc5c482ba, 0xd3819500, 0x8a58629c, 0x00e78da6],
     );
     ck_sobolbn(
         255,
@@ -15310,7 +15310,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x4c104af7, 0x8bbd8f1f, 0xbf210947, 0xc0d10869],
+        [0x4c104af7, 0x8bbd8f1f, 0x48bfb388, 0x06aa3f03],
     );
     ck_sobolbn(
         255,
@@ -15318,7 +15318,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0xd05249a7, 0xb347d245, 0x3a505b7c, 0x20f58547],
+        [0xd05249a7, 0xb347d245, 0x5cc09f8d, 0x4cd3635f],
     );
     ck_sobolbn(
         255,
@@ -15326,7 +15326,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0xaaa6cca8, 0xe22d0787, 0x43610df9, 0xce843a49],
+        [0xaaa6cca8, 0xe22d0787, 0x36515c3e, 0xab49e928],
     );
     ck_sobolbn(
         255,
@@ -15334,7 +15334,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0xc0c5f3b6, 0x7fc2b57a, 0xb512ff42, 0x4e7b9b54],
+        [0xc0c5f3b6, 0x7fc2b57a, 0x45c9bc06, 0x337aa5ca],
     );
     ck_sobolbn(
         255,
@@ -15342,7 +15342,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x7f9fda55, 0x8ac3fd40, 0xb5f862f5, 0x985ab7bb],
+        [0x7f9fda55, 0x8ac3fd40, 0xb16ba873, 0xd0f52718],
     );
     ck_sobolbn(
         255,
@@ -15350,7 +15350,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0xb1dcef63, 0x39807252, 0x101dd8a1, 0x9bb733ac],
+        [0xb1dcef63, 0x39807252, 0x14a6c086, 0x96fd39af],
     );
     ck_sobolbn(
         255,
@@ -15358,7 +15358,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0x2370c5cb, 0xa99610d8, 0xdaf42749, 0x8df48df5],
+        [0x2370c5cb, 0xa99610d8, 0x07f05036, 0x8cd929c9],
     );
     ck_sobolbn(
         255,
@@ -15366,7 +15366,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0xdf2dde5f, 0xbfa4b0fa, 0xf09467b0, 0x55580faa],
+        [0xdf2dde5f, 0xbfa4b0fa, 0xc2d0e03c, 0x58604c95],
     );
     ck_sobolbn(
         255,
@@ -15374,7 +15374,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0x07b4ff82, 0xd69f0576, 0xf02cf8ff, 0x632ae0a5],
+        [0x07b4ff82, 0xd69f0576, 0xf551be93, 0x6b05465d],
     );
     ck_sobolbn(
         255,
@@ -15382,7 +15382,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0xb309be05, 0x67cc83f3, 0x6ca936f0, 0x24df2671],
+        [0xb309be05, 0x67cc83f3, 0xb07c3ccb, 0x257f199b],
     );
     ck_sobolbn(
         255,
@@ -15390,7 +15390,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x16305b7b, 0x25ba65f2, 0x4c7f0264, 0xe255fe98],
+        [0x16305b7b, 0x25ba65f2, 0x7df4a32f, 0xe923ef35],
     );
     ck_sobolbn(
         255,
@@ -15398,7 +15398,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0xc40e4903, 0xb1656711, 0x91d8e836, 0x1ebb2962],
+        [0xc40e4903, 0xb1656711, 0x941ccbb8, 0xc85841a5],
     );
     ck_sobolbn(
         255,
@@ -15406,7 +15406,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0xe6e78fc5, 0xeec60d47, 0xb500a46c, 0xc915a62d],
+        [0xe6e78fc5, 0xeec60d47, 0x68e61678, 0x7ac4911e],
     );
     ck_sobolbn(
         255,
@@ -15414,7 +15414,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x4e4817d3, 0xe9afdf40, 0x81999a9e, 0x2341d77e],
+        [0x4e4817d3, 0xe9afdf40, 0xa0b4abf2, 0x9d13961d],
     );
     ck_sobolbn(
         255,
@@ -15422,7 +15422,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0x8098238a, 0xc3ea01be, 0xc3da4aa7, 0x9f3aa19c],
+        [0x8098238a, 0xc3ea01be, 0x0fc8cfc3, 0x464c9346],
     );
     ck_sobolbn(
         255,
@@ -15430,7 +15430,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0x092b4661, 0x7177e74a, 0x463e34e6, 0x88a99d78],
+        [0x092b4661, 0x7177e74a, 0x16f2fa0d, 0x18bdf902],
     );
     ck_sobolbn(
         255,
@@ -15438,7 +15438,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0xc5b7b0c8, 0x0c2ebd73, 0xd42ed87a, 0x88e51347],
+        [0xc5b7b0c8, 0x0c2ebd73, 0x4c3d80a0, 0x491a5c85],
     );
     ck_sobolbn(
         255,
@@ -15446,7 +15446,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xb609df23, 0x2c5913f2, 0x03d7ba95, 0xb14b9f0e],
+        [0xb609df23, 0x2c5913f2, 0xaaf54c69, 0x8704705a],
     );
     ck_sobolbn(
         255,
@@ -15454,7 +15454,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0x9814b243, 0x25a6239a, 0x08010a0a, 0x7b9e1416],
+        [0x9814b243, 0x25a6239a, 0xd4f5297b, 0xd52de174],
     );
     ck_sobolbn(
         255,
@@ -15462,7 +15462,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0xf7aa36c5, 0xc91eb70d, 0xbe82dd9c, 0x0a8735f2],
+        [0xf7aa36c5, 0xc91eb70d, 0x0284f319, 0xa8929a90],
     );
     ck_sobolbn(
         255,
@@ -15470,7 +15470,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0x2370c5cb, 0xa99610d8, 0xdaf42749, 0x8df48df5],
+        [0x2370c5cb, 0xa99610d8, 0x07f05036, 0x8cd929c9],
     );
     ck_sobolbn(
         255,
@@ -15478,7 +15478,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0x5e51e6f4, 0x158efbb0, 0xae76b2f3, 0x1976c8fb],
+        [0x5e51e6f4, 0x158efbb0, 0x8668c8f7, 0xf799244e],
     );
     ck_sobolbn(
         255,
@@ -15486,7 +15486,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0x023fd190, 0xdea178e5, 0xdf8f0d9a, 0xbaac1906],
+        [0x023fd190, 0xdea178e5, 0xeaff847d, 0x482f060c],
     );
     ck_sobolbn(
         255,
@@ -15494,7 +15494,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xde493783, 0xbf9988b9, 0x16fb373d, 0x1d612de4],
+        [0xde493783, 0xbf9988b9, 0x1cceac19, 0xff99a672],
     );
     ck_sobolbn(
         255,
@@ -15502,7 +15502,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x8ab56dda, 0xd138c19d, 0xb588e851, 0xf2c73ec9],
+        [0x8ab56dda, 0xd138c19d, 0x373a2ef6, 0xf10dddc5],
     );
     ck_sobolbn(
         255,
@@ -15510,7 +15510,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0x59aec93b, 0x9c9e0e37, 0x83e6f4d3, 0x01e110f3],
+        [0x59aec93b, 0x9c9e0e37, 0x9facea28, 0x9852dea1],
     );
     ck_sobolbn(
         256,
@@ -15518,7 +15518,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x7cb05a2e, 0xe5bd87cc, 0xca7ccc27, 0x9e81feda],
+        [0x7cb05a2e, 0xe5bd87cc, 0x8b63265d, 0x44541524],
     );
     ck_sobolbn(
         256,
@@ -15526,7 +15526,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         256,
@@ -15534,7 +15534,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x9d4c55a2, 0xe6f900df, 0xef2b2ced, 0xa37a5b12],
+        [0x9d4c55a2, 0xe6f900df, 0xe251a78a, 0x31a87bbc],
     );
     ck_sobolbn(
         256,
@@ -15542,7 +15542,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0x9c45d872, 0x2160c74c, 0x38377cdf, 0x5b02b331],
+        [0x9c45d872, 0x2160c74c, 0x4541a5f6, 0x8f7695c4],
     );
     ck_sobolbn(
         256,
@@ -15550,7 +15550,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0xb753be70, 0x21ff3297, 0x0dac5004, 0xe0b4a1fa],
+        [0xb753be70, 0x21ff3297, 0x92a48f2c, 0x68b6f1b0],
     );
     ck_sobolbn(
         256,
@@ -15558,7 +15558,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0x539a4648, 0x4bc685ae, 0x67a67fb5, 0x2984729b],
+        [0x539a4648, 0x4bc685ae, 0x687f69c4, 0xbabd7a76],
     );
     ck_sobolbn(
         256,
@@ -15566,7 +15566,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x023a77ff, 0x5fe6ab40, 0x670f9f72, 0x228bb0b4],
+        [0x023a77ff, 0x5fe6ab40, 0x1b3a39bd, 0x34d11930],
     );
     ck_sobolbn(
         256,
@@ -15574,7 +15574,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0xe4f20f5f, 0xb7fce96d, 0x8e96f43d, 0x53f69afa],
+        [0xe4f20f5f, 0xb7fce96d, 0x11c9a108, 0x346a5e93],
     );
     ck_sobolbn(
         256,
@@ -15582,7 +15582,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x0caa674f, 0xb620638d, 0x8a8b146e, 0xe9ef17a8],
+        [0x0caa674f, 0xb620638d, 0x843a0b95, 0xf67673a7],
     );
     ck_sobolbn(
         256,
@@ -15590,7 +15590,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x6d1c97ce, 0xc1e14397, 0x6de985d6, 0xade4d42b],
+        [0x6d1c97ce, 0xc1e14397, 0x34a9e8e1, 0x2aa5ea68],
     );
     ck_sobolbn(
         256,
@@ -15598,7 +15598,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0x9fa2a726, 0x999e35d1, 0x9d0c3b19, 0x322dcbdd],
+        [0x9fa2a726, 0x999e35d1, 0xb66559d1, 0x0bcc04e4],
     );
     ck_sobolbn(
         256,
@@ -15606,7 +15606,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0x1a6f594f, 0x94e9e95b, 0x688bd08d, 0xd6e954ff],
+        [0x1a6f594f, 0x94e9e95b, 0x4ee41589, 0xad5ab01d],
     );
     ck_sobolbn(
         256,
@@ -15614,7 +15614,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0x07c45de0, 0x06c2dc78, 0xd0b56fcc, 0xa55fdda4],
+        [0x07c45de0, 0x06c2dc78, 0x32e10770, 0x57923aa5],
     );
     ck_sobolbn(
         256,
@@ -15622,7 +15622,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0x6ad90c31, 0xe5797841, 0x2e508cf8, 0x5bb86f83],
+        [0x6ad90c31, 0xe5797841, 0x635134ae, 0x4fbed86c],
     );
     ck_sobolbn(
         256,
@@ -15630,7 +15630,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0xfa54e5f1, 0x449fba97, 0x2e5ea728, 0x9b157400],
+        [0xfa54e5f1, 0x449fba97, 0x886165ae, 0x5e467ef5],
     );
     ck_sobolbn(
         256,
@@ -15638,7 +15638,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         256,
@@ -15646,7 +15646,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         256,
@@ -15654,7 +15654,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0xdd671d82, 0x4e18545c, 0xab53e66f, 0xd5a76cf5],
+        [0xdd671d82, 0x4e18545c, 0xcb4f9327, 0x8c46fb57],
     );
     ck_sobolbn(
         256,
@@ -15662,7 +15662,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0xfd9ad3cd, 0x00b7d040, 0xf34519c8, 0x889a5cfc],
+        [0xfd9ad3cd, 0x00b7d040, 0xb4f4abf7, 0xb166f3b1],
     );
     ck_sobolbn(
         256,
@@ -15670,7 +15670,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0x607d9449, 0x7839b2f1, 0x1bba8e5d, 0x6ded6593],
+        [0x607d9449, 0x7839b2f1, 0x4e6aac25, 0x30a8b2ac],
     );
     ck_sobolbn(
         256,
@@ -15678,7 +15678,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0xb8ad83ce, 0xfd657866, 0x8c3cb721, 0xff159e1f],
+        [0xb8ad83ce, 0xfd657866, 0x8b81d7de, 0x82df0735],
     );
     ck_sobolbn(
         256,
@@ -15686,7 +15686,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0x5867103e, 0xec40d8ca, 0xdb68ecce, 0x0ddad4c8],
+        [0x5867103e, 0xec40d8ca, 0x6e983e64, 0xa54adfee],
     );
     ck_sobolbn(
         256,
@@ -15694,7 +15694,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         256,
@@ -15702,7 +15702,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0xdd671d82, 0x4e18545c, 0xab53e66f, 0xd5a76cf5],
+        [0xdd671d82, 0x4e18545c, 0xcb4f9327, 0x8c46fb57],
     );
     ck_sobolbn(
         256,
@@ -15710,7 +15710,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0xb753be70, 0x21ff3297, 0x0dac5004, 0xe0b4a1fa],
+        [0xb753be70, 0x21ff3297, 0x92a48f2c, 0x68b6f1b0],
     );
     ck_sobolbn(
         256,
@@ -15718,7 +15718,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x1cf81dd4, 0x0d997ef0, 0x31d93e71, 0x73737374],
+        [0x1cf81dd4, 0x0d997ef0, 0x00420454, 0x09891421],
     );
     ck_sobolbn(
         256,
@@ -15726,7 +15726,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x0c0e3a37, 0x9a12615c, 0x7152ff0b, 0x0b94d7da],
+        [0x0c0e3a37, 0x9a12615c, 0x292487bd, 0x64fe0762],
     );
     ck_sobolbn(
         256,
@@ -15734,7 +15734,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0xe4f20f5f, 0xb7fce96d, 0x8e96f43d, 0x53f69afa],
+        [0xe4f20f5f, 0xb7fce96d, 0x11c9a108, 0x346a5e93],
     );
     ck_sobolbn(
         256,
@@ -15742,7 +15742,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x8eea024b, 0x7dbb13a5, 0x6940eeae, 0x15c4694b],
+        [0x8eea024b, 0x7dbb13a5, 0x5afc9f4f, 0xbc91ad98],
     );
     ck_sobolbn(
         256,
@@ -15750,7 +15750,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x7ecab9e4, 0x24d9dd9d, 0xc7e55e6b, 0xa08df414],
+        [0x7ecab9e4, 0x24d9dd9d, 0xa22c3046, 0x394938d6],
     );
     ck_sobolbn(
         256,
@@ -15758,7 +15758,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0x9fa2a726, 0x999e35d1, 0x9d0c3b19, 0x322dcbdd],
+        [0x9fa2a726, 0x999e35d1, 0xb66559d1, 0x0bcc04e4],
     );
     ck_sobolbn(
         256,
@@ -15766,7 +15766,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0x7a9e8e1b, 0x5a0a8f68, 0xdcdeaf96, 0x60cbcdde],
+        [0x7a9e8e1b, 0x5a0a8f68, 0x799eef6b, 0x7809eb1c],
     );
     ck_sobolbn(
         256,
@@ -15774,7 +15774,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0xf11e14dd, 0xfb7e3e0d, 0x35185d5e, 0x24d60588],
+        [0xf11e14dd, 0xfb7e3e0d, 0xe6ff30c3, 0xc1cfca34],
     );
     ck_sobolbn(
         256,
@@ -15782,7 +15782,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0x6ad90c31, 0xe5797841, 0x2e508cf8, 0x5bb86f83],
+        [0x6ad90c31, 0xe5797841, 0x635134ae, 0x4fbed86c],
     );
     ck_sobolbn(
         256,
@@ -15790,7 +15790,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x23ca975e, 0x84228a29, 0x1dc0922a, 0xe263dbf5],
+        [0x23ca975e, 0x84228a29, 0x4f31aab9, 0x0d3da177],
     );
     ck_sobolbn(
         256,
@@ -15798,7 +15798,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0xbf06643b, 0xc84d5ace, 0x68a4239c, 0x717ca95f],
+        [0xbf06643b, 0xc84d5ace, 0xb48e1798, 0x6fb9f8cb],
     );
     ck_sobolbn(
         256,
@@ -15806,7 +15806,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xd3d6d71f, 0xbee72cf0, 0xaa5ab72e, 0xa6155723],
+        [0xd3d6d71f, 0xbee72cf0, 0x8b327d8c, 0xeb3098ed],
     );
     ck_sobolbn(
         256,
@@ -15814,7 +15814,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x53e002eb, 0xb67d6bdd, 0xbca56ebf, 0xf7120627],
+        [0x53e002eb, 0xb67d6bdd, 0x5760f27b, 0x62987287],
     );
     ck_sobolbn(
         256,
@@ -15822,7 +15822,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0x40dc834e, 0x8dacb628, 0xb85f11e5, 0x6e9096d1],
+        [0x40dc834e, 0x8dacb628, 0xa043ddb1, 0x23846959],
     );
     ck_sobolbn(
         256,
@@ -15830,7 +15830,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0x607d9449, 0x7839b2f1, 0x1bba8e5d, 0x6ded6593],
+        [0x607d9449, 0x7839b2f1, 0x4e6aac25, 0x30a8b2ac],
     );
     ck_sobolbn(
         256,
@@ -15838,7 +15838,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0xfbbecbe8, 0x95562899, 0xb4b9cafa, 0x61200ea3],
+        [0xfbbecbe8, 0x95562899, 0x7346e278, 0x7319b9f7],
     );
     ck_sobolbn(
         256,
@@ -15846,7 +15846,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0x02ea1369, 0xc1202792, 0x89d851f8, 0x20c5be4a],
+        [0x02ea1369, 0xc1202792, 0x3646cac3, 0x0d0b44e7],
     );
     ck_sobolbn(
         256,
@@ -15854,7 +15854,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0x63a81451, 0x23b8cab6, 0xb3673f4a, 0xbb424bdf],
+        [0x63a81451, 0x23b8cab6, 0x3f202dc2, 0xb0899c63],
     );
     ck_sobolbn(
         256,
@@ -15862,7 +15862,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0x2763dea3, 0xa29fc4b3, 0x3dff6a5b, 0xfbc204d8],
+        [0x2763dea3, 0xa29fc4b3, 0x8c2e8ac7, 0xf9e236ee],
     );
     ck_sobolbn(
         256,
@@ -15870,7 +15870,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0xe32a74b9, 0x9e332128, 0xc93c00b3, 0x8ad7ebc2],
+        [0xe32a74b9, 0x9e332128, 0xacfdf523, 0xca21542f],
     );
     ck_sobolbn(
         256,
@@ -15878,7 +15878,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0xf73a4135, 0x995dd937, 0x60ed26c9, 0x65fcc72b],
+        [0xf73a4135, 0x995dd937, 0xc8cfdf6c, 0x6c683e72],
     );
     ck_sobolbn(
         256,
@@ -15886,7 +15886,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0xc0f19659, 0x7a3ac8ca, 0xa45fcd21, 0x6a4320d6],
+        [0xc0f19659, 0x7a3ac8ca, 0x07f1091a, 0x68de7b38],
     );
     ck_sobolbn(
         256,
@@ -15894,7 +15894,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0x0ed39dd8, 0x3b0a8fca, 0x036a043e, 0x2a61463b],
+        [0x0ed39dd8, 0x3b0a8fca, 0x50c95fe4, 0x6cac9277],
     );
     ck_sobolbn(
         256,
@@ -15902,7 +15902,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0xb2660a83, 0x462f4226, 0xe3c3c46c, 0xed2de442],
+        [0xb2660a83, 0x462f4226, 0x41bc7b03, 0x0de0d760],
     );
     ck_sobolbn(
         256,
@@ -15910,7 +15910,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0xab850323, 0xeb1c9a70, 0x662441f7, 0x9ccda234],
+        [0xab850323, 0xeb1c9a70, 0xdc0a717f, 0x092c2ea3],
     );
     ck_sobolbn(
         256,
@@ -15918,7 +15918,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0x5453e0ec, 0xc235592f, 0x99b547d7, 0xee552b0f],
+        [0x5453e0ec, 0xc235592f, 0xfdea8f5e, 0x182c270c],
     );
     ck_sobolbn(
         256,
@@ -15926,7 +15926,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0x3de64c8e, 0x6cbb4322, 0x236fe119, 0xac016305],
+        [0x3de64c8e, 0x6cbb4322, 0x68b9be74, 0xf8cec962],
     );
     ck_sobolbn(
         256,
@@ -15934,7 +15934,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0x41d12766, 0x55ea7142, 0xc32ec55b, 0x7ddfe644],
+        [0x41d12766, 0x55ea7142, 0x3d44878f, 0xa4a87f52],
     );
     ck_sobolbn(
         256,
@@ -15942,7 +15942,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x4b8a16aa, 0x5ae13847, 0xb20e6e2f, 0x38c316ce],
+        [0x4b8a16aa, 0x5ae13847, 0x0bcb13dc, 0x0f5c4eb7],
     );
     ck_sobolbn(
         256,
@@ -15950,7 +15950,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xc49d2110, 0x4118857f, 0x66110cb5, 0x35f1946f],
+        [0xc49d2110, 0x4118857f, 0xc2162846, 0x4284fa9d],
     );
     ck_sobolbn(
         256,
@@ -15958,7 +15958,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0xd853593e, 0x73ed4150, 0x597297fd, 0xcd011192],
+        [0xd853593e, 0x73ed4150, 0x74d1a1cd, 0x316b1dfd],
     );
     ck_sobolbn(
         256,
@@ -15966,7 +15966,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0x945dd241, 0x637c73ce, 0xb44a2af6, 0xf2e56d33],
+        [0x945dd241, 0x637c73ce, 0x3318eed4, 0x35649e26],
     );
     ck_sobolbn(
         256,
@@ -15974,7 +15974,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0x2763dea3, 0xa29fc4b3, 0x3dff6a5b, 0xfbc204d8],
+        [0x2763dea3, 0xa29fc4b3, 0x8c2e8ac7, 0xf9e236ee],
     );
     ck_sobolbn(
         256,
@@ -15982,7 +15982,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0xcc1cf14e, 0xbef11b8d, 0x85a509a8, 0x68843f4c],
+        [0xcc1cf14e, 0xbef11b8d, 0x8967f187, 0x2c870a35],
     );
     ck_sobolbn(
         256,
@@ -15990,7 +15990,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0x81afcb42, 0xece6e163, 0xd5633a04, 0xb604e798],
+        [0x81afcb42, 0xece6e163, 0x065aa404, 0xc5dc1bf1],
     );
     ck_sobolbn(
         256,
@@ -15998,7 +15998,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xfcca0337, 0x5282c6a7, 0x20e6fa05, 0x78799a07],
+        [0xfcca0337, 0x5282c6a7, 0x4ad225e8, 0xdaeeca3b],
     );
     ck_sobolbn(
         256,
@@ -16006,7 +16006,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0x64b65e8f, 0xeb12034f, 0x5b712a71, 0xffd8a120],
+        [0x64b65e8f, 0xeb12034f, 0x359aef1d, 0xd134572f],
     );
     ck_sobolbn(
         256,
@@ -16014,7 +16014,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0x76e6e985, 0x32c41340, 0x8815b365, 0x8a697a32],
+        [0x76e6e985, 0x32c41340, 0x8e981c5f, 0x35e44415],
     );
     ck_sobolbn(
         1000,
@@ -16022,7 +16022,7 @@ fn golden_sobolbn() {
         0,
         0,
         0,
-        [0x6d926df3, 0x52dc47cf, 0x700168b2, 0x9032c09d],
+        [0x6d926df3, 0x52dc47cf, 0x18f7aab0, 0x90c64f4a],
     );
     ck_sobolbn(
         1000,
@@ -16030,7 +16030,7 @@ fn golden_sobolbn() {
         0,
         0,
         1,
-        [0x38e0123a, 0xc7314961, 0xabc2d822, 0xad9bca35],
+        [0x38e0123a, 0xc7314961, 0x4b2c66f5, 0x8f081a82],
     );
     ck_sobolbn(
         1000,
@@ -16038,7 +16038,7 @@ fn golden_sobolbn() {
         0,
         0,
         13,
-        [0x4ef3a9b2, 0x647d79f3, 0xe8b72126, 0x9458b750],
+        [0x4ef3a9b2, 0x647d79f3, 0x9695f2bb, 0x1697731a],
     );
     ck_sobolbn(
         1000,
@@ -16046,7 +16046,7 @@ fn golden_sobolbn() {
         0,
         1,
         0,
-        [0xaa29c961, 0x8931231a, 0x874a12d5, 0x319c9eaf],
+        [0xaa29c961, 0x8931231a, 0xc558105e, 0x316a2245],
     );
     ck_sobolbn(
         1000,
@@ -16054,7 +16054,7 @@ fn golden_sobolbn() {
         0,
         1,
         1,
-        [0x965cfb80, 0x32624632, 0x39a48915, 0x574157d2],
+        [0x965cfb80, 0x32624632, 0xdfa563fc, 0x650543ee],
     );
     ck_sobolbn(
         1000,
@@ -16062,7 +16062,7 @@ fn golden_sobolbn() {
         0,
         1,
         13,
-        [0xbd738d25, 0xdcfabbf6, 0x38a475af, 0x0a94612b],
+        [0xbd738d25, 0xdcfabbf6, 0x67a9b2d2, 0x830bf32c],
     );
     ck_sobolbn(
         1000,
@@ -16070,7 +16070,7 @@ fn golden_sobolbn() {
         0,
         3,
         0,
-        [0x300dc5b2, 0xd251b9d8, 0xd699f16d, 0x5eb28ad9],
+        [0x300dc5b2, 0xd251b9d8, 0x9c9559f8, 0xfe7abfd6],
     );
     ck_sobolbn(
         1000,
@@ -16078,7 +16078,7 @@ fn golden_sobolbn() {
         0,
         3,
         1,
-        [0x61780b3b, 0x4be8d102, 0x48033c7a, 0x2f3d8ec5],
+        [0x61780b3b, 0x4be8d102, 0xa968c4f6, 0xcff971f8],
     );
     ck_sobolbn(
         1000,
@@ -16086,7 +16086,7 @@ fn golden_sobolbn() {
         0,
         3,
         13,
-        [0x23534677, 0x8b9da3ba, 0x5d4659c7, 0x43a946e2],
+        [0x23534677, 0x8b9da3ba, 0x1d4f7d82, 0x56cb3617],
     );
     ck_sobolbn(
         1000,
@@ -16094,7 +16094,7 @@ fn golden_sobolbn() {
         0,
         42,
         0,
-        [0x0915a018, 0xb7de46b1, 0xe071e961, 0x25329acc],
+        [0x0915a018, 0xb7de46b1, 0xe543c987, 0xcc9f8cbe],
     );
     ck_sobolbn(
         1000,
@@ -16102,7 +16102,7 @@ fn golden_sobolbn() {
         0,
         42,
         1,
-        [0xe8463520, 0x525b700b, 0x7d88ceaf, 0xe4785cfe],
+        [0xe8463520, 0x525b700b, 0x2c955bd1, 0xe551637f],
     );
     ck_sobolbn(
         1000,
@@ -16110,7 +16110,7 @@ fn golden_sobolbn() {
         0,
         42,
         13,
-        [0xa14cf890, 0xf69b7fd3, 0xb2916501, 0x251bd3f2],
+        [0xa14cf890, 0xf69b7fd3, 0xf3745a55, 0xd2c2d32d],
     );
     ck_sobolbn(
         1000,
@@ -16118,7 +16118,7 @@ fn golden_sobolbn() {
         0,
         65535,
         0,
-        [0xd6e96d3d, 0x87276ac5, 0x45fcfe90, 0x011981cd],
+        [0xd6e96d3d, 0x87276ac5, 0xc2d58fd6, 0x96a6c4de],
     );
     ck_sobolbn(
         1000,
@@ -16126,7 +16126,7 @@ fn golden_sobolbn() {
         0,
         65535,
         1,
-        [0x9779428c, 0x7c864af2, 0x491ba214, 0x3fce3a75],
+        [0x9779428c, 0x7c864af2, 0x881acf9f, 0xc7b9d4fe],
     );
     ck_sobolbn(
         1000,
@@ -16134,7 +16134,7 @@ fn golden_sobolbn() {
         0,
         65535,
         13,
-        [0xed6b0dce, 0x35c8f6e8, 0x4b9c55dd, 0xf9929b09],
+        [0xed6b0dce, 0x35c8f6e8, 0xa235a91d, 0x653b8ba8],
     );
     ck_sobolbn(
         1000,
@@ -16142,7 +16142,7 @@ fn golden_sobolbn() {
         0,
         65536,
         0,
-        [0x38e0123a, 0xc7314961, 0xabc2d822, 0xad9bca35],
+        [0x38e0123a, 0xc7314961, 0x4b2c66f5, 0x8f081a82],
     );
     ck_sobolbn(
         1000,
@@ -16150,7 +16150,7 @@ fn golden_sobolbn() {
         0,
         65536,
         1,
-        [0xe326202e, 0xada52be4, 0xd3e61875, 0xbf25742c],
+        [0xe326202e, 0xada52be4, 0xe2610402, 0x2e6f4717],
     );
     ck_sobolbn(
         1000,
@@ -16158,7 +16158,7 @@ fn golden_sobolbn() {
         0,
         65536,
         13,
-        [0xde1ae8eb, 0xaac92826, 0x16ce8ac8, 0x0a7a6e40],
+        [0xde1ae8eb, 0xaac92826, 0xd456f7bc, 0x64ec7dc0],
     );
     ck_sobolbn(
         1000,
@@ -16166,7 +16166,7 @@ fn golden_sobolbn() {
         0,
         70000,
         0,
-        [0xdd453e58, 0x03ea50fd, 0x34f88806, 0x73b811ac],
+        [0xdd453e58, 0x03ea50fd, 0xd78006d7, 0x7ee43a38],
     );
     ck_sobolbn(
         1000,
@@ -16174,7 +16174,7 @@ fn golden_sobolbn() {
         0,
         70000,
         1,
-        [0x3b65c78f, 0xa6cddf7a, 0xf8d5efbd, 0x4515e7b2],
+        [0x3b65c78f, 0xa6cddf7a, 0x85e70559, 0x10796e97],
     );
     ck_sobolbn(
         1000,
@@ -16182,7 +16182,7 @@ fn golden_sobolbn() {
         0,
         70000,
         13,
-        [0x3080b639, 0xc1a526c4, 0x2c74a861, 0x597d31e7],
+        [0x3080b639, 0xc1a526c4, 0x0c2a9f81, 0x721961d3],
     );
     ck_sobolbn(
         1000,
@@ -16190,7 +16190,7 @@ fn golden_sobolbn() {
         1,
         0,
         0,
-        [0x38e0123a, 0xc7314961, 0xabc2d822, 0xad9bca35],
+        [0x38e0123a, 0xc7314961, 0x4b2c66f5, 0x8f081a82],
     );
     ck_sobolbn(
         1000,
@@ -16198,7 +16198,7 @@ fn golden_sobolbn() {
         1,
         0,
         1,
-        [0xe326202e, 0xada52be4, 0xd3e61875, 0xbf25742c],
+        [0xe326202e, 0xada52be4, 0xe2610402, 0x2e6f4717],
     );
     ck_sobolbn(
         1000,
@@ -16206,7 +16206,7 @@ fn golden_sobolbn() {
         1,
         0,
         13,
-        [0xde1ae8eb, 0xaac92826, 0x16ce8ac8, 0x0a7a6e40],
+        [0xde1ae8eb, 0xaac92826, 0xd456f7bc, 0x64ec7dc0],
     );
     ck_sobolbn(
         1000,
@@ -16214,7 +16214,7 @@ fn golden_sobolbn() {
         1,
         1,
         0,
-        [0x965cfb80, 0x32624632, 0x39a48915, 0x574157d2],
+        [0x965cfb80, 0x32624632, 0xdfa563fc, 0x650543ee],
     );
     ck_sobolbn(
         1000,
@@ -16222,7 +16222,7 @@ fn golden_sobolbn() {
         1,
         1,
         1,
-        [0x7c73d3d9, 0x26114eb1, 0x03cc0b05, 0x65568dac],
+        [0x7c73d3d9, 0x26114eb1, 0x32f01bfc, 0xd6277291],
     );
     ck_sobolbn(
         1000,
@@ -16230,7 +16230,7 @@ fn golden_sobolbn() {
         1,
         1,
         13,
-        [0x2ecef7d7, 0x131fe5ed, 0xe73481ff, 0xd61595a2],
+        [0x2ecef7d7, 0x131fe5ed, 0x351ee1d3, 0x8ba3c344],
     );
     ck_sobolbn(
         1000,
@@ -16238,7 +16238,7 @@ fn golden_sobolbn() {
         1,
         3,
         0,
-        [0x61780b3b, 0x4be8d102, 0x48033c7a, 0x2f3d8ec5],
+        [0x61780b3b, 0x4be8d102, 0xa968c4f6, 0xcff971f8],
     );
     ck_sobolbn(
         1000,
@@ -16246,7 +16246,7 @@ fn golden_sobolbn() {
         1,
         3,
         1,
-        [0x9fde8f1e, 0x6e9bace3, 0x6d892219, 0x0723552b],
+        [0x9fde8f1e, 0x6e9bace3, 0x4c14cd5e, 0x5c7f6db7],
     );
     ck_sobolbn(
         1000,
@@ -16254,7 +16254,7 @@ fn golden_sobolbn() {
         1,
         3,
         13,
-        [0x41f9e412, 0xe7e58a35, 0x64161fd1, 0x5d220190],
+        [0x41f9e412, 0xe7e58a35, 0x9232b954, 0xecf263f5],
     );
     ck_sobolbn(
         1000,
@@ -16262,7 +16262,7 @@ fn golden_sobolbn() {
         1,
         42,
         0,
-        [0xe8463520, 0x525b700b, 0x7d88ceaf, 0xe4785cfe],
+        [0xe8463520, 0x525b700b, 0x2c955bd1, 0xe551637f],
     );
     ck_sobolbn(
         1000,
@@ -16270,7 +16270,7 @@ fn golden_sobolbn() {
         1,
         42,
         1,
-        [0xb702c719, 0x98d5be99, 0xc07301ed, 0xdef2b0b6],
+        [0xb702c719, 0x98d5be99, 0x6f6bd73a, 0x0de4fb2b],
     );
     ck_sobolbn(
         1000,
@@ -16278,7 +16278,7 @@ fn golden_sobolbn() {
         1,
         42,
         13,
-        [0x78e9a6b0, 0x5aac2a4c, 0x8c5afaf4, 0x5bc9e72b],
+        [0x78e9a6b0, 0x5aac2a4c, 0x80aa3624, 0x0d06d574],
     );
     ck_sobolbn(
         1000,
@@ -16286,7 +16286,7 @@ fn golden_sobolbn() {
         1,
         65535,
         0,
-        [0x9779428c, 0x7c864af2, 0x491ba214, 0x3fce3a75],
+        [0x9779428c, 0x7c864af2, 0x881acf9f, 0xc7b9d4fe],
     );
     ck_sobolbn(
         1000,
@@ -16294,7 +16294,7 @@ fn golden_sobolbn() {
         1,
         65535,
         1,
-        [0x86fc78cd, 0x382f0c2a, 0x1f720271, 0xbc0486a5],
+        [0x86fc78cd, 0x382f0c2a, 0xa6802632, 0xc5b10844],
     );
     ck_sobolbn(
         1000,
@@ -16302,7 +16302,7 @@ fn golden_sobolbn() {
         1,
         65535,
         13,
-        [0x11a5accf, 0x891127e1, 0x654248bb, 0xecbe5aa6],
+        [0x11a5accf, 0x891127e1, 0xa9ae5d71, 0xe159a4ac],
     );
     ck_sobolbn(
         1000,
@@ -16310,7 +16310,7 @@ fn golden_sobolbn() {
         1,
         65536,
         0,
-        [0xe326202e, 0xada52be4, 0xd3e61875, 0xbf25742c],
+        [0xe326202e, 0xada52be4, 0xe2610402, 0x2e6f4717],
     );
     ck_sobolbn(
         1000,
@@ -16318,7 +16318,7 @@ fn golden_sobolbn() {
         1,
         65536,
         1,
-        [0x5cb07096, 0x30bbb086, 0x3815912f, 0xcabd6a06],
+        [0x5cb07096, 0x30bbb086, 0xaa2b378d, 0xef70a3c5],
     );
     ck_sobolbn(
         1000,
@@ -16326,7 +16326,7 @@ fn golden_sobolbn() {
         1,
         65536,
         13,
-        [0xcc2c3524, 0xc8fe4a2e, 0x6ec14e01, 0xc865f1fd],
+        [0xcc2c3524, 0xc8fe4a2e, 0xc45315b8, 0xbb7eea71],
     );
     ck_sobolbn(
         1000,
@@ -16334,7 +16334,7 @@ fn golden_sobolbn() {
         1,
         70000,
         0,
-        [0x3b65c78f, 0xa6cddf7a, 0xf8d5efbd, 0x4515e7b2],
+        [0x3b65c78f, 0xa6cddf7a, 0x85e70559, 0x10796e97],
     );
     ck_sobolbn(
         1000,
@@ -16342,7 +16342,7 @@ fn golden_sobolbn() {
         1,
         70000,
         1,
-        [0x093a4790, 0xa26c102b, 0xb8b88b42, 0xb53e4af2],
+        [0x093a4790, 0xa26c102b, 0xc9328a0d, 0xa7c28b5f],
     );
     ck_sobolbn(
         1000,
@@ -16350,7 +16350,7 @@ fn golden_sobolbn() {
         1,
         70000,
         13,
-        [0xf3af4ee0, 0x44049455, 0xaec29661, 0x1722c235],
+        [0xf3af4ee0, 0x44049455, 0xe55ced14, 0xfd8f8663],
     );
     ck_sobolbn(
         1000,
@@ -16358,7 +16358,7 @@ fn golden_sobolbn() {
         7,
         0,
         0,
-        [0xc2479dd2, 0x84d7af43, 0x004c9042, 0x0a8e5505],
+        [0xc2479dd2, 0x84d7af43, 0x048bdd57, 0x2b8bb7df],
     );
     ck_sobolbn(
         1000,
@@ -16366,7 +16366,7 @@ fn golden_sobolbn() {
         7,
         0,
         1,
-        [0xfff41831, 0xf57f06a8, 0xd353e546, 0x6fcdf96b],
+        [0xfff41831, 0xf57f06a8, 0xde51ebd5, 0x2043efb1],
     );
     ck_sobolbn(
         1000,
@@ -16374,7 +16374,7 @@ fn golden_sobolbn() {
         7,
         0,
         13,
-        [0x44031a1d, 0xa20ed144, 0xb579c63e, 0x950ebb43],
+        [0x44031a1d, 0xa20ed144, 0x95c5f9cc, 0xee6fbeb7],
     );
     ck_sobolbn(
         1000,
@@ -16382,7 +16382,7 @@ fn golden_sobolbn() {
         7,
         1,
         0,
-        [0x3fbcb2d6, 0x4dacbbc9, 0xbd8e79b0, 0xb96a044e],
+        [0x3fbcb2d6, 0x4dacbbc9, 0xbaad5a76, 0x97f0ca66],
     );
     ck_sobolbn(
         1000,
@@ -16390,7 +16390,7 @@ fn golden_sobolbn() {
         7,
         1,
         1,
-        [0x1339d98a, 0x6a2d3768, 0x4ae8db37, 0xd83297d1],
+        [0x1339d98a, 0x6a2d3768, 0x4740f636, 0x97fe8f27],
     );
     ck_sobolbn(
         1000,
@@ -16398,7 +16398,7 @@ fn golden_sobolbn() {
         7,
         1,
         13,
-        [0xea79a46a, 0x2effc6a8, 0x600d0e35, 0x22207f85],
+        [0xea79a46a, 0x2effc6a8, 0x44a21321, 0x5ccfcb7d],
     );
     ck_sobolbn(
         1000,
@@ -16406,7 +16406,7 @@ fn golden_sobolbn() {
         7,
         3,
         0,
-        [0x53ff482a, 0xc70410ae, 0x5ea92381, 0x526acc94],
+        [0x53ff482a, 0xc70410ae, 0x5a8bea2d, 0xdecf22b8],
     );
     ck_sobolbn(
         1000,
@@ -16414,7 +16414,7 @@ fn golden_sobolbn() {
         7,
         3,
         1,
-        [0x72dd47f1, 0xab226ad8, 0x936a972c, 0x00433d29],
+        [0x72dd47f1, 0xab226ad8, 0x9a9c1959, 0xe3dc8c45],
     );
     ck_sobolbn(
         1000,
@@ -16422,7 +16422,7 @@ fn golden_sobolbn() {
         7,
         3,
         13,
-        [0xbc80bf68, 0xda3d7c0d, 0xc886b17e, 0xe53c8dba],
+        [0xbc80bf68, 0xda3d7c0d, 0xfa8e585a, 0x2920a1ae],
     );
     ck_sobolbn(
         1000,
@@ -16430,7 +16430,7 @@ fn golden_sobolbn() {
         7,
         42,
         0,
-        [0x5c610d05, 0x82a34a3f, 0xc1d454d9, 0xfe39070b],
+        [0x5c610d05, 0x82a34a3f, 0xbe2b1829, 0x77b06b1f],
     );
     ck_sobolbn(
         1000,
@@ -16438,7 +16438,7 @@ fn golden_sobolbn() {
         7,
         42,
         1,
-        [0xee4df34b, 0xc9481e39, 0x0c0da9ca, 0x4d3f44d8],
+        [0xee4df34b, 0xc9481e39, 0x363fc58a, 0x4d70aeaf],
     );
     ck_sobolbn(
         1000,
@@ -16446,7 +16446,7 @@ fn golden_sobolbn() {
         7,
         42,
         13,
-        [0x62c4e6a9, 0xb681d5ff, 0xcd41ca8d, 0x6e8bff84],
+        [0x62c4e6a9, 0xb681d5ff, 0xed13c6ee, 0x0b74a312],
     );
     ck_sobolbn(
         1000,
@@ -16454,7 +16454,7 @@ fn golden_sobolbn() {
         7,
         65535,
         0,
-        [0xbf710559, 0x0f1001df, 0x22c3ec81, 0x3eba3720],
+        [0xbf710559, 0x0f1001df, 0xbb619608, 0x1c620a84],
     );
     ck_sobolbn(
         1000,
@@ -16462,7 +16462,7 @@ fn golden_sobolbn() {
         7,
         65535,
         1,
-        [0x878c28ac, 0x46608235, 0x83162554, 0x43d2f1d8],
+        [0x878c28ac, 0x46608235, 0x57c7337b, 0xe8f00495],
     );
     ck_sobolbn(
         1000,
@@ -16470,7 +16470,7 @@ fn golden_sobolbn() {
         7,
         65535,
         13,
-        [0xd0aed600, 0x1d7d38c2, 0x94af418a, 0x15ab3fff],
+        [0xd0aed600, 0x1d7d38c2, 0x4df085bd, 0xe1654530],
     );
     ck_sobolbn(
         1000,
@@ -16478,7 +16478,7 @@ fn golden_sobolbn() {
         7,
         65536,
         0,
-        [0xfff41831, 0xf57f06a8, 0xd353e546, 0x6fcdf96b],
+        [0xfff41831, 0xf57f06a8, 0xde51ebd5, 0x2043efb1],
     );
     ck_sobolbn(
         1000,
@@ -16486,7 +16486,7 @@ fn golden_sobolbn() {
         7,
         65536,
         1,
-        [0x0a87b7e7, 0xabb73376, 0x2585850a, 0x23fd3225],
+        [0x0a87b7e7, 0xabb73376, 0xdd480162, 0x8d6016a2],
     );
     ck_sobolbn(
         1000,
@@ -16494,7 +16494,7 @@ fn golden_sobolbn() {
         7,
         65536,
         13,
-        [0xa8ffaec6, 0xc0dbaa9c, 0x67aaa128, 0x21d7e65b],
+        [0xa8ffaec6, 0xc0dbaa9c, 0x4c729596, 0xe3ccad91],
     );
     ck_sobolbn(
         1000,
@@ -16502,7 +16502,7 @@ fn golden_sobolbn() {
         7,
         70000,
         0,
-        [0xfb5967b7, 0xa036f091, 0x78167a7f, 0x927efd47],
+        [0xfb5967b7, 0xa036f091, 0x2367868d, 0xaa0fe0e2],
     );
     ck_sobolbn(
         1000,
@@ -16510,7 +16510,7 @@ fn golden_sobolbn() {
         7,
         70000,
         1,
-        [0xaea582bc, 0x73ce3543, 0xd0a1c8c7, 0xe23bef6c],
+        [0xaea582bc, 0x73ce3543, 0xb99dfb04, 0xca0bfe25],
     );
     ck_sobolbn(
         1000,
@@ -16518,7 +16518,7 @@ fn golden_sobolbn() {
         7,
         70000,
         13,
-        [0x4ec64024, 0x82e8408a, 0x4f2ecaba, 0xbf2a9ecb],
+        [0x4ec64024, 0x82e8408a, 0xb682daed, 0xdfbf2112],
     );
 }
 
