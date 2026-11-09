@@ -56,7 +56,8 @@ rather than `b6a204e~1`.
 - `benches/upstream.rs` and `tools/bench_ref.cpp`: a matched Rust / C++
   benchmark using upstream's own `benchmark` workload, so the port can be timed
   against the reference headers. Both sides report `init_us` as a cold start,
-  timing each sampler in a fresh process. See `tools/README.md`.
+  timing each sampler in a fresh process. `tools/README.md` records the
+  results and explains the `target-cpu=native` speedup (GFNI bit reversal).
 
 ### Fixed
 
