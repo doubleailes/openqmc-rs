@@ -7,15 +7,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+**Breaking: sample values change.** `SobolSampler` and `SobolBnSampler` now
+produce different values in dimensions 2 and 3, following upstream OpenQMC
+`b6a204e` ("Replace Sobol matrices with SZ sequences"). Renders using either
+sampler will not reproduce images made with 0.2.x. Dimensions 0 and 1 are
+unchanged. PMJ, lattice and their blue-noise variants are unaffected. Output
+is again bit-for-bit identical to upstream, now at upstream HEAD (`d6c40b5`)
+rather than `b6a204e~1`.
+
+### Changed
+
+- **Behaviour change:** the generator matrices behind `SobolSampler`,
+  `SobolBnSampler` and `owen::shuffled_scrambled_sobol` are now the SZ
+  sequences of Ahmed et al., *SZ Sequences: Binary-Constructed
+  (0, 2^q)-Sequences* (SIGGRAPH Asia 2025). They replace the classic Sobol
+  (Joe & Kuo) direction numbers. Every pair of the four dimensions is now a
+  (0, 2)-sequence in base 4, and the four together are a (0, 4)-sequence in
+  base 16. Before, the pairs (1, 3) and (2, 3) failed a 16×16 grid at 256
+  points. The blue-noise tables still apply, because dimensions 0 and 1 are
+  unchanged.
+- **Breaking API:** `owen::sobol_reversed_index` is renamed
+  `owen::sz_reversed_basis`, matching upstream's `oqmc::szReversedBasis`, and
+  it returns the new SZ values. There is no deprecated alias, because the old
+  name would silently return different numbers.
+- The core is still evaluated from compile-time byte tables, now built from
+  the SZ matrices. On the matched benchmark, Sobol and Sobol-BN draws are
+  1.4–1.6× faster than upstream's C++ at default flags, and about 3× faster
+  with `target-cpu=native`. Upstream dropped its SIMD Sobol paths in the same
+  commit. See `tools/README.md`.
+
 ### Added
 
+- `owen::sz_to_reversed`, a port of upstream's `oqmc::szToReversed`. It is
+  the SZ program on a natural-order index, so
+  `sz_to_reversed(i, d) == sz_reversed_basis(reverse_bits16(i), d)`.
+- Exhaustive tests for the SZ core. The byte tables are checked against both
+  of upstream's shift-mask-xor programs. Further tests cover the eq. 13
+  chaining relation (`P · SZ[2] == SZ[3]`), the upstream host-path draw,
+  base-4 (0, 2)-sequence stratification for every dimension pair, and the
+  base-16 (0, 4)-sequence property of all four dimensions.
 - A large dependency-free test suite (about 800 new tests) covering every
   module: exhaustive and property tests for the utility headers (`encode`,
   `float`, `range`, `rotate`, `reverse`, `permute`, `pcg`), (0,2)-net and
   stratification checks for the Sobol, lattice and PMJ cores, checks on the
   bundled blue-noise tables, `State64Bit` domain-tree algebra, a behavioural
   suite stamped out for all six samplers, and cross-checks that rebuild each
-  sampler's output from the public building blocks. No library code changed.
+  sampler's output from the public building blocks.
 - `benches/upstream.rs` and `tools/bench_ref.cpp`: a matched Rust / C++
   benchmark using upstream's own `benchmark` workload, so the port can be timed
   against the reference headers. See `tools/README.md`.

@@ -17,6 +17,9 @@ g++ -std=c++17 -O2 -DOQMC_FORCE_SCALAR -I openqmc/include \
 cargo fmt   # the generated file must be reformatted to keep CI's fmt check green
 ```
 
+The checked-in vectors were generated from upstream `d6c40b5` (2026-11-09),
+which includes `b6a204e` ("Replace Sobol matrices with SZ sequences").
+
 Then `cargo test -p openqmc-rs --test golden_upstream` must pass. The generator
 emits Rust `#[test]`s whose expected values are the upstream outputs; the test
 bodies recompute the same quantities through this crate's public API and assert
@@ -46,20 +49,18 @@ cargo bench --bench upstream -- all 9
 Add `-DOQMC_FORCE_SCALAR` to time upstream's scalar path. Add `-march=native`,
 or `RUSTFLAGS="-C target-cpu=native"` for Rust, to time AVX2 builds.
 
-**Pin upstream to the commit the port tracks.** Upstream `b6a204e`
-(2026-09-04, "Replace Sobol matrices with SZ sequences") changed Sobol and
-Sobol-BN output, and this port predates it. Benchmark against its parent so
-both sides compute identical values:
+**Benchmark against upstream HEAD.** Upstream `b6a204e` (2026-09-04, "Replace
+Sobol matrices with SZ sequences") changed Sobol and Sobol-BN output, and this
+port tracks it. Earlier releases of this crate (up to 0.2.4) match `b6a204e~1`
+instead. To time one of those, check that commit out
+(`git -C openqmc fetch --unshallow && git -C openqmc checkout b6a204e~1`).
 
-```bash
-git -C openqmc fetch --unshallow && git -C openqmc checkout b6a204e~1
-```
+At upstream `d6c40b5` (HEAD on 2026-11-09), a 64-bit hash of every value the
+benchmark draws (4096 indices × 64 domains) is identical between Rust and C++
+for all six samplers. This holds for the scalar, SSE2 and AVX2 C++ builds, and
+for the baseline and `target-cpu=native` Rust builds.
 
-At that commit, a 64-bit hash of every value the benchmark draws (4096 indices ×
-64 domains) is identical between Rust and C++ for all six samplers. This holds
-for the scalar, SSE2 and AVX2 builds.
-
-### Results (2026-11-09)
+### Results (2026-11-09, upstream `d6c40b5`)
 
 Run on a shared 4-vCPU Intel Xeon @ 2.10 GHz (AVX2) cloud VM, with rustc 1.97,
 g++ 13.3 and clang 18.1, all at `-O3` / release. Each number is ns per 4D draw:
@@ -69,20 +70,25 @@ the faster of g++ and clang.
 
 | sampler   | Rust | C++ scalar | C++ SSE2 | Rust native | C++ AVX2 |
 | --------- | ---: | ---------: | -------: | ----------: | -------: |
-| pmj       |  5.8 |       10.0 |      8.2 |     **3.5** |      7.3 |
-| pmjbn     | 12.4 |       10.3 |     12.5 |     **6.0** |     11.3 |
-| sobol     | 18.8 |       27.5 |     19.5 |     **7.5** |     18.5 |
-| sobolbn   | 22.6 |       31.2 |     26.0 |    **11.0** |     25.6 |
-| lattice   |  6.8 |        7.6 |      6.8 |         7.4 |  **5.8** |
-| latticebn | 12.4 |       10.6 |     12.3 |        11.4 | **10.6** |
+| pmj       |  7.0 |       10.6 |     10.2 |     **3.9** |      9.2 |
+| pmjbn     | 12.3 |       15.6 |     15.2 |     **6.4** |     13.6 |
+| sobol     | 18.9 |       26.9 |     26.7 |     **9.3** |     26.7 |
+| sobolbn   | 22.5 |       35.6 |     35.4 |    **11.4** |     34.7 |
+| lattice   |  6.8 |        8.7 |      8.7 |     7.4     | **7.4**  |
+| latticebn | 13.2 |       13.6 |     13.5 |    **11.5** |     12.3 |
 
-- With default flags (x86-64 baseline, SSE2), the port is at parity with
-  upstream's SIMD build. It is faster on `pmj` (about 1.4×), and roughly level
-  on everything else.
-- With `target-cpu=native`, Rust is 2–2.5× faster than upstream's AVX2 path on
-  the PMJ and Sobol families. The lattice samplers stay at parity, with C++
-  slightly ahead.
+- Upstream `b6a204e` removed the SSE, AVX and Neon paths for the Sobol core, so
+  upstream's Sobol and Sobol-BN cost the same in every C++ build (about 27 and
+  35 ns). Before it, the AVX2 build ran Sobol at about 18.5 ns.
+- This port evaluates the SZ matrix product from byte tables, as it did for
+  the old matrices. With default flags it is 1.4–1.6× faster than upstream on
+  the Sobol family. With `target-cpu=native` it is about 3× faster. A port of
+  upstream's new host path (reverse once, shift-mask-xor programs, dimension 3
+  chained from 2) measured 23 / 29 ns at baseline and about 18 ns native for
+  `sobol`, so the tables stay.
+- PMJ is 1.3–1.5× faster than upstream at baseline and 2–2.5× faster native.
+  The lattice samplers are at parity.
 - Cache initialisation is one-time per process in Rust (lazy globals). Building
-  the PMJ table costs about the same in both, roughly 0.3–1.3 ms. Loading the
-  blue-noise tables takes about 0.3 ms in Rust, against 0.02–0.07 ms in C++,
+  the PMJ table costs about the same in both, roughly 0.3–1.8 ms. Loading the
+  blue-noise tables takes about 0.3 ms in Rust, against 0.03–0.08 ms in C++,
   because Rust decodes the bundled little-endian blobs into a `Box<[u32]>`.

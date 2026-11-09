@@ -1,5 +1,10 @@
 //! Port of `oqmc/sobol.h` — the Owen-scrambled Sobol sampler.
 //!
+//! Since upstream `b6a204e`, the generator matrices are SZ sequences (Ahmed
+//! et al. 2025) rather than the classic Sobol direction numbers: dimensions 0
+//! and 1 are unchanged, while every pair of the four dimensions is a
+//! (0, 2)-sequence in base 4. See [`crate::owen`].
+//!
 //! No cache: all samples are computed on the fly. The per-draw cost is higher
 //! than the other samplers, but Owen scrambling gives excellent random error
 //! cancellation and a very high rate of integration for smooth functions.
@@ -63,7 +68,8 @@ impl SamplerImpl for SobolImpl {
     }
 }
 
-/// Owen-scrambled Sobol sampler (Burley 2020, Ahmed 2024).
+/// Owen-scrambled Sobol sampler (Burley 2020, Ahmed 2024), built on SZ
+/// sequences (Ahmed et al. 2025).
 ///
 /// Cache-free; every sample is computed on the fly. Highest rate of integration
 /// for smooth functions of the six samplers, at the highest per-draw cost. See
