@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-09
+
 **Breaking: sample values change.** `SobolSampler` and `SobolBnSampler` now
 produce different values in dimensions 2 and 3, following upstream OpenQMC
 `b6a204e` ("Replace Sobol matrices with SZ sequences"). Renders using either
@@ -124,7 +126,9 @@ identical to upstream OpenQMC and to 0.1.x.
   (`tests/golden_upstream.rs`, regenerable via `tools/ref_gen.cpp`),
   verifying bit-for-bit parity.
 
-[Unreleased]: https://github.com/doubleailes/openqmc-rs/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/doubleailes/openqmc-rs/compare/0.3.0...HEAD
+[0.3.0]: https://github.com/doubleailes/openqmc-rs/compare/0.2.4...0.3.0
+[0.2.4]: https://github.com/doubleailes/openqmc-rs/compare/0.2.3...0.2.4
 [0.2.0]: https://github.com/doubleailes/openqmc-rs/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/doubleailes/openqmc-rs/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/doubleailes/openqmc-rs/releases/tag/v0.1.0

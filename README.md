@@ -47,7 +47,7 @@ Add the dependency:
 
 ```toml
 [dependencies]
-openqmc-rs = "0.2"
+openqmc-rs = "0.3"
 ```
 
 The crate's library name is `openqmc`, so import it as `use openqmc::...;`. It has no
