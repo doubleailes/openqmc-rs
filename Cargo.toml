@@ -22,3 +22,7 @@ path = "src/lib.rs"
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--generate-link-to-definition"]
+
+[[bench]]
+name = "upstream"
+harness = false
