@@ -16,6 +16,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   bundled blue-noise tables, `State64Bit` domain-tree algebra, a behavioural
   suite stamped out for all six samplers, and cross-checks that rebuild each
   sampler's output from the public building blocks. No library code changed.
+- `benches/upstream.rs` and `tools/bench_ref.cpp`: a matched Rust / C++
+  benchmark using upstream's own `benchmark` workload, so the port can be timed
+  against the reference headers. See `tools/README.md`.
+
+### Fixed
+
+- `tools/README.md`: upstream now requires C++17, so the reference generator is
+  compiled with `-std=c++17` (was `-std=c++14`, which no longer builds).
 
 ## [0.2.4] - 2026-09-26
 

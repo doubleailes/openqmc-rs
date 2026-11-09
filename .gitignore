@@ -8,3 +8,4 @@ Cargo.lock
 # Profiling artifacts
 perf.data*
 *.profraw
+/tools/bench_ref
