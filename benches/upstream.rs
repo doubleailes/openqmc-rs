@@ -6,14 +6,17 @@
 //! sampler, `name,init_us,samples_us,ns_per_draw`, with the draw time the
 //! median over `reps` runs.
 //!
-//! Caches are process-global and lazily built here, so `init_us` is the single
-//! first-touch `warm_cache()` cost rather than a median.
+//! `init_us` is a cold start: the first `warm_cache()` in a process that runs
+//! only that sampler. Caches are process-global and shared (PMJ-BN reuses the
+//! PMJ table), so `all` re-runs this binary once per sampler instead of timing
+//! them in one process. `tools/bench_ref.cpp` measures init the same way.
 //!
 //! ```text
 //! cargo bench --bench upstream -- [sampler|all] [reps]
 //! ```
 
 use std::hint::black_box;
+use std::process::Command;
 use std::time::Instant;
 
 use openqmc::lattice::LatticeImpl;
@@ -26,6 +29,7 @@ use openqmc::{Sampler, SamplerImpl};
 
 const SAMPLES: i32 = 1 << 15;
 const DIMS: i32 = 256;
+const SAMPLERS: [&str; 6] = ["pmj", "pmjbn", "sobol", "sobolbn", "lattice", "latticebn"];
 
 #[inline(never)]
 fn run_loop<T: SamplerImpl>(nsamples: i32, ndims: i32) {
@@ -71,26 +75,31 @@ fn main() {
         .filter(|a| !a.starts_with('-'))
         .collect();
     let which = args.first().map_or("all", String::as_str);
-    let reps = args.get(1).and_then(|r| r.parse().ok()).unwrap_or(9);
-    let want = |n: &str| which == "all" || which == n;
+    let reps: usize = args.get(1).and_then(|r| r.parse().ok()).unwrap_or(9);
+    // Internal: set by the `all` driver so each child skips the header.
+    let child = std::env::args().any(|a| a == "--child");
 
-    println!("sampler,init_us,samples_us,ns_per_draw");
-    if want("pmj") {
-        run::<PmjImpl>("pmj", reps);
+    if !child {
+        println!("sampler,init_us,samples_us,ns_per_draw");
     }
-    if want("pmjbn") {
-        run::<PmjBnImpl>("pmjbn", reps);
-    }
-    if want("sobol") {
-        run::<SobolImpl>("sobol", reps);
-    }
-    if want("sobolbn") {
-        run::<SobolBnImpl>("sobolbn", reps);
-    }
-    if want("lattice") {
-        run::<LatticeImpl>("lattice", reps);
-    }
-    if want("latticebn") {
-        run::<LatticeBnImpl>("latticebn", reps);
+    match which {
+        "all" => {
+            // One fresh process per sampler, so each init is a cold start.
+            let exe = std::env::current_exe().expect("current_exe");
+            for name in SAMPLERS {
+                let status = Command::new(&exe)
+                    .args([name, &reps.to_string(), "--child"])
+                    .status()
+                    .expect("spawn benchmark child");
+                assert!(status.success(), "{name} benchmark failed");
+            }
+        }
+        "pmj" => run::<PmjImpl>("pmj", reps),
+        "pmjbn" => run::<PmjBnImpl>("pmjbn", reps),
+        "sobol" => run::<SobolImpl>("sobol", reps),
+        "sobolbn" => run::<SobolBnImpl>("sobolbn", reps),
+        "lattice" => run::<LatticeImpl>("lattice", reps),
+        "latticebn" => run::<LatticeBnImpl>("latticebn", reps),
+        other => panic!("unknown sampler {other:?}; expected one of {SAMPLERS:?} or all"),
     }
 }
