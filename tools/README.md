@@ -38,7 +38,11 @@ upstream's own `src/tools/lib/benchmark.cpp`. For each sampler, they run 2^15
 sample indices. Each index builds `Sampler(0, 0, 0, i)`, then 64 times calls
 `newDomain(0)` and draws 4 floats, for 256 dimensions. Each prints CSV:
 `sampler,init_us,samples_us,ns_per_draw`. The draw time is the median of
-`reps` runs, and a "draw" is one 4D `drawSample` call.
+`reps` runs, and a "draw" is one 4D `drawSample` call. `init_us` is a cold
+start on both sides: the first cache initialisation in a process that runs only
+that sampler. `all` re-runs the binary once per sampler for this reason. Rust's
+caches are process-global and shared (PMJ-BN reuses the PMJ table), so timing
+them in one process would leave some of the cost out.
 
 ```bash
 g++ -std=c++17 -O3 -I openqmc/include bench_ref.cpp -o bench_ref
@@ -88,7 +92,9 @@ the faster of g++ and clang.
   `sobol`, so the tables stay.
 - PMJ is 1.3–1.5× faster than upstream at baseline and 2–2.5× faster native.
   The lattice samplers are at parity.
-- Cache initialisation is one-time per process in Rust (lazy globals). Building
-  the PMJ table costs about the same in both, roughly 0.3–1.8 ms. Loading the
-  blue-noise tables takes about 0.3 ms in Rust, against 0.03–0.08 ms in C++,
-  because Rust decodes the bundled little-endian blobs into a `Box<[u32]>`.
+- Cold-start cache initialisation is at parity. Building the PMJ table takes
+  about 1.3–2.1 ms in both, and PMJ-BN, which also needs the blue-noise tables,
+  about 1.5–2.0 ms. Loading the blue-noise tables alone takes about 0.3 ms in
+  both. An earlier version of this table reported 0.02–0.08 ms for C++. That
+  figure was the median of repeated initialisations within one process, so it
+  was not a cold start.
